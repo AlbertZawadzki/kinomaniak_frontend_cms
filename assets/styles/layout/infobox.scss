@@ -1,0 +1,62 @@
+.infobox-wrapper {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.infobox-inner-wrapper {
+  position: relative;
+  margin: 0 auto;
+}
+
+.infobox {
+  box-shadow: 0 0 3px 1px rgba($colorBlack, $halfOpacity);
+  background-color: $colorWhite;
+  position: relative;
+  z-index: 2;
+  margin: 10px 0;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 5px;
+  border-radius: 5px;
+
+  &.success {
+    background-color: $colorSuccess;
+  }
+
+  &.failure {
+    background-color: $colorFailure;
+  }
+
+  &.more-action {
+    background-color: $colorMoreAction;
+  }
+
+  &.processing {
+    background-color: $colorProcessing;
+  }
+
+  &.unknown {
+    background-color: $colorBlack;
+    color: $colorRed;
+  }
+}
+
+.infobox-title {
+  margin: 0;
+  text-align: left;
+  text-indent: 3px;
+}
+
+.infobox-message {
+  margin-top: 4px;
+  text-align: justify;
+  padding: 3px;
+  text-indent: 3px;
+  background-color: rgba($colorWhite, $lightOpacity);
+  border-radius: 5px;
+}

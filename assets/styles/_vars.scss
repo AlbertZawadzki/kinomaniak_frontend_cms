@@ -4,7 +4,7 @@ $colorBlue: #4169e1;
 $colorCyan: #00ffff;
 $colorGreen: #9ACD32;
 $colorPink: #FF69B4;
-$colorBrown: #F4A460;
+$colorOrange: #F4A460;
 $colorPurple: #663399;
 $colorRed: #B22222;
 $colorWhite: #EEE;
@@ -18,7 +18,7 @@ $colorUnknown: $colorBlack;
 $colorAll: $colorBlue;
 $colorOwner: $colorRed;
 $colorAdmin: $colorGreen;
-$colorAnalytic: $colorBrown;
+$colorAnalytic: $colorOrange;
 $colorContentManager: $colorLightBlue;
 $colorDeveloper: $colorPink;
 $colorSupport: $colorPurple;
@@ -30,3 +30,9 @@ $halfOpacity: 0.5;
 $lightOpacity: 0.8;
 
 // Color reassingment
+$colorFailure: $colorRed;
+$colorMain: $colorWhite;
+$colorMainContrast: $colorBlack;
+$colorMoreAction: $colorOrange;
+$colorProcessing: $colorYellow;
+$colorSuccess: $colorGreen;
