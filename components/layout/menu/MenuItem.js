@@ -8,6 +8,7 @@ const MenuItem = ({ action, isLink, isTop, name, to, type, subitems, isSubItem }
     menu-item ${isTop ? "top" : "left"} 
     ${type} 
     ${isLink && router.pathname === to ? "active" : "inactive"}
+    ${!isLink && router.pathname.includes(to) ? "active" : "inactive"}
     ${isSubItem ? "subitem" : "normal"}
   `
 
@@ -20,7 +21,7 @@ const MenuItem = ({ action, isLink, isTop, name, to, type, subitems, isSubItem }
   }
 
   if (subitems?.length > 0) {
-    return <div className={basicClassName} onClick={() => action()}>
+    return <div className={basicClassName}>
       {name}
       <div className='submenu-wrapper'>
         <div className='submenu'>
@@ -42,8 +43,10 @@ MenuItem.defaultProps = {
   isLink: false,
   isTop: false,
   name: "No name set",
-  to: "/",
+  to: null,
   type: "unknown",
+  subitems: [],
+  isSubItem: false,
 }
 
 export default MenuItem

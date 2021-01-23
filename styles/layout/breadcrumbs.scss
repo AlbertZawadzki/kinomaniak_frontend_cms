@@ -1,0 +1,35 @@
+.breadcrumbs-wrapper {
+  width: calc(100% - 10px);
+  background-color: $colorWhite;
+  margin: 5px;
+  box-shadow: inset 0 0 3px 1px rgba($colorBlack, $fullOpacity);
+  border-radius: 5px;
+  padding: 3px 6px;
+  box-sizing: border-box;
+  display: flex;
+  overflow: hidden;
+  height: 26px;
+}
+
+.breadcrumb-back {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+
+  &:hover {
+    color: $colorRed;
+  }
+}
+
+.breadcrumb {
+  padding: 0 10px 3px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: $colorRed;
+  }
+}

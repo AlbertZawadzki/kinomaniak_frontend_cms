@@ -1,12 +1,11 @@
 import React from "react"
-import Head from 'next/head'
 
 const Home = () => {
-    return (
-        <div>
-            Home
-        </div>
-    )
+  return (
+    <div>
+      Home
+    </div>
+  )
 }
 
-export default Home;
+export default Home

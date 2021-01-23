@@ -15,11 +15,13 @@ const data = [
     "name": functions.getTranslation("content"),
     "type": ROLES.CONTENT_MANAGER,
     "isLink": false,
+    "to": "/content",
     "subitems": [
       {
         "id": "menu-left-item-2-1",
         "name": functions.getTranslation("actors"),
         "isLink": false,
+        "to": "/content/actors",
         "subitems": [
           {
             "id": "menu-left-item-2-1-a",
@@ -39,6 +41,7 @@ const data = [
         "id": "menu-left-item-2-2",
         "name": functions.getTranslation("categories"),
         "isLink": false,
+        "to": "/content/categories",
         "subitems": [
           {
             "id": "menu-left-item-2-2-a",
@@ -58,6 +61,7 @@ const data = [
         "id": "menu-left-item-2-3",
         "name": functions.getTranslation("contents"),
         "isLink": false,
+        "to": "/content/contents",
         "subitems": [
           {
             "id": "menu-left-item-2-3-a",
@@ -77,6 +81,7 @@ const data = [
         "id": "menu-left-item-2-4",
         "name": functions.getTranslation("images"),
         "isLink": false,
+        "to": "/content/images",
         "subitems": [
           {
             "id": "menu-left-item-2-4-a",
@@ -96,6 +101,7 @@ const data = [
         "id": "menu-left-item-2-5",
         "name": functions.getTranslation("posters"),
         "isLink": false,
+        "to": "/content/posters",
         "subitems": [
           {
             "id": "menu-left-item-2-5-a",
@@ -115,6 +121,7 @@ const data = [
         "id": "menu-left-item-2-6",
         "name": functions.getTranslation("videos"),
         "isLink": false,
+        "to": "/content/videos",
         "subitems": [
           {
             "id": "menu-left-item-2-6-a",
@@ -144,11 +151,13 @@ const data = [
     "name": functions.getTranslation("monetization"),
     "type": ROLES.OWNER,
     "isLink": false,
+    "to": "/monetization",
     "subitems": [
       {
         "id": "menu-left-item-4-1",
         "name": functions.getTranslation("plans"),
         "isLink": false,
+        "to": "/monetization/plans",
         "subitems": [
           {
             "id": "menu-left-item-4-1-a",
@@ -174,6 +183,7 @@ const data = [
         "id": "menu-left-item-4-2",
         "name": functions.getTranslation("Vouchers"),
         "isLink": false,
+        "to": "/monetization/vouchers",
         "subitems": [
           {
             "id": "menu-left-item-4-2-a",
@@ -208,6 +218,7 @@ const data = [
     "name": functions.getTranslation("geoblock"),
     "type": ROLES.CONTENT_MANAGER,
     "isLink": false,
+    "to": "/geoblock",
     "subitems": [
       {
         "id": "menu-left-item-5-1",
@@ -235,6 +246,7 @@ const data = [
     "name": functions.getTranslation("users"),
     "type": ROLES.OWNER,
     "isLink": false,
+    "to": "/users",
     "subitems": [
       {
         "id": "menu-left-item-7-1",
@@ -279,6 +291,7 @@ const data = [
     "name": functions.getTranslation("settings"),
     "type": ROLES.ADMIN,
     "isLink": false,
+    "to": "/settings",
     "subitems": [
       {
         "id": "menu-left-item-8-1",
@@ -299,6 +312,7 @@ const data = [
     "name": functions.getTranslation("support"),
     "type": ROLES.SUPPORT,
     "isLink": false,
+    "to": "/support",
     "subitems": [
       {
         "id": "menu-left-item-9-1",
@@ -319,6 +333,7 @@ const data = [
     "name": functions.getTranslation("translations"),
     "type": ROLES.TRANSLATOR,
     "isLink": false,
+    "to": "/translations",
     "subitems": [
       {
         "id": "menu-left-item-8-1",
