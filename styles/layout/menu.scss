@@ -1,0 +1,129 @@
+.menu-top {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  background-color: $colorWhite;
+  align-items: flex-end;
+}
+
+.menu-left {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $colorWhite;
+}
+
+.menu-item {
+  cursor: pointer;
+  border-left: 2px solid $colorWhite;
+  text-align: center;
+  padding: 3px 0;
+  position: relative;
+  background-color: $colorWhite;
+
+  &.top {
+    padding: 3px 8px 0;
+    border-left: 0;
+    border-bottom: 2px solid $colorWhite;
+  }
+
+  &.active {
+    &.all {
+      border-color: $colorAll;
+      background-color: rgba($colorAll, $fullOpacity);
+    }
+
+    &.owner {
+      border-color: $colorOwner;
+      background-color: rgba($colorOwner, $fullOpacity);
+    }
+
+    &.admin {
+      border-color: $colorAdmin;
+      background-color: rgba($colorAdmin, $fullOpacity);
+    }
+
+    &.analytic {
+      border-color: $colorAnalytic;
+      background-color: rgba($colorAnalytic, $fullOpacity);
+    }
+
+    &.content-manager {
+      border-color: $colorContentManager;
+      background-color: rgba($colorContentManager, $fullOpacity);
+    }
+
+    &.developer {
+      border-color: $colorDeveloper;
+      background-color: rgba($colorDeveloper, $fullOpacity);
+    }
+  }
+
+  &:hover {
+    border-color: $colorUnknown;
+    background-color: rgba($colorUnknown, $fullOpacity);
+
+    &.all {
+      border-color: $colorAll;
+      background-color: rgba($colorAll, $halfOpacity);
+    }
+
+    &.owner {
+      border-color: $colorOwner;
+      background-color: rgba($colorOwner, $halfOpacity);
+    }
+
+    &.admin {
+      border-color: $colorAdmin;
+      background-color: rgba($colorAdmin, $halfOpacity);
+    }
+
+    &.analytic {
+      border-color: $colorAnalytic;
+      background-color: rgba($colorAnalytic, $halfOpacity);
+    }
+
+    &.content-manager {
+      border-color: $colorContentManager;
+      background-color: rgba($colorContentManager, $halfOpacity);
+    }
+
+    &.developer {
+      border-color: $colorDeveloper;
+      background-color: rgba($colorDeveloper, $halfOpacity);
+    }
+
+    &.support {
+      border-color: $colorSupport;
+      background-color: rgba($colorSupport, $halfOpacity);
+    }
+
+    &.translator {
+      border-color: $colorTranslator;
+      background-color: rgba($colorTranslator, $halfOpacity);
+    }
+  }
+
+  .submenu-wrapper & {
+    padding: 3px 8px 3px 6px;
+    width: 140px;
+  }
+}
+
+.submenu-wrapper {
+  position: absolute;
+  display: none;
+  left: 100%;
+  top: 0;
+  padding-left: 10px;
+
+  .menu-item:hover > & {
+    display: block;
+  }
+}
+
+.submenu {
+  background-color: $colorWhite;
+  box-shadow: 0 0 3px 1px rgba($colorBlack, $halfOpacity);
+}

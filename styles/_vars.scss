@@ -1,0 +1,32 @@
+// Full colors
+$colorBlack: #000;
+$colorBlue: #4169e1;
+$colorCyan: #00ffff;
+$colorGreen: #9ACD32;
+$colorPink: #FF69B4;
+$colorBrown: #F4A460;
+$colorPurple: #663399;
+$colorRed: #B22222;
+$colorWhite: #EEE;
+$colorYellow: #F0E68C;
+
+// Light colors
+$colorLightBlue: #AFEEEE;
+
+// Role named colors
+$colorUnknown: $colorBlack;
+$colorAll: $colorBlue;
+$colorOwner: $colorRed;
+$colorAdmin: $colorGreen;
+$colorAnalytic: $colorBrown;
+$colorContentManager: $colorLightBlue;
+$colorDeveloper: $colorPink;
+$colorSupport: $colorPurple;
+$colorTranslator: $colorCyan;
+
+// Consts
+$fullOpacity: 0.2;
+$halfOpacity: 0.5;
+$lightOpacity: 0.8;
+
+// Color reassingment

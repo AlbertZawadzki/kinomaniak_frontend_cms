@@ -1,0 +1,10 @@
+{
+  "ALL": "all",
+  "OWNER": "owner",
+  "ADMIN": "admin",
+  "CONTENT_MANAGER": "content-manager",
+  "ANALYTIC": "analytic",
+  "DEVELOPER": "developer",
+  "SUPPORT": "support",
+  "TRANSLATOR": "translator"
+}
