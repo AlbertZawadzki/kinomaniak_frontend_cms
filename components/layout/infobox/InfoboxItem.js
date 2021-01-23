@@ -1,40 +1,36 @@
 import React from "react"
 import * as Icons from "../../../assets/icons"
+import functions from "../../../functions"
 
 const statuses = [
   {
     name: "processing",
     translation: "processing",
     button: "",
-    title: "Processing",
     autoClose: true,
   },
   {
     name: "more-action",
-    translation: "more_action",
+    translation: "more_action_needed",
     button: "",
-    title: "More action needed",
     autoClose: false,
   },
   {
     name: "success",
     translation: "success",
     button: "accept",
-    title: "Success",
     autoClose: true,
   },
   {
     name: "failure",
     translation: "failure",
     button: "warn",
-    title: "Failure",
     autoClose: false,
   },
   {
     name: "unknown",
     translation: "unknown",
     button: "",
-    title: "???",
     autoClose: false,
   },
 ]
@@ -42,12 +38,12 @@ const statuses = [
 const InfoboxItem = ({ status, title, message, id }) => {
   status = statuses.filter(item => item.name === status || item.name === "unknowm")[0]
   const buttonClass = "button round absolute right " + status.button
-  
+
   return <div className={`infobox ${status.name}`}>
     <button className={buttonClass}>
       <Icons.Cross />
     </button>
-    <h3 className='infobox-title'>{title || status.title}</h3>
+    <h3 className='infobox-title'>{title || functions.getTranslation(status.translation)}</h3>
     {message?.length > 0 && (
       <div className='infobox-message'>
         {message}

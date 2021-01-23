@@ -47,9 +47,13 @@
 }
 
 .infobox-title {
+  width: calc(100% - 19px);
   margin: 0;
   text-align: left;
   text-indent: 3px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .infobox-message {
