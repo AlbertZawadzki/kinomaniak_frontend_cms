@@ -1,29 +1,46 @@
 .breadcrumbs-wrapper {
   width: 100%;
-  background-color: $colorWhite;
-  box-shadow: inset 0 0 3px 1px rgba($colorBlack, $fullOpacity);
-  border-radius: 5px;
-  padding: 3px 6px;
   box-sizing: border-box;
   display: flex;
   overflow: hidden;
   height: 26px;
 }
 
+.breadcrumbs-inner-wrapper {
+  display: flex;
+  padding: 3px;
+  border-radius: 5px;
+  background-color: $colorMain;
+  box-shadow: inset 0 0 3px 1px rgba($colorMainContrast, $fullOpacity);
+
+  &:last-of-type {
+    margin-left: 5px;
+    width: 100%;
+    padding-left: 10px;
+  }
+
+  &:first-of-type {
+    width: 20px;
+  }
+}
+
 .breadcrumb-back {
   display: block;
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
+  height: 18px;
+  margin: 1px 0;
   cursor: pointer;
 
   &:hover {
     color: $colorRed;
   }
+
+  svg {
+    font-size: 18px;
+  }
 }
 
 .breadcrumb {
-  padding: 0 10px 3px 0;
+  padding: 0 6px 3px 0;
   cursor: pointer;
   display: flex;
   align-items: center;

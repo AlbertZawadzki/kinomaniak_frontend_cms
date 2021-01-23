@@ -11,3 +11,8 @@ body {
   margin: 0;
   overflow: hidden;
 }
+
+svg {
+  filter: drop-shadow(0 0 1px $colorMainContrast);
+  transition: color 0.1s;
+}

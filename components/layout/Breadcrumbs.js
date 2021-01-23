@@ -1,6 +1,8 @@
 import React from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import * as Icons from "../../assets/icons"
+import functions from "../../functions"
 
 const Breadcrumbs = () => {
   const router = useRouter()
@@ -12,20 +14,25 @@ const Breadcrumbs = () => {
   }
 
   return <div className='breadcrumbs-wrapper min-tablet'>
-    <div className='breadcrumb-back' onClick={() => router.back()}>
+    <div className='breadcrumbs-inner-wrapper'>
+      <div className='breadcrumb-back' onClick={() => router.back()}>
+        <Icons.ArrowLeft />
+      </div>
     </div>
-    {
-      crumbs.map((crumb, id) => {
-          fullPath += crumb + "/"
+    <div className='breadcrumbs-inner-wrapper'>
+      {
+        crumbs.map((crumb, id) => {
+            fullPath += crumb + "/"
 
-          return <Link href={fullPath} key={`breadcrumb-${id}`}>
-            <div className='breadcrumb'>
-              {`/${crumb}`}
-            </div>
-          </Link>
-        },
-      )
-    }
+            return <Link href={fullPath} key={`breadcrumb-${id}`}>
+              <div className='breadcrumb'>
+                {`/${crumb.length === 0 ? functions.getTranslation("home").toLowerCase() : crumb}`}
+              </div>
+            </Link>
+          },
+        )
+      }
+    </div>
   </div>
 }
 
