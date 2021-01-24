@@ -4,10 +4,10 @@
 }
 
 .content-wrapper {
-  padding: 6px 5px 5px;
+  padding: 10px;
   width: calc(100% - 10px);
   box-shadow: inset 0 0 5px 1px rgba($colorBlack, $halfOpacity);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .data-wrapper {

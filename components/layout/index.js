@@ -15,21 +15,14 @@ class Layout extends React.Component {
     user: null,
   }
 
-  refreshUser = () =>
-    setInterval(() => {
-      database.getUser()
-    }, 30000)
-
   componentDidMount() {
-    this.refreshUser()
-
-    store.subscribe(() => {
+    this.subscriber = store.subscribe(() => {
       this.setState({ user: store.getState().request.data.user })
     })
   }
 
   componentWillUnmount() {
-    clearInterval(this.refreshUser())
+    this.subscriber()
   }
 
   render() {
@@ -38,6 +31,7 @@ class Layout extends React.Component {
     if (!functions.hasAccess(role)) {
       return (
         <React.Fragment>
+          <Notifications />
           <div className="data-wrapper">
             <div className="error">No access</div>
           </div>

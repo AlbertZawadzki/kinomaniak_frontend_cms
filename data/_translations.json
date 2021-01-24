@@ -1,6 +1,7 @@
 {
   "_no_translation_available": "This has not been translated yet",
   "???": "???",
+  "actor": "Actor",
   "actors": "Actors",
   "add": "Add",
   "admin": "Admin",
@@ -24,6 +25,10 @@
   "gateway": "Gateway",
   "gateways": "Gateways",
   "geoblock": "Geoblock",
+  "go_to": "Go to",
+  "go_to_all": "See all",
+  "go_to_create_form": "Create new one",
+  "go_to_index": "Go to main page",
   "historical": "Historical",
   "home": "Home",
   "image": "Image",

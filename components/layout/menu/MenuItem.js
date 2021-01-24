@@ -2,6 +2,21 @@ import React from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import functions from "../../../functions"
+import store from "../../../redux/store"
+
+const renderName = (name) => {
+  if (name === "user_name") {
+    return store.getState().request.data?.user?.name || "Unknown"
+  }
+  return name
+}
+
+const renderPath = (path) => {
+  if (path === "/profile/") {
+    return path + (store.getState().request.data?.user?.id || 0)
+  }
+  return path
+}
 
 const MenuItem = ({
   action,
@@ -28,8 +43,8 @@ const MenuItem = ({
 
   if (isLink) {
     return (
-      <Link href={to}>
-        <div className={basicClassName}>{name}</div>
+      <Link href={renderPath(to)}>
+        <div className={basicClassName}>{renderName(name)}</div>
       </Link>
     )
   }

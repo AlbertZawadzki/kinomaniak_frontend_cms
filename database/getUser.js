@@ -23,7 +23,8 @@ const getUser = async () => {
       store.dispatch(setCsrf(data?.csrf || null))
       store.dispatch(setUser({ ...object }))
     })
-    .catch(() => {
+    .catch((error) => {
+      console.error(error)
       const object = {
         id: 0,
         name: "No name",
