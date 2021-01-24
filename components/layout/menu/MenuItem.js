@@ -1,39 +1,64 @@
 import React from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import functions from "../../../functions"
 
-const MenuItem = ({ action, isLink, isTop, name, to, type, subitems, isSubItem }) => {
+const MenuItem = ({
+  action,
+  isLink,
+  isTop,
+  name,
+  to,
+  type,
+  subitems,
+  isSubItem,
+}) => {
   const router = useRouter()
   let basicClassName = `
-    menu-item ${isTop ? "top" : "left"} 
-    ${type} 
+    menu-item ${isTop ? "top" : "left"}
+    ${type}
     ${isLink && router.pathname === to ? "active" : "inactive"}
     ${!isLink && router.pathname.includes(to) ? "active" : "inactive"}
     ${isSubItem ? "subitem" : "normal"}
   `
 
+  if (!functions.hasAccess(type)) {
+    return <React.Fragment />
+  }
+
   if (isLink) {
-    return <Link href={to}>
-      <div className={basicClassName}>
-        {name}
-      </div>
-    </Link>
+    return (
+      <Link href={to}>
+        <div className={basicClassName}>{name}</div>
+      </Link>
+    )
   }
 
   if (subitems?.length > 0) {
-    return <div className={basicClassName}>
-      {name}
-      <div className='submenu-wrapper'>
-        <div className='submenu'>
-          {subitems.map(item => <MenuItem type={item.type || type} key={item.id} {...item} isSubItem />)}
+    return (
+      <div className={basicClassName}>
+        {name}
+        <div className="submenu-wrapper">
+          <div className="submenu">
+            {subitems.map((item) => (
+              <MenuItem
+                type={item.type || type}
+                key={item.id}
+                {...item}
+                isSubItem
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    )
   }
 
-  return <div className={basicClassName} onClick={() => action()}>
-    {name}
-  </div>
+  return (
+    <div className={basicClassName} onClick={() => action()}>
+      {name}
+    </div>
+  )
 }
 
 MenuItem.defaultProps = {
@@ -50,4 +75,3 @@ MenuItem.defaultProps = {
 }
 
 export default MenuItem
-

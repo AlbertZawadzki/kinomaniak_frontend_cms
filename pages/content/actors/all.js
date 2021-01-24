@@ -1,10 +1,12 @@
 import React from "react"
+import Layout from "../../../components/layout"
+import roles from "../../../data/_role_types.json"
 
 const ContentActorsAll = () => {
   return (
-    <div>
+    <Layout title="Actors - all" role={roles.CONTENT_MANAGER}>
       Content/Actors/All
-    </div>
+    </Layout>
   )
 }
 

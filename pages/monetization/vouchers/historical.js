@@ -1,10 +1,12 @@
 import React from "react"
+import Layout from "../../../components/layout"
+import roles from "../../../data/_role_types.json"
 
 const MonetizationVouchersHistorical = () => {
   return (
-    <div>
+    <Layout title="Vouchers - historical" role={roles.OWNER}>
       Monetization/Vouchers/Historical
-    </div>
+    </Layout>
   )
 }
 

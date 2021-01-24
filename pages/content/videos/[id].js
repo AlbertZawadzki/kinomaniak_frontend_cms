@@ -1,10 +1,12 @@
 import React from "react"
+import Layout from "../../../components/layout"
+import roles from "../../../data/_role_types.json"
 
 const ContentVideosSingle = ({ id }) => {
   return (
-    <pre>
+    <Layout title="Videos - single" role={roles.CONTENT_MANAGER}>
       Content/Videos/{id}
-    </pre>
+    </Layout>
   )
 }
 

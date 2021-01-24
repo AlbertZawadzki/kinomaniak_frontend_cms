@@ -1,3 +1,5 @@
-import getTranslation from "./getTranslation";
+import getNotificationStatus from "./getNotificationStatus"
+import getTranslation from "./getTranslation"
+import hasAccess from "./hasAccess"
 
-export default {getTranslation}
+export default { getNotificationStatus, getTranslation, hasAccess }

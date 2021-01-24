@@ -6,5 +6,6 @@
   "ANALYTIC": "analytic",
   "DEVELOPER": "developer",
   "SUPPORT": "support",
-  "TRANSLATOR": "translator"
+  "TRANSLATOR": "translator",
+  "USER": "user"
 }

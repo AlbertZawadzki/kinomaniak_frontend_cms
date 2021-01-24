@@ -1,10 +1,12 @@
 import React from "react"
+import Layout from "../../../components/layout"
+import roles from "../../../data/_role_types.json"
 
 const MonetizationPlansAll = () => {
   return (
-    <div>
+    <Layout title="Plans - all" role={roles.OWNER}>
       Monetization/Plans/All
-    </div>
+    </Layout>
   )
 }
 

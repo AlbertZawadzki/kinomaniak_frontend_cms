@@ -1,11 +1,13 @@
 import React from "react"
+import Layout from "../../../components/layout"
+import roles from "../../../data/_role_types.json"
 
-const ContentActorsNew = () => {
+const ContentPostersNew = () => {
   return (
-    <div>
-      Content/Actors/New
-    </div>
+    <Layout title="Posters - new" role={roles.CONTENT_MANAGER}>
+      Content/Posters/New
+    </Layout>
   )
 }
 
-export default ContentActorsNew
+export default ContentPostersNew

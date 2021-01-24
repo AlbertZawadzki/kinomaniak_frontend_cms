@@ -1,13 +1,16 @@
 import React from "react"
-import Layout from "../components/layout"
-import '../assets/styles/index.scss'
+import "../assets/styles/index.scss"
+import store from "../redux/store"
+import { Provider } from "react-redux"
 
-const MyApp = ({Component, pageProps}) => {
-    console.log(pageProps);
+const MyApp = ({ Component, pageProps }) => {
+  console.log("Page props: ", pageProps)
 
-    return <Layout>
-        <Component {...pageProps} />
-    </Layout>
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  )
 }
 
 export default MyApp
