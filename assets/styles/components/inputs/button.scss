@@ -1,0 +1,82 @@
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: filter 0.1s ease-in-out, background-color 0.25s;
+  font-size: 18px;
+
+  &.round {
+    border-radius: 50%;
+  }
+
+  &.absolute {
+    position: absolute;
+  }
+
+  &.top {
+    top: 10px;
+  }
+
+  &.right {
+    right: 5px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &.center{
+    margin: auto;
+  }
+
+  &.small {
+    font-size: 16px;
+    padding: 0 8px;
+  }
+
+  .unknown & {
+    color: $colorMain;
+  }
+
+  &:hover {
+    color: $colorMain;
+    filter: drop-shadow(0 0 1px $colorMainContrast);
+
+    &.warn {
+      filter: drop-shadow(0 0 1px $colorFailure);
+    }
+
+    &.accept {
+      filter: drop-shadow(0 0 1px $colorSuccess);
+    }
+
+    .unknown & {
+      filter: drop-shadow(0 0 1px $colorMain);
+    }
+  }
+}
+
+input[type=button],
+input[type=submit] {
+  @extend button;
+  background-color: $colorButton;
+  color: $colorMain;
+  border-radius: 3px;
+  margin: 5px;
+  box-shadow: 0 0 3px 1px rgba($colorMainContrast, $fullOpacity);
+  min-height: 30px;
+  min-width: 70px;
+
+  &:hover{
+    background-color: $colorSuccess;
+  }
+
+  &.small {
+    min-height: 28px;
+    min-width: 50px;
+  }
+}
+
+.submit-wrapper {
+  margin-top: 5px;
+  width: calc(100% - 5px);
+  display: flex;
+}

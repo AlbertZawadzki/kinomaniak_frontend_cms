@@ -1,0 +1,65 @@
+.tiles-row {
+  display:flex;
+  flex-wrap: wrap;
+
+  @include mobileMax {
+   flex-direction: column;
+   justify-content: center;
+  }
+}
+
+.tile-wrapper {
+  position: relative;
+
+  &.small {
+    box-shadow: 0 0 3px 1px rgba($colorMainContrast,  $halfOpacity);
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px 10px 10px 0;
+    min-width: 250px;
+  }
+
+  @include mobileMax {
+    width: calc(100% - 20px);
+    margin: 5px auto 10px;
+  }
+}
+
+.tile-content {
+  background-color: $colorMain;
+  padding: 3px 5px 5px;
+  border-radius: 0 0 5px 5px;
+  box-shadow: inset 0 0 3px 1px rgba($colorMainContrast, $fullOpacity);
+  transition: all 0.1s ease-in-out;
+  transform-origin: top center;
+  display: flex;
+  flex-wrap: wrap;
+  height:calc(100% - 38px);
+  min-height:50px;
+  box-sizing: border-box;
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &.hidden {
+    padding: 0;
+    transform: scaleY(0);
+    height: 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+}
+
+
+div.error {
+  color: $colorRed;
+  width: 100%;
+  min-height: 100px;
+  box-shadow: inset 0 0 7px 1px rgba($colorRed, $halfOpacity);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+}

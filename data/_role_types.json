@@ -7,5 +7,6 @@
   "DEVELOPER": "developer",
   "SUPPORT": "support",
   "TRANSLATOR": "translator",
-  "USER": "user"
+  "USER": "user",
+  "NEW_USER": "new-user"
 }

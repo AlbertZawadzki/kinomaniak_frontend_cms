@@ -28,16 +28,16 @@ class Layout extends React.Component {
   render() {
     const { title, children, role } = this.props
 
-    if (!functions.hasAccess(role)) {
+    if (!functions.hasAccess(role) && !functions.isLogged()) {
       return (
         <React.Fragment>
           <Notifications />
           <div className="data-wrapper">
             <LoginPanel />
           </div>
-          <pre className="redux-wrapper">
+          <div className="redux-wrapper">
             <Dev />
-          </pre>
+          </div>
         </React.Fragment>
       )
     }
@@ -51,10 +51,22 @@ class Layout extends React.Component {
           <MenuLeft />
           <div className="content-wrapper">
             <Breadcrumbs />
-            <div className="data-wrapper">{children}</div>
-            <pre className="redux-wrapper">
+            <div className="data-wrapper">
+              {functions.hasAccess(role) ? (
+                children
+              ) : (
+                <div className="error">
+                  {`${functions.getTranslation(
+                    "insufficient_permissions"
+                  )}, ${functions.getTranslation(
+                    "required_role_min"
+                  )}: ${role}`}
+                </div>
+              )}
+            </div>
+            <div className="redux-wrapper">
               <Dev />
-            </pre>
+            </div>
           </div>
         </div>
       </React.Fragment>

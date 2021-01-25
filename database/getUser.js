@@ -22,6 +22,10 @@ const getUser = async () => {
         session: data?.data?.ssid || null,
       }
 
+      if (!CFG.getToken()) {
+        return
+      }
+
       localStorage.setItem("_token", data?._token || null)
       store.dispatch(setToken(data?._token || null))
       store.dispatch(setCsrf(data?.csrf || null))

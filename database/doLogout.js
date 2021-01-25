@@ -1,16 +1,10 @@
 import * as CFG from "./config"
 import store from "../redux/store"
-import { setCsrf, setToken, setUser } from "../redux/actions/request"
 import { addNotification } from "../redux/actions/notification"
-import roles from "../data/_role_types.json"
-
 const doLogout = async () => {
   const url = CFG.BACKEND_URL + "me/logout?" + CFG.getToken()
 
-  localStorage.setItem("_token", "null")
-  store.dispatch(setToken(null))
-  store.dispatch(setCsrf(null))
-  store.dispatch(setUser({ ...object }))
+  CFG.clearUser()
 
   store.dispatch(
     addNotification({
@@ -30,6 +24,8 @@ const doLogout = async () => {
           message: null,
         })
       )
+
+      CFG.clearUser()
     })
     .catch((error) => {
       console.error(error)
@@ -40,14 +36,9 @@ const doLogout = async () => {
           message: null,
         })
       )
-    })
 
-  const object = {
-    id: 0,
-    name: "No name",
-    role: roles.USER,
-    session: null,
-  }
+      CFG.clearUser()
+    })
 }
 
 export default doLogout
