@@ -1,6 +1,6 @@
 import functions from "../functions"
-
 import ROLES from "./_role_types.json"
+import * as Icons from "../assets/icons"
 
 const data = [
   {
@@ -9,6 +9,7 @@ const data = [
     type: ROLES.ALL,
     isLink: true,
     to: "/",
+    Icon: <Icons.Home />,
   },
   {
     id: "menu-left-item-2",
@@ -16,24 +17,28 @@ const data = [
     type: ROLES.CONTENT_MANAGER,
     isLink: false,
     to: "/content",
+    Icon: <Icons.Content />,
     subitems: [
       {
         id: "menu-left-item-2-1",
         name: functions.getTranslation("actors"),
         isLink: false,
         to: "/content/actors",
+        Icon: <Icons.Actors />,
         subitems: [
           {
             id: "menu-left-item-2-1-a",
             name: functions.getTranslation("create"),
             isLink: true,
             to: "/content/actors/new",
+            Icon: <Icons.New />,
           },
           {
             id: "menu-left-item-2-1-b",
             name: functions.getTranslation("all"),
             isLink: true,
             to: "/content/actors/all",
+            Icon: <Icons.All />,
           },
         ],
       },
@@ -42,18 +47,21 @@ const data = [
         name: functions.getTranslation("categories"),
         isLink: false,
         to: "/content/categories",
+        Icon: <Icons.Category />,
         subitems: [
           {
             id: "menu-left-item-2-2-a",
             name: functions.getTranslation("create"),
             isLink: true,
             to: "/content/categories/new",
+            Icon: <Icons.New />,
           },
           {
             id: "menu-left-item-2-2-b",
             name: functions.getTranslation("all"),
             isLink: true,
             to: "/content/categories/all",
+            Icon: <Icons.All />,
           },
         ],
       },
@@ -62,18 +70,21 @@ const data = [
         name: functions.getTranslation("contents"),
         isLink: false,
         to: "/content/contents",
+        Icon: <Icons.Movie />,
         subitems: [
           {
             id: "menu-left-item-2-3-a",
             name: functions.getTranslation("create"),
             isLink: true,
             to: "/content/contents/new",
+            Icon: <Icons.New />,
           },
           {
             id: "menu-left-item-2-3-b",
             name: functions.getTranslation("all"),
             isLink: true,
             to: "/content/contents/all",
+            Icon: <Icons.All />,
           },
         ],
       },
@@ -82,18 +93,21 @@ const data = [
         name: functions.getTranslation("images"),
         isLink: false,
         to: "/content/images",
+        Icon: <Icons.Image />,
         subitems: [
           {
             id: "menu-left-item-2-4-a",
             name: functions.getTranslation("add"),
             isLink: true,
             to: "/content/images/new",
+            Icon: <Icons.New />,
           },
           {
             id: "menu-left-item-2-4-b",
             name: functions.getTranslation("all"),
             isLink: true,
             to: "/content/images/all",
+            Icon: <Icons.All />,
           },
         ],
       },
@@ -102,18 +116,21 @@ const data = [
         name: functions.getTranslation("posters"),
         isLink: false,
         to: "/content/posters",
+        Icon: <Icons.Poster />,
         subitems: [
           {
             id: "menu-left-item-2-5-a",
             name: functions.getTranslation("create"),
             isLink: true,
             to: "/content/posters/new",
+            Icon: <Icons.New />,
           },
           {
             id: "menu-left-item-2-5-b",
             name: functions.getTranslation("all"),
             isLink: true,
             to: "/content/posters/all",
+            Icon: <Icons.All />,
           },
         ],
       },
@@ -122,18 +139,21 @@ const data = [
         name: functions.getTranslation("videos"),
         isLink: false,
         to: "/content/videos",
+        Icon: <Icons.Video />,
         subitems: [
           {
             id: "menu-left-item-2-6-a",
             name: functions.getTranslation("add"),
             isLink: true,
             to: "/content/videos/new",
+            Icon: <Icons.New />,
           },
           {
             id: "menu-left-item-2-6-b",
             name: functions.getTranslation("all"),
             isLink: true,
             to: "/content/videos/all",
+            Icon: <Icons.All />,
           },
         ],
       },
@@ -145,6 +165,7 @@ const data = [
     type: ROLES.CONTENT_MANAGER,
     isLink: true,
     to: "/apps/common",
+    Icon: <Icons.Apps />,
   },
   {
     id: "menu-left-item-4",
@@ -152,30 +173,35 @@ const data = [
     type: ROLES.OWNER,
     isLink: false,
     to: "/monetization",
+    Icon: <Icons.Monetization />,
     subitems: [
       {
         id: "menu-left-item-4-1",
         name: functions.getTranslation("plans"),
         isLink: false,
         to: "/monetization/plans",
+        Icon: <Icons.Plan />,
         subitems: [
           {
             id: "menu-left-item-4-1-a",
             name: functions.getTranslation("create"),
             isLink: true,
             to: "/monetization/plans/new",
+            Icon: <Icons.New />,
           },
           {
             id: "menu-left-item-4-1-b",
             name: functions.getTranslation("all"),
             isLink: true,
             to: "/monetization/plans/all",
+            Icon: <Icons.All />,
           },
           {
             id: "menu-left-item-4-1-d",
             name: functions.getTranslation("historical"),
             isLink: true,
             to: "/monetization/plans/historical",
+            Icon: <Icons.Date />,
           },
         ],
       },
@@ -184,24 +210,28 @@ const data = [
         name: functions.getTranslation("Vouchers"),
         isLink: false,
         to: "/monetization/vouchers",
+        Icon: <Icons.Plan />,
         subitems: [
           {
             id: "menu-left-item-4-2-a",
             name: functions.getTranslation("create"),
             isLink: true,
             to: "/monetization/vouchers/new",
+            Icon: <Icons.New />,
           },
           {
             id: "menu-left-item-4-2-b",
             name: functions.getTranslation("all"),
             isLink: true,
             to: "/monetization/vouchers/all",
+            Icon: <Icons.All />,
           },
           {
             id: "menu-left-item-4-2-c",
             name: functions.getTranslation("historical"),
             isLink: true,
             to: "/monetization/vouchers/historical",
+            Icon: <Icons.Date />,
           },
         ],
       },
@@ -210,6 +240,7 @@ const data = [
         name: functions.getTranslation("gateways"),
         isLink: true,
         to: "/monetization/gateways",
+        Icon: <Icons.Monetization />,
       },
     ],
   },
@@ -219,18 +250,21 @@ const data = [
     type: ROLES.CONTENT_MANAGER,
     isLink: false,
     to: "/geoblock",
+    Icon: <Icons.Website />,
     subitems: [
       {
         id: "menu-left-item-5-1",
         name: functions.getTranslation("create"),
         isLink: true,
         to: "/geoblock/new",
+        Icon: <Icons.New />,
       },
       {
         id: "menu-left-item-5-2",
         name: functions.getTranslation("all"),
         isLink: true,
         to: "/geoblock/all",
+        Icon: <Icons.All />,
       },
     ],
   },
@@ -240,6 +274,7 @@ const data = [
     type: ROLES.ANALYTIC,
     isLink: true,
     to: "/analytics",
+    Icon: <Icons.Analytics />,
   },
   {
     id: "menu-left-item-7",
@@ -247,12 +282,14 @@ const data = [
     type: ROLES.OWNER,
     isLink: false,
     to: "/users",
+    Icon: <Icons.Profile />,
     subitems: [
       {
         id: "menu-left-item-7-1",
         name: functions.getTranslation("all"),
         isLink: true,
         to: "/users/all",
+        Icon: <Icons.All />,
       },
       {
         id: "menu-left-item-7-2",
@@ -292,18 +329,21 @@ const data = [
     type: ROLES.ADMIN,
     isLink: false,
     to: "/settings",
+    Icon: <Icons.Settings />,
     subitems: [
       {
         id: "menu-left-item-8-1",
         name: functions.getTranslation("tokens"),
         isLink: true,
-        to: "/settings/all",
+        to: "/settings/token",
+        Icon: <Icons.All />,
       },
       {
         id: "menu-left-item-8-2",
         name: functions.getTranslation("other"),
         isLink: true,
-        to: "/users/all",
+        to: "/setting/other",
+        Icon: <Icons.All />,
       },
     ],
   },
@@ -313,18 +353,21 @@ const data = [
     type: ROLES.SUPPORT,
     isLink: false,
     to: "/support",
+    Icon: <Icons.MailUs />,
     subitems: [
       {
         id: "menu-left-item-9-1",
         name: functions.getTranslation("Inside"),
         isLink: true,
         to: "/support/in",
+        Icon: <Icons.MailUs />,
       },
       {
         id: "menu-left-item-9-2",
         name: functions.getTranslation("Outside"),
         isLink: true,
         to: "/support/out",
+        Icon: <Icons.MailUs />,
       },
     ],
   },
@@ -334,18 +377,21 @@ const data = [
     type: ROLES.TRANSLATOR,
     isLink: false,
     to: "/translations",
+    Icon: <Icons.Translate />,
     subitems: [
       {
         id: "menu-left-item-10-1",
         name: functions.getTranslation("create"),
         isLink: true,
         to: "/translations/new",
+        Icon: <Icons.New />,
       },
       {
         id: "menu-left-item-10-2",
         name: functions.getTranslation("all"),
         isLink: true,
         to: "/translations/all",
+        Icon: <Icons.All />,
       },
     ],
   },

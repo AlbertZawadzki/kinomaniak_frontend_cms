@@ -4,6 +4,10 @@ import { setCsrf, setToken, setUser } from "../redux/actions/request"
 import roles from "../data/_role_types.json"
 
 const getUser = async () => {
+  if (!CFG.getToken()) {
+    return
+  }
+
   const url = CFG.BACKEND_URL + "me/can?" + CFG.getToken()
 
   return await fetch(url, { method: "GET" })
@@ -32,6 +36,7 @@ const getUser = async () => {
         session: null,
       }
 
+      localStorage.setItem("_token", null)
       store.dispatch(setToken(null))
       store.dispatch(setCsrf(null))
       store.dispatch(setUser({ ...object }))

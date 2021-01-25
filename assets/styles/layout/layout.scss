@@ -1,6 +1,10 @@
 .site-wrapper {
   display: flex;
   height: calc(100vh - 26px);
+
+  @include mobileMax{
+    height: 100vh;
+  }
 }
 
 .content-wrapper {

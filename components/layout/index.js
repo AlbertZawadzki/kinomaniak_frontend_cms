@@ -8,7 +8,7 @@ import Dev from "./dev"
 import functions from "../../functions"
 import roles from "../../data/_role_types.json"
 import store from "../../redux/store"
-import database from "../../database"
+import LoginPanel from "../panels/LoginPanel"
 
 class Layout extends React.Component {
   state = {
@@ -33,7 +33,7 @@ class Layout extends React.Component {
         <React.Fragment>
           <Notifications />
           <div className="data-wrapper">
-            <div className="error">No access</div>
+            <LoginPanel />
           </div>
           <pre className="redux-wrapper">
             <Dev />

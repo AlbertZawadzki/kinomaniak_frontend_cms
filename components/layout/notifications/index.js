@@ -16,11 +16,15 @@ class Notifications extends React.Component {
 
   subscribeStore = () => {
     this.fetchFromStore()
-    store.subscribe(() => this.fetchFromStore())
+    this.subscriber = store.subscribe(() => this.fetchFromStore())
   }
 
   componentDidMount() {
     this.subscribeStore()
+  }
+
+  componentWillUnmount() {
+    this.subscriber()
   }
 
   render() {

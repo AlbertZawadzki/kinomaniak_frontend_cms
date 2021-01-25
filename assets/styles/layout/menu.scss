@@ -6,24 +6,69 @@
   align-items: flex-end;
 }
 
+.menu-mobile-effect {
+  @include mobileMax {
+    width: 100vw;
+    position: absolute;
+    z-index: 10;
+    height: 100vh;
+    background-color: rgba($colorMainContrast, $halfOpacity);
+
+    &.inactive {
+      max-width: 0;
+    }
+  }
+}
+
 .menu-left {
   width: 150px;
   height: 100%;
   display: flex;
   flex-direction: column;
   background-color: $colorWhite;
+
+  @include mobileMax {
+    width: 150px;
+    transform: translateX(-200px);
+    box-shadow: 0 0 5px 1px rgba($colorMainContrast, $halfOpacity);
+    transition: transform 0.25s ease-in-out;
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+}
+
+.menu-mobile-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  background-color: $colorMain;
+  box-shadow: 0 0 5px 1px rgba($colorMainContrast, $halfOpacity);
+  border-radius: 3px;
+  z-index: 15;
+
+  svg {
+    font-size: 30px;
+
+    &.active {
+      color: $colorSuccess;
+    }
+  }
 }
 
 .menu-item {
   cursor: pointer;
   border-left: 2px solid $colorWhite;
-  text-align: center;
-  padding: 3px 0;
+  padding: 5px 0 3px;
   position: relative;
   background-color: $colorWhite;
+  display: flex;
 
   &.top {
-    padding: 3px 8px 0;
+    padding: 3px 8px 0 6px;
     border-left: 0;
     border-bottom: 2px solid $colorWhite;
   }
@@ -106,9 +151,33 @@
   }
 
   .submenu-wrapper & {
-    padding: 3px 8px 3px 6px;
+    padding: 5px 8px 3px 0;
     width: 140px;
   }
+}
+
+.menu-item-icon {
+  display: flex;
+  align-items: flex-end;
+
+  svg {
+    filter: none;
+
+    .menu-left & {
+      margin: 0 4px;
+    }
+
+    .subitem & {
+      margin-right: 2px;
+    }
+  }
+}
+
+.menu-item-name {
+  display: flex;
+  align-items: flex-end;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .submenu-wrapper {
@@ -127,4 +196,8 @@
 .submenu {
   background-color: $colorWhite;
   box-shadow: 0 0 3px 1px rgba($colorBlack, $halfOpacity);
+}
+
+.mobile-top-menu {
+  border-top: 3px double $colorMainContrast;
 }

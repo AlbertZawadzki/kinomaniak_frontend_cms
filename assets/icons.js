@@ -1,4 +1,5 @@
 import Actors from "@material-ui/icons/PeopleAltRounded"
+import All from "@material-ui/icons/HourglassEmptyOutlined"
 import Analytics from "@material-ui/icons/InsertChartRounded"
 import Android from "@material-ui/icons/AndroidRounded"
 import Apps from "@material-ui/icons/AppsRounded"
@@ -25,9 +26,11 @@ import Logout from "@material-ui/icons/ExitToAppRounded"
 import MailUs from "@material-ui/icons/AlternateEmailRounded"
 import Monetization from "@material-ui/icons/MonetizationOnRounded"
 import Movie from "@material-ui/icons/MovieRounded"
+import New from "@material-ui/icons/HourglassEmptyOutlined"
 import Plan from "@material-ui/icons/AssignmentRounded"
-import Purchased from "@material-ui/icons/ShoppingCartRounded"
+import Poster from "@material-ui/icons/ImageRounded"
 import Profile from "@material-ui/icons/AccountCircleRounded"
+import Purchased from "@material-ui/icons/ShoppingCartRounded"
 import Rules from "@material-ui/icons/PolicyRounded"
 import Search from "@material-ui/icons/SearchRounded"
 import Series from "@material-ui/icons/VideocamRounded"
@@ -48,6 +51,7 @@ import Website from "@material-ui/icons/LanguageRounded"
 
 export {
   Actors,
+  All,
   Analytics,
   Android,
   Apps,
@@ -74,7 +78,9 @@ export {
   MailUs,
   Monetization,
   Movie,
+  New,
   Plan,
+  Poster,
   Profile,
   Purchased,
   Rules,
