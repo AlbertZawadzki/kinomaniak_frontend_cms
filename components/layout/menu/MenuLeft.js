@@ -25,7 +25,7 @@ const MenuLeft = () => {
                 return menuItem.showOnMobile ? (
                   <MenuItem {...menuItem} key={menuItem.id} />
                 ) : (
-                  <React.Fragment />
+                  <React.Fragment key={menuItem.id} />
                 )
               })}
             </div>

@@ -23,7 +23,7 @@ button {
     margin-right: 0;
   }
 
-  &.center{
+  &.center {
     margin: auto;
   }
 
@@ -54,8 +54,8 @@ button {
   }
 }
 
-input[type=button],
-input[type=submit] {
+input[type="button"],
+input[type="submit"] {
   @extend button;
   background-color: $colorButton;
   color: $colorMain;
@@ -65,13 +65,22 @@ input[type=submit] {
   min-height: 30px;
   min-width: 70px;
 
-  &:hover{
+  &:hover {
     background-color: $colorSuccess;
   }
 
   &.small {
     min-height: 28px;
-    min-width: 50px;
+    min-width: 66px;
+  }
+
+  &.warn {
+    background-color: $colorFailure;
+
+    &:hover {
+      background-color: $colorMainContrast;
+      color: $colorFailure;
+    }
   }
 }
 

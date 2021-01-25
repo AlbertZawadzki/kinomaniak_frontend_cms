@@ -15,20 +15,14 @@ const getUser = async () => {
       return { data: await res.json(), status: res.status }
     })
     .then(({ data }) => {
+      CFG.setParams(data)
+
       const object = {
         id: data?.data?.id || 0,
         name: data?.data?.name || "No name",
         role: data?.data?.role || roles.USER,
         session: data?.data?.ssid || null,
       }
-
-      if (!CFG.getToken()) {
-        return
-      }
-
-      localStorage.setItem("_token", data?._token || null)
-      store.dispatch(setToken(data?._token || null))
-      store.dispatch(setCsrf(data?.csrf || null))
       store.dispatch(setUser({ ...object }))
     })
     .catch((error) => {
@@ -40,9 +34,7 @@ const getUser = async () => {
         session: null,
       }
 
-      localStorage.setItem("_token", null)
-      store.dispatch(setToken(null))
-      store.dispatch(setCsrf(null))
+      CFG.setParams()
       store.dispatch(setUser({ ...object }))
     })
 }

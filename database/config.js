@@ -4,6 +4,9 @@ import roles from "../data/_role_types.json"
 
 export const BACKEND_URL = "http://localhost:8000/api/" //process.env.DEV ? "localhost:8000/api" : "api"
 
+/**
+ * Return current user token
+ */
 export const getToken = () => {
   if (typeof window === "undefined") {
     return false
@@ -21,6 +24,9 @@ export const getToken = () => {
   return "_token=" + token
 }
 
+/**
+ * Definite user logout
+ */
 export const clearUser = () => {
   const object = {
     id: 0,
@@ -33,4 +39,20 @@ export const clearUser = () => {
   store.dispatch(setToken(null))
   store.dispatch(setCsrf(null))
   store.dispatch(setUser({ ...object }))
+}
+
+/**
+ * Set session params
+ */
+export const setParams = (data = null) => {
+  localStorage.setItem("_token", data?._token || null)
+  store.dispatch(setToken(data?._token || null))
+  store.dispatch(setCsrf(data?.csrf || null))
+}
+
+/**
+ * All session params
+ */
+export const getParams = () => {
+  return "?" + (getToken() || "")
 }
