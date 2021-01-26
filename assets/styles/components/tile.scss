@@ -20,6 +20,10 @@
     min-width: 250px;
   }
 
+  &.no-shadow {
+    box-shadow: none;
+  }
+
   @include mobileMax {
     width: calc(100% - 20px);
     margin: 5px auto 10px;

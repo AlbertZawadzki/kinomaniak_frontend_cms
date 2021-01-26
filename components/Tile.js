@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import * as Icons from "../assets/icons"
 
-const Tile = ({ hidden, hideable, title, children, sub, full, column }) => {
+const Tile = ({ hidden, hideable, title, children, sub, full, column, noShadow }) => {
 
   const [show, setShow] = useState(!hidden)
   let buttonStyles
@@ -29,7 +29,7 @@ const Tile = ({ hidden, hideable, title, children, sub, full, column }) => {
   }
 
   return (
-    <div className={`tile-wrapper ${full ? "full" : "small"}`}>
+    <div className={`tile-wrapper ${full ? "full" : "small"} ${noShadow ? "no-shadow" : "shadow"}`}>
       {title}
       {hideable && (
         <button
@@ -61,6 +61,7 @@ Tile.defaultProps = {
   sub: 0,
   full: true,
   column: false,
+  noShadow: false,
 }
 
 export default Tile
