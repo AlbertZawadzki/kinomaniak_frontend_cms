@@ -57,7 +57,7 @@ class Notification extends React.Component {
   render() {
     let { title, message } = this.props
     let { status, counter } = this.state
-    const buttonClass = "button absolute right " + status.button
+    const buttonClass = "button absolute right top " + status.button
 
     return (
       <div
