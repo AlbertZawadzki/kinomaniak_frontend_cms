@@ -10,9 +10,9 @@ export const addActor = (data) => ({
   data: data,
 })
 
-export const removeActor = (data) => ({
+export const removeActor = (id) => ({
   type: actions.ACTORS_REMOVE,
-  data: data,
+  id: id,
 })
 
 export const updateActor = (data) => ({

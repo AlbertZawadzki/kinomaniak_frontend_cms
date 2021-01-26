@@ -1,18 +1,29 @@
 import * as actions from "../actionNames/actor"
 
-const request = (state = { data: [] }, action) => {
+const request = (state = { data: [], was_fetched: false }, action) => {
   switch (action.type) {
     case actions.ACTORS_ADD:
-      state.data.push(data)
+      state.data.push(action.data)
       return state
     case actions.ACTORS_REMOVE:
-      console.log("actors.remove")
+      state.data = state.data.filter(actor => actor.id !== action.id)
       return state
     case actions.ACTORS_SET:
+      state.was_fetched = true
       state.data = action.data
       return state
     case actions.ACTORS_UPDATE:
-      console.log("actors.update")
+      let found = false
+      for (let i = 0; i < state.data.length; i++) {
+        if (state.data[i].id === action.data.id) {
+          state.data[i] = action.data
+          found = true
+          break
+        }
+      }
+      if (!found) {
+        state.data.push(action.data)
+      }
       return state
     default:
       return state

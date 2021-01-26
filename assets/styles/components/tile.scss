@@ -1,10 +1,17 @@
+.tile {
+  box-shadow: 0 0 3px 1px rgba($colorMainContrast, $halfOpacity);
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 5px;
+}
+
 .tiles-row {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
 
   @include mobileMax {
-   flex-direction: column;
-   justify-content: center;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -12,7 +19,7 @@
   position: relative;
 
   &.small {
-    box-shadow: 0 0 3px 1px rgba($colorMainContrast,  $halfOpacity);
+    box-shadow: 0 0 3px 1px rgba($colorMainContrast, $halfOpacity);
     border-radius: 5px;
     padding: 5px 10px;
     margin: 5px 10px 10px 0;
@@ -25,6 +32,10 @@
   }
 }
 
+.tile-title {
+  text-indent: 3px;
+}
+
 .tile-content {
   background-color: $colorMain;
   padding: 3px 5px 5px;
@@ -34,8 +45,8 @@
   transform-origin: top center;
   display: flex;
   flex-wrap: wrap;
-  height:calc(100% - 38px);
-  min-height:50px;
+  height: calc(100% - 38px);
+  min-height: 50px;
   box-sizing: border-box;
 
   &.column {
@@ -49,17 +60,4 @@
     min-height: 0;
     overflow: hidden;
   }
-}
-
-
-div.error {
-  color: $colorRed;
-  width: 100%;
-  min-height: 100px;
-  box-shadow: inset 0 0 7px 1px rgba($colorRed, $halfOpacity);
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px 0;
 }

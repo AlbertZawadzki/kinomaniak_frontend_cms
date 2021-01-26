@@ -9,13 +9,17 @@ class Lister extends React.Component {
 
   componentDidMount() {
     const { items } = this.props
+    this.setState({ items })
+  }
 
+  componentWillReceiveProps() {
+    const { items } = this.props
     this.setState({ items })
   }
 
   render() {
     const { items } = this.state
-    const { Component, linkSingle, linkUpdate, linkDelete } = this.props
+    const { Component, linkSingle, actionDelete } = this.props
 
     return (
       <div className="lister-wrapper">
@@ -37,6 +41,7 @@ class Lister extends React.Component {
                   type="button"
                   className="small right warn"
                   value={functions.getTranslation("delete")}
+                  onClick={() => actionDelete(item.id)}
                 />
               </div>
             </div>
@@ -47,10 +52,13 @@ class Lister extends React.Component {
   }
 }
 
-Lister.defaultProps = {
+Lister
+  .defaultProps = {
   items: [],
   Component: <div className="error">No component given</div>,
-  linkDelete: "",
+  actionDelete: (id) => {
+    console.log(id)
+  },
   linkSingle: "",
 }
 

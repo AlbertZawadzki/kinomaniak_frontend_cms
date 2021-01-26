@@ -1,7 +1,5 @@
 .lister-wrapper {
-  box-shadow: 0 0 3px 1px rgba($colorMainContrast, $halfOpacity);
-  border-radius: 5px;
-  margin-bottom: 10px;
+  @extend .tile
 }
 
 .lister-items {
