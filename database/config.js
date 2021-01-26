@@ -75,6 +75,7 @@ export const handleStatus = ({ data, status }, action) => {
       store.dispatch(addNotification({ status: "unknown", message: "AUTHORIZATION FAILURE " + status }))
       return false
     case 400:
+    case 404:
     case 500:
       store.dispatch(
         addNotification({

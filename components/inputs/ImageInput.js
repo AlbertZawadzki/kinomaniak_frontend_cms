@@ -32,7 +32,7 @@ class ImageInput extends React.Component {
       <label htmlFor={`input-image-${name}`} className='button'>
         {title} {`(${functions.getTranslation("in_scale_w_h")}: ${scale})`}
       </label>
-      <input type='file' id={`input-image-${name}`} onChange={this.setImage} />
+      <input type='file' id={`input-image-${name}`} onChange={this.setImage} name={name} />
     </div>
   }
 }

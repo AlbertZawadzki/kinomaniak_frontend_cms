@@ -7,6 +7,7 @@ import Lister from "../../../components/Lister"
 import { connect } from "react-redux"
 import { removeActor, setActors } from "../../../redux/actions/actor"
 import store from "../../../redux/store"
+import functions from "../../../functions"
 
 class ContentActorsAll extends React.Component {
   state = {
@@ -39,18 +40,37 @@ class ContentActorsAll extends React.Component {
 
   render() {
     const { data, fetched } = this.state
+    const fastActionsName = functions.getTranslation("actors_actions")
+    const fastActions = [
+      {
+        to: "/content/actors/new",
+        name: functions.getTranslation("actor_create_new"),
+      },
+    ]
+
 
     if (!fetched) {
       return (
-        <Layout title="Actors - all" role={roles.CONTENT_MANAGER}>
+        <Layout
+          title="Actors - all"
+          role={roles.CONTENT_MANAGER}
+          fastActions={fastActions}
+          fastActionsName={fastActionsName}
+        >
           Fetching
         </Layout>
       )
     }
 
     return (
-      <Layout title="Actors - all" role={roles.CONTENT_MANAGER}>
+      <Layout
+        title="Actors - all"
+        role={roles.CONTENT_MANAGER}
+        fastActions={fastActions}
+        fastActionsName={fastActionsName}
+      >
         <Lister
+          name={functions.getTranslation("actors_all")}
           items={data}
           Component={ActorShortSingle}
           linkSingle="content/actors"

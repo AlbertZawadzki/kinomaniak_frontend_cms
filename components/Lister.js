@@ -1,6 +1,7 @@
 import Link from "next/link"
 import React from "react"
 import functions from "../functions"
+import Tile from "./Tile"
 
 class Lister extends React.Component {
   state = {
@@ -19,10 +20,10 @@ class Lister extends React.Component {
 
   render() {
     const { items } = this.state
-    const { Component, linkSingle, actionDelete } = this.props
+    const { Component, linkSingle, actionDelete, name } = this.props
 
     return (
-      <div className="lister-wrapper">
+      <Tile title={name}>
         <div className="error">TODO: filter</div>
         <div className="error">TODO: group operations</div>
         <div className="lister-items">
@@ -47,7 +48,7 @@ class Lister extends React.Component {
             </div>
           ))}
         </div>
-      </div>
+      </Tile>
     )
   }
 }
@@ -60,6 +61,7 @@ Lister
     console.log(id)
   },
   linkSingle: "",
+  name: "No title given",
 }
 
 export default Lister

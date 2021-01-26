@@ -3,27 +3,30 @@ import * as Icons from "../assets/icons"
 
 const Tile = ({ hidden, hideable, title, children, sub, full, column }) => {
 
+  const [show, setShow] = useState(!hidden)
   let buttonStyles
-  let iconStyles
+  let iconStyles = {
+    transform: show ? "rotateZ(-180deg)" : "rotateZ(0)",
+    transition: "transform 0.25s ease-in-out",
+    fontSize: "26px",
+  }
 
   switch (sub) {
     case 1:
       title = <h3 className='tile-title'>{title}</h3>
-      buttonStyles = { top: 0, right: "-5px" }
-      iconStyles = { fontSize: "22px" }
+      buttonStyles = { top: "-5px", right: "-5px" }
+      iconStyles.fontSize = "22px"
       break
     case 2:
       title = <h4 className='tile-title'>{title}</h4>
-      buttonStyles = { top: 0, right: "-5px" }
-      iconStyles = { fontSize: "20px" }
+      buttonStyles = { top: 0, right: 0 }
+      iconStyles.fontSize = "20px"
       break
     default:
       title = <h2 className='tile-title'>{title}</h2>
-      buttonStyles = { top: "5px", right: 0 }
-      iconStyles = { fontSize: "24px" }
+      buttonStyles = { top: "2px", right: "2px" }
+      iconStyles.fontSize = "26px"
   }
-
-  const [show, setShow] = useState(!hidden)
 
   return (
     <div className={`tile-wrapper ${full ? "full" : "small"}`}>
@@ -35,7 +38,7 @@ const Tile = ({ hidden, hideable, title, children, sub, full, column }) => {
           onClick={() => setShow(!show)}
           style={buttonStyles}
         >
-          {show ? <Icons.ArrowUp style={iconStyles} /> : <Icons.ArrowDown style={iconStyles} />}
+          <Icons.ArrowUp style={iconStyles} c />
         </button>
       )}
       <div

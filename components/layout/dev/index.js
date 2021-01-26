@@ -3,16 +3,16 @@ import Login from "./Login"
 import Notificator from "./Notificator"
 import Redux from "./Redux"
 import User from "./User"
+import Tile from "../../Tile"
 
 const Dev = () => {
   return (
-    <div>
-      <h1>#DEV BOX</h1>
+    <Tile title={"#DEV BOX"} hidden column>
       <Login />
       <User />
       <Notificator />
       <Redux />
-    </div>
+    </Tile>
   )
 }
 

@@ -11,13 +11,17 @@
 }
 
 .form-actor {
-  @extend .tile
+  width: 100%;
 }
 
 .actor-images-wrapper {
   display: flex;
   justify-content: space-evenly;
   margin-top: 10px;
+
+  @include mobileMax {
+    flex-direction: column;
+  }
 }
 
 .actor-single-image {

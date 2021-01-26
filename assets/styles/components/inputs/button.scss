@@ -4,6 +4,7 @@ button {
   cursor: pointer;
   transition: filter 0.1s ease-in-out, background-color 0.25s;
   font-size: 18px;
+  margin: 5px;
 
   &.round {
     border-radius: 50%;

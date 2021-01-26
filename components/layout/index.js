@@ -9,6 +9,7 @@ import functions from "../../functions"
 import roles from "../../data/_role_types.json"
 import store from "../../redux/store"
 import LoginPanel from "../panels/LoginPanel"
+import FastActions from "./fast_actions"
 
 class Layout extends React.Component {
   state = {
@@ -26,7 +27,7 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { title, children, role } = this.props
+    const { title, children, role, fastActions, fastActionsName } = this.props
 
     if (!functions.hasAccess(role) && !functions.isLogged()) {
       return (
@@ -35,9 +36,7 @@ class Layout extends React.Component {
           <div className="data-wrapper">
             <LoginPanel />
           </div>
-          <div className="redux-wrapper">
-            <Dev />
-          </div>
+          <Dev />
         </React.Fragment>
       )
     }
@@ -53,20 +52,21 @@ class Layout extends React.Component {
             <Breadcrumbs />
             <div className="data-wrapper">
               {functions.hasAccess(role) ? (
-                children
+                <React.Fragment>
+                  <FastActions items={fastActions} name={fastActionsName} />
+                  {children}
+                </React.Fragment>
               ) : (
                 <div className="error">
                   {`${functions.getTranslation(
-                    "insufficient_permissions"
+                    "insufficient_permissions",
                   )}, ${functions.getTranslation(
-                    "required_role_min"
+                    "required_role_min",
                   )}: ${role}`}
                 </div>
               )}
             </div>
-            <div className="redux-wrapper">
-              <Dev />
-            </div>
+            <Dev />
           </div>
         </div>
       </React.Fragment>
@@ -76,8 +76,10 @@ class Layout extends React.Component {
 
 Layout.defaultProps = {
   title: "No title set",
-  children: <pre className="error">No children</pre>,
+  children: <React.Fragment />,
   role: roles.OWNER,
+  fastActions: [],
+  fastActionsName: "No name given",
 }
 
 export default Layout

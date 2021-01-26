@@ -34,16 +34,39 @@ class ContentActorsSingle extends React.Component {
 
   render() {
     const { actor, loading } = this.state
+    const fastActionsName = functions.getTranslation("actors_actions")
+    const fastActions = [
+      {
+        to: "/content/actors/all",
+        name: functions.getTranslation("actors_see_all"),
+      },
+      {
+        to: "/content/actors/new",
+        name: functions.getTranslation("actor_create_new"),
+      },
+    ]
 
     if (loading) {
-      return <Layout title="Actors - loading" role={roles.CONTENT_MANAGER}>
-        <Loader />
-      </Layout>
+      return (
+        <Layout
+          title="Actors - loading"
+          role={roles.CONTENT_MANAGER}
+          fastActions={fastActions}
+          fastActionsName={fastActionsName}
+        >
+          <Loader />
+        </Layout>
+      )
     }
 
     if (!actor) {
       return (
-        <Layout title="Actors - unknown" role={roles.CONTENT_MANAGER}>
+        <Layout
+          title="Actors - unknown"
+          role={roles.CONTENT_MANAGER}
+          fastActions={fastActions}
+          fastActionsName={fastActionsName}
+        >
           <div className='error'>
             {functions.getTranslation("not_found")}
           </div>
@@ -52,15 +75,18 @@ class ContentActorsSingle extends React.Component {
     }
 
     return (
-      <Layout title={`Actors - ${actor.lastname} ${actor.name}`} role={roles.CONTENT_MANAGER}>
+      <Layout
+        title={`Actors - ${actor.lastname} ${actor.name}`}
+        role={roles.CONTENT_MANAGER}
+        fastActions={fastActions}
+        fastActionsName={fastActionsName}
+      >
         <ActorForm {...actor} isOld />
-        <div className='tile'>
-          <Tile title={functions.getTranslation("actor_in_contents")}>
+        <Tile title={functions.getTranslation("actor_in_contents")}>
         <pre>
           {JSON.stringify(actor.contents, null, 2)}
         </pre>
-          </Tile>
-        </div>
+        </Tile>
       </Layout>
     )
   }

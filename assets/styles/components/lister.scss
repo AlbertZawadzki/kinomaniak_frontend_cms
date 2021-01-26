@@ -1,8 +1,5 @@
-.lister-wrapper {
-  @extend .tile
-}
-
 .lister-items {
+  width: 100%;
   padding: 10px 5px 1px;
 
   input[type="checkbox"] {
