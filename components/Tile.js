@@ -6,7 +6,7 @@ const Tile = ({ hidden, hideable, title, children, sub, full, column, noShadow }
   const [show, setShow] = useState(!hidden)
   let buttonStyles
   let iconStyles = {
-    transform: show ? "rotateZ(-180deg)" : "rotateZ(0)",
+    transform: show ? "rotateZ(0)" : "rotateZ(-180deg)",
     transition: "transform 0.25s ease-in-out",
     fontSize: "26px",
   }
