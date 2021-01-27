@@ -12,7 +12,7 @@ class MyApp extends React.Component {
     } else {
       database.getUser()
     }
-  }, 1000)
+  }, 30000)
 
   startRefreshUser = () => {
     clearInterval(this.refreshUser)
@@ -23,7 +23,7 @@ class MyApp extends React.Component {
       } else {
         database.getUser()
       }
-    }, 1000)
+    }, 30000)
   }
 
   componentDidMount() {

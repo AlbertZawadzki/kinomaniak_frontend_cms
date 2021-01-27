@@ -1,6 +1,6 @@
 import * as CFG from "./config"
 import store from "../redux/store"
-import { setCsrf, setToken, setUser } from "../redux/actions/request"
+import { setUser } from "../redux/actions/request"
 import roles from "../data/_role_types.json"
 
 const getUser = async () => {
@@ -8,7 +8,7 @@ const getUser = async () => {
     return
   }
 
-  const url = CFG.BACKEND_URL + "me/can?" + CFG.getToken()
+  const url = CFG.BACKEND_URL + "me/authenticate?" + CFG.getToken()
 
   return await fetch(url, { method: "GET" })
     .then(async (res) => {
