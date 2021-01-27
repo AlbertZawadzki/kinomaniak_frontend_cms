@@ -12,6 +12,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/utils": "^4.11.2",
     "next": "10.0.5",
+    "next-images": "^1.7.0",
     "node-sass": "^4.14.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
