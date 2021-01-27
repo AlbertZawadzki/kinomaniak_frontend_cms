@@ -4,7 +4,6 @@ import { setUser } from "../redux/actions/request"
 import roles from "../data/_role_types.json"
 
 const getUser = async () => {
-  console.log(!CFG.canAuthUser() ? "Blokuje" : "Nie blokuje")
   if (!CFG.getToken() || !CFG.canAuthUser()) {
     return
   }
