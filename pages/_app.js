@@ -6,13 +6,13 @@ import database from "../database"
 
 class MyApp extends React.Component {
   userId = 0
-  refreshUser = setInterval(() => {
+  refreshUser = setTimeout(() => setInterval(() => {
     if (this.userId === 0) {
       clearInterval(this.refreshUser)
     } else {
       database.getUser()
     }
-  }, 30000)
+  }, 30000), 5000)
 
   startRefreshUser = () => {
     clearInterval(this.refreshUser)
