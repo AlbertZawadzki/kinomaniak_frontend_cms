@@ -3,16 +3,17 @@ import "../assets/styles/index.scss"
 import store from "../redux/store"
 import { Provider } from "react-redux"
 import database from "../database"
+import * as CFG from "../database/config"
 
 class MyApp extends React.Component {
   userId = 0
-  refreshUser = setTimeout(() => setInterval(() => {
+  refreshUser = setInterval(() => {
     if (this.userId === 0) {
       clearInterval(this.refreshUser)
     } else {
       database.getUser()
     }
-  }, 30000), 5000)
+  }, CFG.USER_TOKEN_REFRESH_TIME)
 
   startRefreshUser = () => {
     clearInterval(this.refreshUser)
@@ -23,7 +24,7 @@ class MyApp extends React.Component {
       } else {
         database.getUser()
       }
-    }, 30000)
+    }, CFG.USER_TOKEN_REFRESH_TIME)
   }
 
   componentDidMount() {
