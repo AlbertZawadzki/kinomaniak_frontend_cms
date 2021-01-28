@@ -4,15 +4,21 @@ $colorBlue: #4169e1;
 $colorCyan: #00ffff;
 $colorGreen: #037d50;
 $colorPink: #FF69B4;
-$colorOrange: #F4A460;
+$colorOrange: #FF4500;
 $colorPurple: #663399;
 $colorRed: #B22222;
 $colorWhite: #EEE;
-$colorYellow: #F0E68C;
+$colorYellow: #FFD700;
+$color_give_name: #2F4F4F;
+
+// BrightColors
+$colorBrightBlue: #1E90FF;
 
 // Light colors
 $colorLightBlue: #AFEEEE;
 $colorLightGreen: #9ACD32;
+$colorLightOrange: #F4A460;
+$colorLightYellow: #F0E68C;
 
 // Dark colors
 $colorDarkBlue: #1e222b;
@@ -37,8 +43,8 @@ $lightOpacity: 0.8;
 $colorButton: $colorBlue;
 $colorButtonHover: $colorGreen;
 $colorFailure: $colorRed;
-$colorMoreAction: $colorOrange;
-$colorProcessing: $colorYellow;
+$colorMoreAction: $color_give_name;
+$colorProcessing: $colorBrightBlue;
 $colorSuccess: $colorGreen;
 
 // Theme colors

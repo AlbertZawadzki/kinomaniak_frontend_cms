@@ -30,7 +30,7 @@ class MyApp extends React.Component {
 
   componentDidMount() {
     database.getUser()
-    document.body.className = "theme-light"
+    document.body.className = localStorage.getItem("theme") || "theme-light"
 
     this.subscriber = store.subscribe(() => {
       this.userId = store.getState().request.data?.user?.id || 0

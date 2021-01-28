@@ -64,10 +64,10 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   color: $colorBlack;
-  text-shadow: 1px 1px 1px $colorWhite,
-  -1px 1px 1px $colorWhite,
-  1px -1px 1px $colorWhite,
-  -1px -1px 1px $colorWhite,;
+  text-shadow: 1px 1px 1px rgba($colorWhite, $fullOpacity),
+  -1px 1px 1px rgba($colorWhite, $fullOpacity),
+  1px -1px 1px rgba($colorWhite, $fullOpacity),
+  -1px -1px 1px rgba($colorWhite, $fullOpacity);
 }
 
 .notification-message {
@@ -77,4 +77,5 @@
   text-indent: 3px;
   background-color: rgba($colorWhite, $lightOpacity);
   border-radius: 5px;
+  color: $colorBlack;
 }

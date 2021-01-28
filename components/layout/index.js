@@ -31,13 +31,13 @@ class Layout extends React.Component {
 
     if (!functions.hasAccess(role) && !functions.isLogged()) {
       return (
-        <React.Fragment>
+        <div className="authorization-wrapper">
           <Notifications />
           <div className="data-wrapper">
             <LoginPanel />
           </div>
           <Dev />
-        </React.Fragment>
+        </div>
       )
     }
 

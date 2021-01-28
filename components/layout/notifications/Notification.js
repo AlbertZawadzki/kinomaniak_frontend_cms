@@ -67,7 +67,7 @@ class Notification extends React.Component {
         onMouseEnter={() => this.setCountDown(false)}
         onMouseLeave={() => this.setCountDown(true)}
       >
-        <button className={buttonClass} onClick={() => this.close()}>
+        <button className={buttonClass} style={{ color: "#000 !important" }} onClick={() => this.close()}>
           <Icons.Cross />
         </button>
         <h3 className="notification-title no-border">

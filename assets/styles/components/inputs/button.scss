@@ -38,23 +38,10 @@ button {
   }
 
   &:hover {
+    color: $colorWhite;
+
     @include themify($themes) {
-      color: themed('colorMain');
       filter: drop-shadow(0 0 1px themed($colorMainContrast));
-    }
-
-    &.warn {
-      filter: drop-shadow(0 0 1px $colorFailure);
-    }
-
-    &.accept {
-      filter: drop-shadow(0 0 1px $colorSuccess);
-    }
-
-    .unknown & {
-      @include themify($themes) {
-        filter: drop-shadow(0 0 1px themed($colorMain));
-      }
     }
   }
 }
@@ -67,7 +54,7 @@ input[type="submit"] {
   margin: 5px;
   min-height: 30px;
   min-width: 70px;
-  color: $colorWhite;
+  color: $colorWhite !important;
 
   @include themify($themes) {
     box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $fullOpacity);

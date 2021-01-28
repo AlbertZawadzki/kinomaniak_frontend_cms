@@ -16,6 +16,12 @@ body {
   overflow: hidden;
 }
 
+#__next {
+  @include themify($themes) {
+    background-color: themed('colorMain');
+  }
+}
+
 svg {
   transition: color 0.1s;
 

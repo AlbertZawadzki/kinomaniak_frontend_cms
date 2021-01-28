@@ -21,3 +21,12 @@
 .data-wrapper {
   margin-top: 5px;
 }
+
+.authorization-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}

@@ -11,6 +11,7 @@ const data = [
     isLink: false,
     action: () => {
       document.body.className = document.body.className === "theme-light" ? "theme-dark" : "theme-light"
+      localStorage.setItem("theme", document.body.className)
     },
     showOnMobile: true,
     Icon: <Icons.Theme />,
