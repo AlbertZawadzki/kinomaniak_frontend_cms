@@ -1,5 +1,4 @@
 .poster-wrapper {
-
 }
 
 .poster-inner-wrapper {
@@ -10,6 +9,12 @@
   cursor: pointer;
   transition: background-size 0.25s ease-in-out;
   position: relative;
+
+
+  .tv & {
+    width: 254px;
+    height: 178px;
+  }
 
   .hover &,
   &:hover {
