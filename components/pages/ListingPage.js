@@ -50,7 +50,9 @@ class ListingPage extends React.Component {
           fastActions={fastActions.actions}
           fastActionsName={fastActions.name}
         >
-          {functions.getTranslation("fetching")}
+          <div className='error'>
+            ZRob loadera {functions.getTranslation("fetching")}
+          </div>
         </Layout>
       )
     }

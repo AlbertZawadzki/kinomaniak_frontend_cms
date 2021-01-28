@@ -36,7 +36,7 @@ class ActorForm extends React.Component {
 
     return (
       <Tile title={functions.getTranslation("actors_form")}>
-        <form className='form-actor' onSubmit={(event) => submitForm(event, id, image_url)}
+        <form className='content-form' onSubmit={(event) => submitForm(event, id, image_url)}
               encType="multipart/form-data">
           <TextInput name='name' value={name} title={functions.getTranslation("actor_name")} />
           <TextInput name='lastname' value={lastname} title={functions.getTranslation("actor_lastname")} />

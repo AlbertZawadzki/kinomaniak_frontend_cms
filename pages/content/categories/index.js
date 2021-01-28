@@ -10,6 +10,10 @@ const ContentCategories = () => {
       to: "/content/categories/new",
       name: functions.getTranslation("categories_create_new"),
     },
+    {
+      to: "/content/categories/all",
+      name: functions.getTranslation("categories_see_all"),
+    },
   ]
 
   return (

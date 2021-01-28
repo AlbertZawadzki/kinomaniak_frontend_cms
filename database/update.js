@@ -5,7 +5,7 @@ import * as CFG from "./config"
 const update = async (url, action, form) => {
   url = CFG.BACKEND_URL + url + CFG.getParams()
   store.dispatch(
-    addNotification({ status: "processing", title: "Fetching data" }),
+    addNotification({ status: "processing", title: "Updating..." }),
   )
 
   return await fetch(url, { method: "POST", body: form })

@@ -16,10 +16,9 @@ const ContentActors = () => {
     },
   ]
 
-
   return (
     <Layout
-      title="Actors"
+      title={functions.getTranslation("actors")}
       role={roles.CONTENT_MANAGER}
       fastActions={fastActions}
       fastActionsName={fastActionsName}
