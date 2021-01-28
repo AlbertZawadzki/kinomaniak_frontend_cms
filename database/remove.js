@@ -11,7 +11,7 @@ const remove = async (url, action) => {
   url = CFG.BACKEND_URL + url + CFG.getParams()
 
   store.dispatch(
-    addNotification({ status: "processing", title: "Deleting" }),
+    addNotification({ status: "processing", title: "Deleting..." }),
   )
 
   return await fetch(url, { method: "POST" })
