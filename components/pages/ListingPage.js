@@ -1,11 +1,11 @@
 import React from "react"
 import Layout from "../layout"
 import roles from "../../data/_role_types.json"
-import functions from "../../functions"
 import store from "../../redux/store"
 import database from "../../database"
 import Lister from "../Lister"
 import { connect } from "react-redux"
+import Loader from "../Loader"
 
 class ListingPage extends React.Component {
   state = {
@@ -50,9 +50,7 @@ class ListingPage extends React.Component {
           fastActions={fastActions.actions}
           fastActionsName={fastActions.name}
         >
-          <div className='error'>
-            ZRob loadera {functions.getTranslation("fetching")}
-          </div>
+          <Loader />
         </Layout>
       )
     }
