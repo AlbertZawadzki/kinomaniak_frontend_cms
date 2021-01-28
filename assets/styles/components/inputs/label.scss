@@ -1,0 +1,35 @@
+label {
+  text-indent: 3px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+
+  @include themify($themes) {
+    border-bottom: 1px solid themed($colorMainContrast);
+  }
+
+  &.button {
+    border: 0;
+    background-color: $colorButton;
+    text-align: center;
+    border-radius: 5px;
+    padding: 3px 5px;
+    color: $colorWhite;
+    margin: 5px;
+
+    &:hover {
+      background-color: $colorButtonHover;
+    }
+
+    @include themify($themes) {
+      box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $fullOpacity);
+    }
+  }
+
+  &.checkbox {
+    border: 0;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+  }
+}

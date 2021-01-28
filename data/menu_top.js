@@ -5,6 +5,17 @@ import * as Icons from "../assets/icons"
 
 const data = [
   {
+    id: "menu-top-item-0",
+    name: functions.getTranslation("theme"),
+    type: ROLES.ALL,
+    isLink: false,
+    action: () => {
+      document.body.className = document.body.className === "theme-light" ? "theme-dark" : "theme-light"
+    },
+    showOnMobile: true,
+    Icon: <Icons.Theme />,
+  },
+  {
     id: "menu-top-item-1",
     name: functions.getTranslation("home"),
     type: ROLES.ALL,

@@ -1,9 +1,10 @@
 import React from "react"
-import "../assets/styles/index.scss"
 import store from "../redux/store"
 import { Provider } from "react-redux"
 import database from "../database"
 import * as CFG from "../database/config"
+import "../assets/styles/index.scss"
+
 
 class MyApp extends React.Component {
   userId = 0
@@ -29,6 +30,7 @@ class MyApp extends React.Component {
 
   componentDidMount() {
     database.getUser()
+    document.body.className = "theme-light"
 
     this.subscriber = store.subscribe(() => {
       this.userId = store.getState().request.data?.user?.id || 0
@@ -48,7 +50,6 @@ class MyApp extends React.Component {
 
   render() {
     const { Component, pageProps } = this.props
-    console.log("Page props: ", pageProps)
 
     return (
       <Provider store={store}>

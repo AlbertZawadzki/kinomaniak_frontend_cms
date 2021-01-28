@@ -2,8 +2,11 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  background-color: $colorWhite;
   align-items: flex-end;
+
+  @include themify($themes) {
+    background-color: themed('colorMain');
+  }
 }
 
 .menu-mobile-effect {
@@ -12,7 +15,10 @@
     position: absolute;
     z-index: 10;
     height: 100vh;
-    background-color: rgba($colorMainContrast, $halfOpacity);
+
+    @include themify($themes) {
+      background-color: rgba(themed('colorMainContrast'), $halfOpacity);
+    }
 
     &.inactive {
       max-width: 0;
@@ -25,13 +31,19 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: $colorWhite;
+
+  @include themify($themes) {
+    background-color: themed('colorMain');
+  }
 
   @include mobileMax {
     width: 150px;
     transform: translateX(-200px);
-    box-shadow: 0 0 5px 1px rgba($colorMainContrast, $halfOpacity);
     transition: transform 0.25s ease-in-out;
+
+    @include themify($themes) {
+      box-shadow: 0 0 5px 1px rgba(themed('colorMainContrast'), $halfOpacity);
+    }
 
     &.active {
       transform: translateX(0);
@@ -45,10 +57,13 @@
   right: 10px;
   height: 30px;
   width: 30px;
-  background-color: $colorMain;
-  box-shadow: 0 0 5px 1px rgba($colorMainContrast, $halfOpacity);
   border-radius: 3px;
   z-index: 15;
+
+  @include themify($themes) {
+    background-color: themed('colorMain');
+    box-shadow: 0 0 5px 1px rgba(themed('colorMainContrast'), $halfOpacity);
+  }
 
   svg {
     font-size: 30px;
@@ -61,16 +76,23 @@
 
 .menu-item {
   cursor: pointer;
-  border-left: 2px solid $colorWhite;
   padding: 5px 0 3px;
   position: relative;
-  background-color: $colorWhite;
   display: flex;
 
   &.top {
     padding: 3px 8px 0 6px;
-    border-left: 0;
-    border-bottom: 2px solid $colorWhite;
+    border-left: 0
+  }
+
+  @include themify($themes) {
+    border-left: 2px solid themed('colorMain');
+    background-color: themed('colorMain');
+
+    &.top {
+      border-bottom: 2px solid themed('colorMain');
+      border-left: 0
+    }
   }
 
   &.active {
@@ -194,10 +216,14 @@
 }
 
 .submenu {
-  background-color: $colorWhite;
-  box-shadow: 0 0 3px 1px rgba($colorBlack, $halfOpacity);
+  @include themify($themes) {
+    background-color: themed('colorMain');
+    box-shadow: 0 0 3px 1px rgba(themed('colorMainContrast'), $halfOpacity);
+  }
 }
 
 .mobile-top-menu {
-  border-top: 3px double $colorMainContrast;
+  @include themify($themes) {
+    border-top: 3px double themed('colorMainContrast');
+  }
 }

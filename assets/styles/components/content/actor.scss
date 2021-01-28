@@ -34,6 +34,9 @@
   height: 150px;
   margin: 10px auto;
   border-radius: 3px;
-  box-shadow: 0 0 3px 1px rgba($colorMainContrast, $fullOpacity);
-  background-color: $colorMain;
+
+  @include themify($themes) {
+    background-color: rgba(themed('colorMainContrast'), $halfOpacity);
+    box-shadow: 0 0 3px 1px rgba(themed('colorMainContrast'), $fullOpacity);
+  }
 }

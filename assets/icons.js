@@ -1,5 +1,8 @@
 import Actors from "@material-ui/icons/PeopleAltRounded"
+import Users from "@material-ui/icons/PeopleAltRounded"
 import All from "@material-ui/icons/HourglassEmptyOutlined"
+import EmptyIcon from "@material-ui/icons/HourglassEmptyOutlined"
+import New from "@material-ui/icons/HourglassEmptyOutlined"
 import Analytics from "@material-ui/icons/InsertChartRounded"
 import Android from "@material-ui/icons/AndroidRounded"
 import Apps from "@material-ui/icons/AppsRounded"
@@ -15,20 +18,18 @@ import Content from "@material-ui/icons/InsertDriveFileRounded"
 import Cross from "@material-ui/icons/ClearRounded"
 import Date from "@material-ui/icons/TodayRounded"
 import Earth from "@material-ui/icons/PublicRounded"
-import EmptyIcon from "@material-ui/icons/HourglassEmptyOutlined"
 import Facebook from "@material-ui/icons/Facebook"
 import Instagram from "@material-ui/icons/Instagram"
 import Home from "@material-ui/icons/HomeRounded"
 import Image from "@material-ui/icons/ImageRounded"
+import Poster from "@material-ui/icons/ImageRounded"
 import Iphone from "@material-ui/icons/PhoneIphoneRounded"
 import Library from "@material-ui/icons/PlaylistAddCheckRounded"
 import Logout from "@material-ui/icons/ExitToAppRounded"
 import MailUs from "@material-ui/icons/AlternateEmailRounded"
 import Monetization from "@material-ui/icons/MonetizationOnRounded"
 import Movie from "@material-ui/icons/MovieRounded"
-import New from "@material-ui/icons/HourglassEmptyOutlined"
 import Plan from "@material-ui/icons/AssignmentRounded"
-import Poster from "@material-ui/icons/ImageRounded"
 import Profile from "@material-ui/icons/AccountCircleRounded"
 import Purchased from "@material-ui/icons/ShoppingCartRounded"
 import Rules from "@material-ui/icons/PolicyRounded"
@@ -40,11 +41,13 @@ import StarEmpty from "@material-ui/icons/StarBorderRounded"
 import StarFull from "@material-ui/icons/StarRounded"
 import StarHalf from "@material-ui/icons/StarHalfRounded"
 import Settings from "@material-ui/icons/SettingsRounded"
+import ThemeDark from "@material-ui/icons/Brightness5Rounded"
+import Theme from "@material-ui/icons/Brightness6Rounded"
+import ThemeLight from "@material-ui/icons/Brightness7Rounded"
 import Tick from "@material-ui/icons/CheckRounded"
 import Translate from "@material-ui/icons/TranslateRounded"
 import TV from "@material-ui/icons/TvRounded"
 import Twitter from "@material-ui/icons/Twitter"
-import Users from "@material-ui/icons/PeopleAltRounded"
 import Video from "@material-ui/icons/TheatersRounded"
 import Views from "@material-ui/icons/Visibility"
 import Website from "@material-ui/icons/LanguageRounded"
@@ -92,6 +95,9 @@ export {
   StarFull,
   StarHalf,
   Settings,
+  ThemeDark,
+  Theme,
+  ThemeLight,
   Tick,
   Translate,
   TV,

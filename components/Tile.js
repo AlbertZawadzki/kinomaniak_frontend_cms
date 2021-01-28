@@ -38,7 +38,7 @@ const Tile = ({ hidden, hideable, title, children, sub, full, column, noShadow }
           onClick={() => setShow(!show)}
           style={buttonStyles}
         >
-          <Icons.ArrowUp style={iconStyles} c />
+          <Icons.ArrowUp style={iconStyles} />
         </button>
       )}
       <div

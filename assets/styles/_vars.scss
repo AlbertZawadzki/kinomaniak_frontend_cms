@@ -15,6 +15,7 @@ $colorLightBlue: #AFEEEE;
 $colorLightGreen: #9ACD32;
 
 // Dark colors
+$colorDarkBlue: #1e222b;
 
 // Role named colors
 $colorUnknown: $colorBlack;
@@ -32,12 +33,14 @@ $fullOpacity: 0.2;
 $halfOpacity: 0.5;
 $lightOpacity: 0.8;
 
-// Color reassingment
+// Default light mode
 $colorButton: $colorBlue;
 $colorButtonHover: $colorGreen;
 $colorFailure: $colorRed;
-$colorMain: $colorWhite;
-$colorMainContrast: $colorBlack;
 $colorMoreAction: $colorOrange;
 $colorProcessing: $colorYellow;
 $colorSuccess: $colorGreen;
+
+// Theme colors
+$colorThemeLight: $colorWhite;
+$colorThemeDark: $colorDarkBlue;

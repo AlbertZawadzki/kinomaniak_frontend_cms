@@ -28,7 +28,7 @@
   right: 0;
   padding: 3px 8px;
   border-radius: 5px;
-  box-shadow: 0 0 3px 1px rgba($colorMainContrast, $halfOpacity);
+  box-shadow: 0 0 3px 1px rgba($colorBlack, $halfOpacity);
   transform: translateX(7px) rotate(10deg);
   z-index: 5;
 }
@@ -74,7 +74,7 @@
 
   .hover &,
   &:hover {
-    box-shadow: inset 0 0 25px 25px rgba($colorMainContrast, $lightOpacity);
+    box-shadow: inset 0 0 25px 25px rgba($colorBlack, $lightOpacity);
 
     .poster-text {
       opacity: 1;

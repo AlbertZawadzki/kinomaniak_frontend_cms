@@ -4,11 +4,17 @@ import { addNotification } from "../../../redux/actions/notification"
 import Tile from "../../Tile"
 
 class Notificator extends React.Component {
+  state = {
+    dark: false,
+  }
+
   addNotification = (status, title, message = null) => {
     this.props.dispatch(addNotification({ status, title, message }))
   }
 
   render() {
+    const { dark } = this.state
+
     return (
       <Tile title="Notfications" hidden>
         <input
@@ -37,6 +43,12 @@ class Notificator extends React.Component {
           type="button"
           onClick={() => this.addNotification("more-action", "More", "message")}
           value="More action"
+        />
+        <input type='button' value={`switch theme to ${dark ? "light" : "dark"}`}
+               onClick={() => {
+                 this.setState({ dark: !dark })
+                 document.body.className = `theme-${dark ? "dark" : "light"}`
+               }}
         />
       </Tile>
     )

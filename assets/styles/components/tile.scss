@@ -10,12 +10,15 @@
 
 .tile-wrapper {
   position: relative;
-  box-shadow: 0 0 3px 1px rgba($colorMainContrast, $halfOpacity);
   margin-bottom: 10px;
   border-radius: 5px;
   padding: 5px;
   width: 100%;
   box-sizing: border-box;
+
+  @include themify($themes) {
+    box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $halfOpacity);
+  }
 
   &.small {
     margin: 5px 10px 10px 0;

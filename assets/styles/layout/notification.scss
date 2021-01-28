@@ -63,6 +63,11 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  color: $colorBlack;
+  text-shadow: 1px 1px 1px $colorWhite,
+  -1px 1px 1px $colorWhite,
+  1px -1px 1px $colorWhite,
+  -1px -1px 1px $colorWhite,;
 }
 
 .notification-message {

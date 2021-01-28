@@ -5,7 +5,10 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
-  color: $colorMainContrast;
+
+  @include themify($themes) {
+    color: themed('colorMainContrast');
+  }
 }
 
 body {
@@ -14,14 +17,20 @@ body {
 }
 
 svg {
-  filter: drop-shadow(0 0 1px $colorMainContrast);
   transition: color 0.1s;
+
+  @include themify($themes) {
+    filter: drop-shadow(0 0 1px themed($colorMainContrast));
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  border-bottom: 1px solid $colorMainContrast;
   font-weight: normal;
+
+  @include themify($themes) {
+    border-bottom: 1px solid themed($colorMainContrast);
+  }
 
   &.no-border {
     border: 0;

@@ -6,7 +6,7 @@ button {
   font-size: 18px;
   margin: 5px;
 
-  &.round {
+  & .round {
     border-radius: 50%;
   }
 
@@ -34,12 +34,14 @@ button {
   }
 
   .unknown & {
-    color: $colorMain;
+    color: $colorWhite;
   }
 
   &:hover {
-    color: $colorMain;
-    filter: drop-shadow(0 0 1px $colorMainContrast);
+    @include themify($themes) {
+      color: themed('colorMain');
+      filter: drop-shadow(0 0 1px themed($colorMainContrast));
+    }
 
     &.warn {
       filter: drop-shadow(0 0 1px $colorFailure);
@@ -50,7 +52,9 @@ button {
     }
 
     .unknown & {
-      filter: drop-shadow(0 0 1px $colorMain);
+      @include themify($themes) {
+        filter: drop-shadow(0 0 1px themed($colorMain));
+      }
     }
   }
 }
@@ -59,12 +63,15 @@ input[type="button"],
 input[type="submit"] {
   @extend button;
   background-color: $colorButton;
-  color: $colorMain;
   border-radius: 3px;
   margin: 5px;
-  box-shadow: 0 0 3px 1px rgba($colorMainContrast, $fullOpacity);
   min-height: 30px;
   min-width: 70px;
+  color: $colorWhite;
+
+  @include themify($themes) {
+    box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $fullOpacity);
+  }
 
   &:hover {
     background-color: $colorSuccess;
@@ -81,7 +88,15 @@ input[type="submit"] {
     &:hover {
       background-color: $colorMainContrast;
       color: $colorFailure;
+
+      @include themify($themes) {
+        background-color: themed($colorMainContrast);
+      }
     }
+  }
+
+  svg {
+    color: $colorBlack;
   }
 }
 

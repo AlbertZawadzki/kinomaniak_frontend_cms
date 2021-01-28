@@ -13,5 +13,8 @@ input[type=file] {
   width: auto;
   height: auto;
   margin: auto;
-  box-shadow: 0 0 3px 1px rgba($colorMainContrast, $lightOpacity);
+
+  @include themify($themes) {
+    box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $lightOpacity);
+  }
 }
