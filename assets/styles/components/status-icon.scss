@@ -1,0 +1,23 @@
+.status-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+  margin: auto 15px auto 0;
+
+  @include themify($themes) {
+    box-shadow: inset 0 0 3px 1px rgba(themed($colorMainContrast), $halfOpacity);
+  }
+
+  &.unknown {
+    background-color: $colorGray;
+  }
+
+  &.failure {
+    background-color: $colorRed;
+  }
+
+  &.success {
+    background-color: $colorSuccess;
+  }
+}

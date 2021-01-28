@@ -73,12 +73,8 @@ input[type="submit"] {
     background-color: $colorFailure;
 
     &:hover {
-      background-color: $colorMainContrast;
+      background-color: $colorDarkBlue;
       color: $colorFailure;
-
-      @include themify($themes) {
-        background-color: themed($colorMainContrast);
-      }
     }
   }
 

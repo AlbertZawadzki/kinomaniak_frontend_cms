@@ -2,6 +2,7 @@ import Link from "next/link"
 import React from "react"
 import functions from "../functions"
 import Tile from "./Tile"
+import StatusIcon from "./StatusIcon"
 
 class Lister extends React.Component {
   state = {
@@ -31,6 +32,7 @@ class Lister extends React.Component {
             <div className="lister-outer-item-wrapper" key={item.key}>
               <input type="checkbox" name={item.key} />
               <div className="lister-item" key={item.key}>
+                <StatusIcon id={item.key} />
                 <div className="lister-item-wrapper">
                   <Link href={`/${linkSingle}/${item.id}`}>
                     <div className="lister-link-wrapper">

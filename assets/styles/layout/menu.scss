@@ -17,7 +17,7 @@
     height: 100vh;
 
     @include themify($themes) {
-      background-color: rgba(themed('colorMainContrast'), $halfOpacity);
+      background-color: rgba($colorBlack, $halfOpacity);
     }
 
     &.inactive {
