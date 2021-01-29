@@ -1,0 +1,4 @@
+export const POSTERS_ADD = "POSTERS_ADD"
+export const POSTERS_SET = "POSTERS_SET"
+export const POSTERS_REMOVE = "POSTERS_REMOVE"
+export const POSTERS_UPDATE = "POSTERS_UPDATE"

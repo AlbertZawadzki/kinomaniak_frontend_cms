@@ -1,9 +1,14 @@
+.status-wrapper {
+  margin: auto 0;
+  display: flex;
+}
+
 .status-icon {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   display: block;
-  margin: auto 15px auto 0;
+  margin: auto 10px auto 0;
 
   @include themify {
     box-shadow: inset 0 0 3px 1px rgba(themed($colorMainContrast), $halfOpacity);

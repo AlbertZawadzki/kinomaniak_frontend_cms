@@ -28,7 +28,7 @@ class Lister extends React.Component {
         <div className="error">TODO: filter</div>
         <div className="error">TODO: group operations</div>
         <div className="lister-items">
-          {items.map((item) => (
+          {items ? items.map((item) => (
             <div className="lister-outer-item-wrapper" key={item.key}>
               <input type="checkbox" name={item.key} />
               <div className="lister-item" key={item.key}>
@@ -48,7 +48,11 @@ class Lister extends React.Component {
                 />
               </div>
             </div>
-          ))}
+          )) : (
+            <div className='error'>
+              {JSON.stringify(items, null, 4)}
+            </div>)
+          }
         </div>
       </Tile>
     )

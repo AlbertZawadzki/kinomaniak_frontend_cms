@@ -1,13 +1,30 @@
 import React from "react"
-import Layout from "../../../components/layout"
-import roles from "../../../data/_role_types.json"
+import functions from "../../../functions"
+import database from "../../../database"
+import ListingPage from "../../../components/pages/ListingPage"
+import { removePoster, setPosters } from "../../../redux/actions/poster"
+import PosterShortSingle from "../../../components/content/PosterShortSingle"
 
-const ContentPostersAll = () => {
-  return (
-    <Layout title="Posters - all" role={roles.CONTENT_MANAGER}>
-      Content/Posters/All
-    </Layout>
-  )
-}
+const fastActionsName = functions.getTranslation("posters_actions")
+const fastActions = [
+  {
+    to: "/content/posters/new",
+    name: functions.getTranslation("posters_create_new"),
+  },
+]
+
+const ContentPostersAll = () => (
+  <ListingPage
+    storeName={"posters"}
+    fetchLink={"poster-styles/get"}
+    actionSet={setPosters}
+    actionDelete={(id) => database.remove(`posters/delete/${id}`, removePoster(id))}
+    title={functions.getTranslation("posters_all_page")}
+    fastActions={{ name: fastActionsName, items: fastActions }}
+    listerName={functions.getTranslation("posters_all")}
+    linkSingle={"content/posters"}
+    Component={PosterShortSingle}
+  />
+)
 
 export default ContentPostersAll

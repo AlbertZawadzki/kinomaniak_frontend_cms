@@ -1,4 +1,5 @@
 import React from "react"
+import functions from "../functions"
 
 class StatusIcon extends React.Component {
   state = {
@@ -13,7 +14,10 @@ class StatusIcon extends React.Component {
   render() {
     const { status } = this.state
 
-    return <div className={`status-icon ${status}`}></div>
+    return <div className='status-wrapper'>
+      <div className={`status-icon ${status}`} />
+      {functions.getTranslation(`status-${status}`)}
+    </div>
   }
 }
 
