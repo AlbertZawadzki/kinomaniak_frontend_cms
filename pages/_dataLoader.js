@@ -6,19 +6,17 @@ import { setCurrencies } from "../redux/actions/currency"
 
 class DataLoader extends React.Component {
   componentDidMount() {
-    this.fetchCountries()
-    this.fetchCurrencies()
+    this.fetchData()
   }
 
-  fetchCountries = async () => {
-    const countries = await database.get("data/countries/get", true)
+  fetchData = async () => {
+    const data = await database.get("data/get", true)
+    const { countries, currencies } = data
+
     this.props.dispatch(setCountries(countries))
-  }
-
-  fetchCurrencies = async () => {
-    const currencies = await database.get("data/currencies/get", true)
     this.props.dispatch(setCurrencies(currencies))
   }
+
 
   render() {
     const { children } = this.props
