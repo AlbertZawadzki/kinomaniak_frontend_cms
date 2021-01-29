@@ -5,6 +5,7 @@
 
 input[type=checkbox] {
   transform: translateY(1px);
+  cursor: pointer;
 
   &.hidden {
     width: 0;
