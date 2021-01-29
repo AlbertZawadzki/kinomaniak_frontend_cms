@@ -31,7 +31,7 @@ class Lister extends React.Component {
         {
           allItems.length !== 0 && (
             <Filter
-              items={items}
+              items={allItems}
               onlyKeys={filterKeys.only}
               skipKeys={filterKeys.skip}
               actionReturn={(items) => this.setState({ items })}
