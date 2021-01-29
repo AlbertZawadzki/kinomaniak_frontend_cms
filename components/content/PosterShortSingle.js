@@ -4,15 +4,17 @@ import Poster from "../Poster"
 const PosterShortSingle = ({ name, pin_color, pin_effect, border_visible, border_color, border_effect }) => {
   return (
     <div className='short-single-poster-wrapper'>
-      <Poster
-        pinColor={pin_color}
-        pinEffect={pin_effect}
-        borderVisible={border_visible}
-        borderColor={border_color}
-        borderEffect={border_effect}
-        scale={0.5}
-      />
-      {name}
+      <div className='short-single-poster-inner-wrapper'>
+        <Poster
+          pinColor={pin_color}
+          pinEffect={pin_effect}
+          borderVisible={border_visible}
+          borderColor={border_color}
+          borderEffect={border_effect}
+          scale={0.5}
+        />
+        {name}
+      </div>
     </div>
   )
 }

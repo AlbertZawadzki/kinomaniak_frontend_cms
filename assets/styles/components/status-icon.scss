@@ -1,8 +1,8 @@
 .status-wrapper {
   padding: 0 10px;
-  margin-right: 5px;
   display: flex;
   align-items: center;
+  z-index: 2;
 
   &.unknown {
     background-color: rgba($colorUnknown, $fullOpacity);
