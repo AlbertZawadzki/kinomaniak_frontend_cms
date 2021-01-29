@@ -4,12 +4,14 @@ $themes: (
                 colorMainDarker: $colorThemeLightDarker,
                 colorMainContrast: $colorThemeDark,
                 colorMainContrastDarker: $colorThemeDarkDarker,
+                colorMainBlue:$colorBlue,
         ),
         dark: (
                 colorMain: $colorThemeDark,
                 colorMainDarker: $colorThemeDarkDarker,
                 colorMainContrast: $colorThemeLight,
                 colorMainContrastDarker: $colorThemeLightDarker,
+                colorMainBlue:$colorLightBlue,
         ),
 );
 
@@ -35,3 +37,4 @@ $colorMain: "colorMain";
 $colorMainContrast: "colorMainContrast";
 $colorMainDarker: "colorMainDarker";
 $colorMainContrastDarker: "colorMainContrastDarker";
+$colorMainBlue: "colorMainBlue";

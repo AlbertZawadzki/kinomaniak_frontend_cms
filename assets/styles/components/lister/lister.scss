@@ -36,7 +36,7 @@
     }
   }
 
-  input[type="checkbox"]:checked + * + & {
+  input[type="checkbox"]:checked ~ & {
     background-color: rgba($colorSuccess, $fullOpacity);
   }
 }

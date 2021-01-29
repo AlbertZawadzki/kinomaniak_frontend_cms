@@ -1,3 +1,14 @@
+.input-text-outer-wrapper {
+  width: 100%;
+
+  @include tabletMin {
+    &.small {
+      width: 24%;
+      margin: 0 0.5%;
+    }
+  }
+}
+
 .input-wrapper {
   width: 100%;
   display: flex;

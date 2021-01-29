@@ -5,13 +5,20 @@ import { removeCategory, setCategories } from "../../../redux/actions/category"
 import CategoriesShortSingle from "../../../components/content/CategoryShortSingle"
 import ListingPage from "../../../components/pages/ListingPage"
 
-const fastActionsName = functions.getTranslation("categories_actions")
-const fastActions = [
-  {
-    to: "/content/categories/new",
-    name: functions.getTranslation("categories_create_new"),
-  },
-]
+const fastActions = {
+  name: functions.getTranslation("categories_actions"),
+  items: [
+    {
+      to: "/content/categories/new",
+      name: functions.getTranslation("categories_create_new"),
+    },
+  ],
+}
+
+const filterKeys = {
+  skip: ["key", "image_url", "contents_count", "is_full"],
+  only: [],
+}
 
 const ContentCategoriesAll = () => (
   <ListingPage
@@ -20,10 +27,11 @@ const ContentCategoriesAll = () => (
     actionSet={setCategories}
     actionDelete={(id) => database.remove(`categories/delete/${id}`, removeCategory(id))}
     title={functions.getTranslation("categories_all_page")}
-    fastActions={{ name: fastActionsName, items: fastActions }}
+    fastActions={fastActions}
     listerName={functions.getTranslation("categories_all")}
     linkSingle={"content/categories"}
     Component={CategoriesShortSingle}
+    filterKeys={filterKeys}
   />
 )
 

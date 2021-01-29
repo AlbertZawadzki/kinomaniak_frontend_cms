@@ -39,7 +39,7 @@ class ListingPage extends React.Component {
   }
 
   render() {
-    const { title, fastActions, listerName, linkSingle, Component } = this.props
+    const { title, fastActions, listerName, linkSingle, Component, filterKeys } = this.props
     const { data, fetched } = this.state
 
     if (!fetched) {
@@ -68,6 +68,7 @@ class ListingPage extends React.Component {
           Component={Component}
           linkSingle={linkSingle}
           actionDelete={this.actionDelete}
+          filterKeys={filterKeys}
         />
       </Layout>
     )
@@ -88,6 +89,10 @@ ListingPage.defaultProps = {
   listerName: "lister name",
   linkSingle: "/",
   Component: <React.Fragment />,
+  filterKeys: {
+    skip: ["key", "is_full"],
+    only: [],
+  },
 }
 
 export default connect()(ListingPage)

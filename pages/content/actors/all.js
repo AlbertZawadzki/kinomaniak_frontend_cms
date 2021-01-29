@@ -5,13 +5,20 @@ import functions from "../../../functions"
 import database from "../../../database"
 import ListingPage from "../../../components/pages/ListingPage"
 
-const fastActionsName = functions.getTranslation("actors_actions")
-const fastActions = [
-  {
-    to: "/content/actors/new",
-    name: functions.getTranslation("actor_create_new"),
-  },
-]
+const fastActions = {
+  name: functions.getTranslation("actors_actions"),
+  items: [
+    {
+      to: "/content/actors/new",
+      name: functions.getTranslation("actor_create_new"),
+    },
+  ],
+}
+
+const filterKeys = {
+  skip: ["key", "image_url", "contents_count", "is_full"],
+  only: [],
+}
 
 const ContentActorsAll = () => (
   <ListingPage
@@ -20,10 +27,11 @@ const ContentActorsAll = () => (
     actionSet={setActors}
     actionDelete={(id) => database.remove(`actors/delete/${id}`, removeActor(id))}
     title={functions.getTranslation("actors_all_page")}
-    fastActions={{ name: fastActionsName, items: fastActions }}
+    fastActions={fastActions}
     listerName={functions.getTranslation("actors_all")}
     linkSingle={"content/actors"}
     Component={ActorShortSingle}
+    filterKeys={filterKeys}
   />
 )
 
