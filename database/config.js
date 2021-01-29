@@ -6,12 +6,16 @@ import { addNotification } from "../redux/actions/notification"
 export const USER_TOKEN_REFRESH_TIME = 30000
 export const BACKEND_URL = "http://localhost:8000/api/" //process.env.DEV ? "localhost:8000/api" : "api"
 
+/**
+ * Check if user is logged and if he was last authed more than 30sec ago
+ */
 export const canAuthUser = () => {
   const time = new Date()
   const now = time.getTime().toString()
   const request = store.getState().request?.data?.time || (parseInt(now) - 2 * USER_TOKEN_REFRESH_TIME).toString()
+  const userExists = store.getState().request?.user?.id !== 0
 
-  return now - request > USER_TOKEN_REFRESH_TIME
+  return userExists && now - request > USER_TOKEN_REFRESH_TIME
 }
 
 /**
@@ -52,6 +56,9 @@ export const clearUser = () => {
   store.dispatch(setUser({ ...object }))
 }
 
+/**
+ * Updates last request time
+ */
 export const updateRequestTime = () => {
   const time = new Date()
   const now = time.getTime().toString()

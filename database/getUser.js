@@ -4,10 +4,15 @@ import { setUser } from "../redux/actions/request"
 import roles from "../data/_role_types.json"
 
 const getUser = async () => {
+  console.log("attempt")
+  console.log("Blocked: " + (!CFG.canAuthUser() ? "yes" : "false"))
+  console.log("Token: " + (!CFG.getToken() ? "is null" : "exists"))
+  console.log("Token: " + CFG.getToken())
   if (!CFG.getToken() || !CFG.canAuthUser()) {
     return
   }
 
+  let object = null
   const url = CFG.BACKEND_URL + "me/authenticate?" + CFG.getToken()
 
   return await fetch(url, { method: "GET" })
@@ -16,13 +21,16 @@ const getUser = async () => {
     })
     .then(({ data }) => {
       CFG.setParams(data)
+      console.log(data)
 
-      const object = {
-        id: data?.data?.id || 0,
-        name: data?.data?.name || "No name",
-        role: data?.data?.role || roles.USER,
-        session: data?.data?.ssid || null,
+      if (data?.data?.id) {
+        object = {
+          id: data?.data?.id,
+          name: data?.data?.name,
+          role: data?.data?.role,
+        }
       }
+
       store.dispatch(setUser({ ...object }))
     })
     .catch((error) => {

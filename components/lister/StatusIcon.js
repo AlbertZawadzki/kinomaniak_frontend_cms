@@ -1,5 +1,5 @@
 import React from "react"
-import functions from "../functions"
+import functions from "../../functions"
 
 class StatusIcon extends React.Component {
   state = {

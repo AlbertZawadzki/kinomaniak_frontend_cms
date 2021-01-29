@@ -13,6 +13,7 @@ class TextInput extends React.Component {
           name={name}
           defaultValue={value}
           id={id}
+          onChange={(event) => this.props.actionReturn(event.target)}
         />
       </div>
     )
@@ -23,7 +24,7 @@ TextInput.defaultProps = {
   name: "unknown-name",
   value: "",
   title: "No title given",
-  returnData: () => {
+  actionReturn: () => {
     console.log("No return function given")
   },
   isPassword: false,
