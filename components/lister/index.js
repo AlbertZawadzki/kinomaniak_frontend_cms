@@ -39,7 +39,9 @@ class Lister extends React.Component {
           )}
         <div className="error">TODO: group operations</div>
         <div className="lister-items">
-          <h2>{`${functions.getTranslation("items_current_showing")}: (${items.length}/${allItems.length})`}</h2>
+          <h2>
+            {`${functions.getTranslation("items_current_showing")}: (${items.length}/${allItems.length})`}
+          </h2>
           {
             items.length === 0 ? (
               <div className='error'>
