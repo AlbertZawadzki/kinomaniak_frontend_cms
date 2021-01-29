@@ -66,6 +66,7 @@
   "insufficient_permissions": "Insufficient permissions",
   "items_all": "All items",
   "items_current_showing": "Showing current items",
+  "items_per_page": "Items per page",
   "loading": "loading",
   "login": "Login",
   "logout": "Logout",

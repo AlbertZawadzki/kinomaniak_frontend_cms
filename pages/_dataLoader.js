@@ -3,10 +3,16 @@ import database from "../database"
 import { connect } from "react-redux"
 import { setCountries } from "../redux/actions/country"
 import { setCurrencies } from "../redux/actions/currency"
+import roles from "../data/_role_types.json"
+import functions from "../functions"
 
 class DataLoader extends React.Component {
   componentDidMount() {
-    this.fetchData()
+    if (functions.hasAccess(roles.All)) {
+      this.fetchData()
+    } else {
+      console.log("no access")
+    }
   }
 
   fetchData = async () => {

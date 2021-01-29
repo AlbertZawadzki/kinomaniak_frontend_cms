@@ -5,25 +5,44 @@ import Tile from "../Tile"
 import StatusIcon from "./StatusIcon"
 import * as Icons from "../../assets/icons"
 import Filter from "./Filter"
+import Pagination from "./Pagination"
 
 class Lister extends React.Component {
   state = {
     allItems: [],
     items: [],
+    filteredItems: [],
+    paginatedItems: [],
+    itemsPerPage: 10,
+    page: 0,
   }
 
   componentDidMount() {
     const { items } = this.props
-    this.setState({ allItems: items, items })
+    this.setState({ filteredItems: items, allItems: items, paginatedItems: items }, () => this.changePage())
   }
 
-  componentWillReceiveProps() {
-    const { items } = this.props
-    this.setState({ allItems: items, items })
+  filterItems = (items) => {
+    this.setState({ filteredItems: items, items }, () => this.changePage(0))
+  }
+
+  changePage = (page = -1, itemsPerPage = -1) => {
+    if (page < 0) {
+      page = this.state.page
+    }
+    if (itemsPerPage < 0) {
+      itemsPerPage = this.state.itemsPerPage
+    }
+
+    let { filteredItems } = this.state
+
+    const items = filteredItems.slice(page * itemsPerPage, (page + 1) * itemsPerPage)
+
+    this.setState({ items }, () => this.forceUpdate())
   }
 
   render() {
-    const { items, allItems } = this.state
+    const { items, allItems, filteredItems } = this.state
     const { Component, linkSingle, actionDelete, name, filterKeys } = this.props
 
     return (
@@ -34,10 +53,9 @@ class Lister extends React.Component {
               items={allItems}
               onlyKeys={filterKeys.only}
               skipKeys={filterKeys.skip}
-              actionReturn={(items) => this.setState({ items })}
+              actionReturn={this.filterItems}
             />
           )}
-        <div className="error">TODO: group operations</div>
         <div className="lister-items">
           <h2>
             {`${functions.getTranslation("items_current_showing")}: (${items.length}/${allItems.length})`}
@@ -48,30 +66,34 @@ class Lister extends React.Component {
                 {functions.getTranslation("no_items_found")}
               </div>
             ) : (
-              items.map((item) => (
-                <div className="lister-outer-item-wrapper" key={item.key}>
-                  <input type="checkbox" className='hidden' id={item.key} />
-                  <label className='lister-checkbox' htmlFor={item.key}>
-                    <Icons.Tick />
-                  </label>
-                  <StatusIcon id={item.key} />
-                  <div className="lister-item" key={item.key}>
-                    <div className="lister-item-wrapper">
-                      <Link href={`/${linkSingle}/${item.id}`}>
-                        <div className="lister-link-wrapper">
-                          <Component {...item} />
-                        </div>
-                      </Link>
+              <React.Fragment>
+                <Pagination itemsLength={filteredItems.length} actionReturn={this.changePage} />
+                {items.map((item) => (
+                  <div className="lister-outer-item-wrapper" key={item.key}>
+                    <input type="checkbox" className='hidden' name={item.key} id={item.key} />
+                    <label className='lister-checkbox' htmlFor={item.key}>
+                      <Icons.Tick />
+                    </label>
+                    <StatusIcon id={item.key} />
+                    <div className="lister-item" key={item.key}>
+                      <div className="lister-item-wrapper">
+                        <Link href={`/${linkSingle}/${item.id}`}>
+                          <div className="lister-link-wrapper">
+                            <Component {...item} />
+                          </div>
+                        </Link>
+                      </div>
+                      <input
+                        type="button"
+                        className="small right warn"
+                        value={functions.getTranslation("delete")}
+                        onClick={() => actionDelete(item.id)}
+                      />
                     </div>
-                    <input
-                      type="button"
-                      className="small right warn"
-                      value={functions.getTranslation("delete")}
-                      onClick={() => actionDelete(item.id)}
-                    />
                   </div>
-                </div>
-              )))}
+                ))}
+              </React.Fragment>
+            )}
         </div>
       </Tile>
     )

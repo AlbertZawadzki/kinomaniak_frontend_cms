@@ -16,6 +16,7 @@ import CMS from "@material-ui/icons/BusinessRounded"
 import Content from "@material-ui/icons/InsertDriveFileRounded"
 import Cross from "@material-ui/icons/ClearRounded"
 import Date from "@material-ui/icons/TodayRounded"
+import Dots from "@material-ui/icons/MoreHorizRounded"
 import Earth from "@material-ui/icons/PublicRounded"
 import Facebook from "@material-ui/icons/Facebook"
 import Instagram from "@material-ui/icons/Instagram"
@@ -69,6 +70,7 @@ export {
   Content,
   Cross,
   Date,
+  Dots,
   Earth,
   EmptyIcon,
   Facebook,

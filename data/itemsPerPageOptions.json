@@ -1,0 +1,42 @@
+[
+  {
+    "key": "items-per-page-5",
+    "number": 5
+  },
+  {
+    "key": "items-per-page-10",
+    "number": 10
+  },
+  {
+    "key": "items-per-page-25",
+    "number": 25
+  },
+  {
+    "key": "items-per-page-50",
+    "number": 50
+  },
+  {
+    "key": "items-per-page-100",
+    "number": 100
+  },
+  {
+    "key": "items-per-page-150",
+    "number": 150
+  },
+  {
+    "key": "items-per-page-200",
+    "number": 200
+  },
+  {
+    "key": "items-per-page-250",
+    "number": 250
+  },
+  {
+    "key": "items-per-page-500",
+    "number": 500
+  },
+  {
+    "key": "items-per-page-1000",
+    "number": 1000
+  }
+]

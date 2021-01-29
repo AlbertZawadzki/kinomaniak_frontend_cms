@@ -6,7 +6,7 @@ class TextInput extends React.Component {
     const id = "text-input-" + name
 
     return (
-      <div className={`input-text-outer-wrapper ${small ? "small" : "big"}`}>
+      <div className={`input-outer-wrapper ${small ? "small" : "big"}`}>
         <div className="input-wrapper">
           <label htmlFor={id}>{title}</label>
           <input
