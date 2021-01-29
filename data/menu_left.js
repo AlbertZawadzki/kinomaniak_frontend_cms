@@ -1,5 +1,5 @@
 import functions from "../functions"
-import ROLES from "./_role_types.json"
+import ROLES from "./roleTypes.json"
 import * as Icons from "../assets/icons"
 
 const data = [

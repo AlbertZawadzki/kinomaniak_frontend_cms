@@ -1,4 +1,4 @@
-import data from "../data/_translations.json"
+import data from "../data/translations.json"
 
 const getTranslation = (name) => {
   name = name ? name.toString().toLowerCase() : null

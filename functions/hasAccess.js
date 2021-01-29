@@ -1,4 +1,4 @@
-import roles from "../data/_role_types.json"
+import roles from "../data/roleTypes.json"
 import store from "../redux/store"
 
 const hasAccess = (role) => {

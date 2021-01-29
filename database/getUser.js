@@ -1,7 +1,7 @@
 import * as CFG from "./config"
 import store from "../redux/store"
 import { setUser } from "../redux/actions/request"
-import roles from "../data/_role_types.json"
+import roles from "../data/roleTypes.json"
 
 const getUser = async () => {
   // console.log("attempt")

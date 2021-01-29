@@ -1,6 +1,6 @@
 import store from "../redux/store"
 import { setCsrf, setLastRequestTime, setToken, setUser } from "../redux/actions/request"
-import roles from "../data/_role_types.json"
+import roles from "../data/roleTypes.json"
 import { addNotification } from "../redux/actions/notification"
 
 export const USER_TOKEN_REFRESH_TIME = 30000

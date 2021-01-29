@@ -125,7 +125,7 @@ class Filter extends React.Component {
     let { keys, filters } = this.state
 
     return (
-      <Tile title={functions.getTranslation("filters")}>
+      <Tile title={functions.getTranslation("filters")} hidden>
         {
           keys.map(key => (
             <TextInput

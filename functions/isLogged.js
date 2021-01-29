@@ -1,7 +1,7 @@
-import roles from "../data/_role_types.json"
+import roles from "../data/roleTypes.json"
 import store from "../redux/store"
 
-const isLogged = (role) => {
+const isLogged = () => {
   let userId = store.getState().request?.data?.user?.id || 0
   let userRole = store.getState().request?.data?.user?.role || roles.USER
 

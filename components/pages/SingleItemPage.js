@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../layout"
-import roles from "../../data/_role_types.json"
+import roles from "../../data/roleTypes.json"
 import { connect } from "react-redux"
 import functions from "../../functions"
 import store from "../../redux/store"

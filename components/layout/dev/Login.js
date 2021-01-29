@@ -3,12 +3,12 @@ import Tile from "../../Tile"
 import store from "../../../redux/store"
 import { setCsrf, setToken, setUser } from "../../../redux/actions/request"
 import database from "../../../database"
-import roles from "../../../data/_role_types.json"
+import roles from "../../../data/roleTypes.json"
 
 class Login extends React.Component {
   login = async (role) => {
     let url = "http://localhost:8000/api-test/" + role
-    if (store.getState().request.data?.token || false) {
+    if (store.getState().request.data?.token) {
       url +=
         "?_token=" +
         (localStorage.getItem("_token") || store.getState().request.data?.token)
