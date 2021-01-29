@@ -35,8 +35,8 @@ class Lister extends React.Component {
               <label className='lister-checkbox' htmlFor={item.key}>
                 <Icons.Tick />
               </label>
+              <StatusIcon id={item.key} />
               <div className="lister-item" key={item.key}>
-                <StatusIcon id={item.key} />
                 <div className="lister-item-wrapper">
                   <Link href={`/${linkSingle}/${item.id}`}>
                     <div className="lister-link-wrapper">
