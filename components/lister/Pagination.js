@@ -130,12 +130,10 @@ class Pagination extends React.Component {
 
   render() {
     const { itemsLength } = this.props
-    const { page, itemsPerPage } = this.state
-    const limitOptions = itemsPerPageOptions.filter(option => option.number < itemsLength)
+    const { page } = this.state
     const pages = this.renderPagesButtons()
-    const maxPages = Math.ceil(itemsLength / itemsPerPage)
 
-    if (maxPages < 2) {
+    if (itemsLength < 5) {
       return <React.Fragment />
     }
 
@@ -156,7 +154,7 @@ class Pagination extends React.Component {
         <SelectInput
           name='set-pagination-items'
           title={`${functions.getTranslation("items_per_page")}:`}
-          options={limitOptions}
+          options={itemsPerPageOptions}
           optionKeyName='number'
           actionReturn={this.setItemsPerPage}
           selected='items-per-page-10'
