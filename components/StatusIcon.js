@@ -7,14 +7,12 @@ class StatusIcon extends React.Component {
   }
 
   componentDidMount() {
-    const { id } = this.props
-
   }
 
   render() {
     const { status } = this.state
 
-    return <div className='status-wrapper'>
+    return <div className={`status-wrapper ${status}`}>
       <div className={`status-icon ${status}`} />
       {functions.getTranslation(`status-${status}`)}
     </div>

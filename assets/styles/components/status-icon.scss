@@ -1,6 +1,20 @@
 .status-wrapper {
-  margin: auto 5px auto 0;
+  padding: 0 10px;
   display: flex;
+  height: 100%;
+  align-items: center;
+
+  &.unknown {
+    background-color: rgba($colorUnknown, $fullOpacity);
+  }
+
+  &.failure {
+    background-color: rgba($colorFailure, $fullOpacity);
+  }
+
+  &.success {
+    background-color: rgba($colorSuccess, $fullOpacity);
+  }
 }
 
 .status-icon {
@@ -8,18 +22,18 @@
   height: 10px;
   border-radius: 50%;
   display: block;
-  margin: auto 10px auto 0;
+  margin-right: 10px;
 
   @include themify {
     box-shadow: inset 0 0 3px 1px rgba(themed($colorMainContrast), $halfOpacity);
   }
 
   &.unknown {
-    background-color: $colorGray;
+    background-color: $colorUnknown;
   }
 
   &.failure {
-    background-color: $colorRed;
+    background-color: $colorFailure;
   }
 
   &.success {

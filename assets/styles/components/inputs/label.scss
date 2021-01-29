@@ -39,7 +39,7 @@ label {
     border-radius: 0;
     border: 0;
     margin: 0 0 0 -7px;
-    width: 30px;
+    width: 40px;
 
     @include themify {
       background-color: themed($colorMainContrast);
@@ -54,7 +54,7 @@ label {
     }
 
     svg {
-      padding-left: 3px;
+      margin: auto;
       opacity: 0;
     }
   }

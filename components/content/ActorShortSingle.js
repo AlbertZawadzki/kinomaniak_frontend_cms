@@ -1,9 +1,10 @@
 import React from "react"
+import Image from "../Image"
 
 const ActorShortSingle = ({ name, lastname, image_url }) => {
   return (
     <div className='short-single-actor-wrapper'>
-      <img src={image_url} className='small-actor-image' alt={`${name} ${lastname}`} />
+      <Image src={image_url} className='small-actor-image' alt={`${name} ${lastname}`} />
       {`${name} ${lastname}`}
     </div>
   )

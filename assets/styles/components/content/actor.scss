@@ -6,8 +6,13 @@
 .small-actor-image {
   height: 30px;
   width: 30px;
-  margin: 5px 5px 5px -5px;
+  margin: 5px;
   border-radius: 3px;
+  overflow: hidden;
+
+  @include themify {
+    box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $fullOpacity);
+  }
 }
 
 .actor-images-wrapper {
