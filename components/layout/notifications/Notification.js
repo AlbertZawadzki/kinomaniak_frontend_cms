@@ -39,7 +39,7 @@ class Notification extends React.Component {
     const { step } = this.state
 
     if (autoClose) {
-      let timeCounter = setInterval(() => {
+      this.timeCounter = setInterval(() => {
         let { step, counter, countDown } = this.state
         if (countDown) {
           counter -= step
@@ -47,17 +47,21 @@ class Notification extends React.Component {
         }
 
         if (counter === 0) {
-          clearInterval(timeCounter)
+          clearInterval(this.timeCounter)
           this.close()
         }
       }, step)
     }
   }
 
+  componentWillUnmount() {
+    clearInterval(this.timeCounter)
+  }
+
   render() {
     let { title, message } = this.props
     let { status, counter } = this.state
-    const buttonClass = "button absolute right top " + status.button
+    const buttonClass = "notification-button absolute right top " + status.button
 
     return (
       <div
@@ -67,7 +71,7 @@ class Notification extends React.Component {
         onMouseEnter={() => this.setCountDown(false)}
         onMouseLeave={() => this.setCountDown(true)}
       >
-        <button className={buttonClass} style={{ color: "#000 !important" }} onClick={() => this.close()}>
+        <button className={buttonClass} onClick={() => this.close()}>
           <Icons.Cross />
         </button>
         <h3 className="notification-title no-border">

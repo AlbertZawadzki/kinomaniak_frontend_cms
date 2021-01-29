@@ -54,7 +54,6 @@ input[type="submit"] {
   margin: 5px;
   min-height: 30px;
   min-width: 70px;
-  color: $colorWhite !important;
 
   @include themify {
     box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $fullOpacity);
