@@ -3,6 +3,7 @@ import React from "react"
 import functions from "../functions"
 import Tile from "./Tile"
 import StatusIcon from "./StatusIcon"
+import * as Icons from "../assets/icons"
 
 class Lister extends React.Component {
   state = {
@@ -30,7 +31,10 @@ class Lister extends React.Component {
         <div className="lister-items">
           {items ? items.map((item) => (
             <div className="lister-outer-item-wrapper" key={item.key}>
-              <input type="checkbox" name={item.key} />
+              <input type="checkbox" className='hidden' id={item.key} />
+              <label className='lister-checkbox' htmlFor={item.key}>
+                <Icons.Tick />
+              </label>
               <div className="lister-item" key={item.key}>
                 <StatusIcon id={item.key} />
                 <div className="lister-item-wrapper">

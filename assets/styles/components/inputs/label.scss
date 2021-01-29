@@ -32,4 +32,30 @@ label {
     cursor: pointer;
     user-select: none;
   }
+
+  &.lister-checkbox {
+    display: flex;
+    align-items: center;
+    border-radius: 0;
+    border: 0;
+    margin: 0 0 0 -7px;
+    width: 30px;
+
+    @include themify {
+      background-color: themed($colorMainContrast);
+    }
+
+    input[type=checkbox]:checked + & {
+      background-color: rgba($colorSuccess, $halfOpacity);
+
+      svg {
+        opacity: 1;
+      }
+    }
+
+    svg {
+      padding-left: 3px;
+      opacity: 0;
+    }
+  }
 }

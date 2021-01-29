@@ -1,18 +1,11 @@
 .lister-items {
   width: 100%;
   padding: 10px 5px 1px;
-
-  input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-    margin: auto 10px;
-  }
 }
 
 .lister-outer-item-wrapper {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   margin: 5px 0;
   border-radius: 5px;
   overflow: hidden;
@@ -22,7 +15,9 @@
   }
 
   &:hover {
-    background-color: rgba($colorBlue, $fullOpacity);
+    @include themify {
+      background-color: rgba(themed($colorMainContrast), $fullOpacity);
+    }
   }
 }
 
@@ -41,10 +36,8 @@
     }
   }
 
-  input[type="checkbox"]:checked + & {
-    @include themify {
-      background-color: rgba(themed($colorMainContrast), $halfOpacity);
-    }
+  input[type="checkbox"]:checked + * + & {
+    background-color: rgba($colorSuccess, $fullOpacity);
   }
 }
 
