@@ -23,6 +23,7 @@ $colorLightYellow: #F0E68C;
 
 // Dark colors
 $colorDarkBlue: #1e222b;
+$colorDarkWhite: #DDD;
 
 // Role named colors
 $colorUnknown: $colorBlack;
@@ -49,5 +50,7 @@ $colorProcessing: $colorBrightBlue;
 $colorSuccess: $colorGreen;
 
 // Theme colors
-$colorThemeLight: $colorWhite;
 $colorThemeDark: $colorDarkBlue;
+$colorThemeDarkDarker: $colorBlack;
+$colorThemeLight: $colorWhite;
+$colorThemeLightDarker: $colorDarkWhite;

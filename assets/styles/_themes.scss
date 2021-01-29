@@ -1,15 +1,19 @@
 $themes: (
         light: (
                 colorMain: $colorThemeLight,
+                colorMainDarker: $colorThemeLightDarker,
                 colorMainContrast: $colorThemeDark,
+                colorMainContrastDarker: $colorThemeDarkDarker,
         ),
         dark: (
                 colorMain: $colorThemeDark,
+                colorMainDarker: $colorThemeDarkDarker,
                 colorMainContrast: $colorThemeLight,
+                colorMainContrastDarker: $colorThemeLightDarker,
         ),
 );
 
-@mixin themify($themes) {
+@mixin themify() {
   @each $theme, $map in $themes {
     .theme-#{$theme} & {
       $theme-map: () !global;
@@ -29,3 +33,5 @@ $themes: (
 
 $colorMain: "colorMain";
 $colorMainContrast: "colorMainContrast";
+$colorMainDarker: "colorMainDarker";
+$colorMainContrastDarker: "colorMainContrastDarker";

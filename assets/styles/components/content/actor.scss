@@ -31,7 +31,7 @@
   margin: 10px auto;
   border-radius: 3px;
 
-  @include themify($themes) {
+  @include themify {
     background-color: rgba(themed('colorMainContrast'), $halfOpacity);
     box-shadow: 0 0 3px 1px rgba(themed('colorMainContrast'), $fullOpacity);
   }

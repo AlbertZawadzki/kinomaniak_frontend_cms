@@ -8,6 +8,8 @@ const post = async (url, action, form) => {
     addNotification({ status: "processing", title: "Adding..." }),
   )
 
+  CFG.updateRequestTime()
+
   return await fetch(url, { method: "POST", body: form })
     .then(async (res) => {
       return {

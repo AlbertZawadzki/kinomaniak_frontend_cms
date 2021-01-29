@@ -4,7 +4,7 @@
   justify-content: flex-end;
   align-items: flex-end;
 
-  @include themify($themes) {
+  @include themify {
     background-color: themed('colorMain');
   }
 }
@@ -16,7 +16,7 @@
     z-index: 10;
     height: 100vh;
 
-    @include themify($themes) {
+    @include themify {
       background-color: rgba($colorBlack, $halfOpacity);
     }
 
@@ -32,16 +32,16 @@
   display: flex;
   flex-direction: column;
 
-  @include themify($themes) {
+  @include themify {
     background-color: themed('colorMain');
   }
 
   @include mobileMax {
-    width: 150px;
-    transform: translateX(-200px);
+    width: 180px;
+    transform: translateX(-190px);
     transition: transform 0.25s ease-in-out;
 
-    @include themify($themes) {
+    @include themify {
       box-shadow: 0 0 5px 1px rgba(themed('colorMainContrast'), $halfOpacity);
     }
 
@@ -60,7 +60,7 @@
   border-radius: 3px;
   z-index: 15;
 
-  @include themify($themes) {
+  @include themify {
     background-color: themed('colorMain');
     box-shadow: 0 0 5px 1px rgba(themed('colorMainContrast'), $halfOpacity);
   }
@@ -85,7 +85,7 @@
     border-left: 0
   }
 
-  @include themify($themes) {
+  @include themify {
     border-left: 2px solid themed('colorMain');
     background-color: themed('colorMain');
 
@@ -216,14 +216,14 @@
 }
 
 .submenu {
-  @include themify($themes) {
+  @include themify {
     background-color: themed('colorMain');
     box-shadow: 0 0 3px 1px rgba(themed('colorMainContrast'), $halfOpacity);
   }
 }
 
 .mobile-top-menu {
-  @include themify($themes) {
+  @include themify {
     border-top: 3px double themed('colorMainContrast');
   }
 }

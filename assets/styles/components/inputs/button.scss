@@ -40,7 +40,7 @@ button {
   &:hover {
     color: $colorWhite;
 
-    @include themify($themes) {
+    @include themify {
       filter: drop-shadow(0 0 1px themed($colorMainContrast));
     }
   }
@@ -56,7 +56,7 @@ input[type="submit"] {
   min-width: 70px;
   color: $colorWhite !important;
 
-  @include themify($themes) {
+  @include themify {
     box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $fullOpacity);
   }
 

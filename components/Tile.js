@@ -4,7 +4,7 @@ import * as Icons from "../assets/icons"
 const Tile = ({ hidden, hideable, title, children, sub, full, column, noShadow }) => {
 
   const [show, setShow] = useState(!hidden)
-  let buttonStyles
+  let buttonStyles = { top: 0, right: 0 }
   let iconStyles = {
     transform: show ? "rotateZ(0)" : "rotateZ(-180deg)",
     transition: "transform 0.25s ease-in-out",
@@ -14,12 +14,10 @@ const Tile = ({ hidden, hideable, title, children, sub, full, column, noShadow }
   switch (sub) {
     case 1:
       title = <h3 className='tile-title'>{title}</h3>
-      buttonStyles = { top: "-5px", right: "-5px" }
       iconStyles.fontSize = "22px"
       break
     case 2:
       title = <h4 className='tile-title'>{title}</h4>
-      buttonStyles = { top: 0, right: 0 }
       iconStyles.fontSize = "20px"
       break
     default:

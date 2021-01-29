@@ -16,7 +16,7 @@
   width: 100%;
   box-sizing: border-box;
 
-  @include themify($themes) {
+  @include themify {
     box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $halfOpacity);
   }
 

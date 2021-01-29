@@ -4,7 +4,7 @@ label {
   cursor: pointer;
   border-radius: 5px 5px 0 0;
 
-  @include themify($themes) {
+  @include themify {
     border-bottom: 1px solid themed($colorMainContrast);
   }
 
@@ -21,7 +21,7 @@ label {
       background-color: $colorButtonHover;
     }
 
-    @include themify($themes) {
+    @include themify {
       box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $fullOpacity);
     }
   }

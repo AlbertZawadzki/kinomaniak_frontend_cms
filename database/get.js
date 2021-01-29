@@ -11,6 +11,8 @@ const get = async (url, silent = false) => {
     )
   }
 
+  CFG.updateRequestTime()
+
   return await fetch(url)
     .then((res) => res.json())
     .then((data) => {

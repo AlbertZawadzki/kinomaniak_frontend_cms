@@ -14,6 +14,8 @@ const remove = async (url, action) => {
     addNotification({ status: "processing", title: "Deleting..." }),
   )
 
+  CFG.updateRequestTime()
+
   return await fetch(url, { method: "POST" })
     .then((res) => res.json())
     .then((data) => {

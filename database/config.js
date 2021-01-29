@@ -52,14 +52,16 @@ export const clearUser = () => {
   store.dispatch(setUser({ ...object }))
 }
 
+export const updateRequestTime = () => {
+  const time = new Date()
+  const now = time.getTime().toString()
+  store.dispatch(setLastRequestTime(now))
+}
+
 /**
  * Set session params
  */
 export const setParams = (data = null) => {
-  const time = new Date()
-  const now = time.getTime().toString()
-  store.dispatch(setLastRequestTime(now))
-
   localStorage.setItem("_token", data?._token || null)
   store.dispatch(setToken(data?._token || null))
   store.dispatch(setCsrf(data?.csrf || null))
