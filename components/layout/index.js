@@ -36,7 +36,9 @@ class Layout extends React.Component {
           <div className="data-wrapper">
             <LoginPanel />
           </div>
-          <Dev />
+          <div className="content-wrapper">
+            <Dev />
+          </div>
         </div>
       )
     }
