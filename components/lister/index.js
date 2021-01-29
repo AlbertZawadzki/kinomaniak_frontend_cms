@@ -67,7 +67,6 @@ class Lister extends React.Component {
               </div>
             ) : (
               <React.Fragment>
-                <Pagination itemsLength={filteredItems.length} actionReturn={this.changePage} />
                 {items.map((item) => (
                   <div className="lister-outer-item-wrapper" key={item.key}>
                     <input type="checkbox" className='hidden' name={item.key} id={item.key} />
@@ -92,6 +91,7 @@ class Lister extends React.Component {
                     </div>
                   </div>
                 ))}
+                <Pagination itemsLength={filteredItems.length} actionReturn={this.changePage} />
               </React.Fragment>
             )}
         </div>
