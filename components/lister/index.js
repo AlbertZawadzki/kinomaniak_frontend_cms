@@ -40,35 +40,36 @@ class Lister extends React.Component {
         <div className="error">TODO: group operations</div>
         <div className="lister-items">
           <h2>{`${functions.getTranslation("items_current_showing")}: (${items.length}/${allItems.length})`}</h2>
-          {items.length === 0 ? (
-            <div className='error'>
-              {functions.getTranslation("no_items_found")}
-            </div>
-          ) : (
-            items.map((item) => (
-              <div className="lister-outer-item-wrapper" key={item.key}>
-                <input type="checkbox" className='hidden' id={item.key} />
-                <label className='lister-checkbox' htmlFor={item.key}>
-                  <Icons.Tick />
-                </label>
-                <StatusIcon id={item.key} />
-                <div className="lister-item" key={item.key}>
-                  <div className="lister-item-wrapper">
-                    <Link href={`/${linkSingle}/${item.id}`}>
-                      <div className="lister-link-wrapper">
-                        <Component {...item} />
-                      </div>
-                    </Link>
-                  </div>
-                  <input
-                    type="button"
-                    className="small right warn"
-                    value={functions.getTranslation("delete")}
-                    onClick={() => actionDelete(item.id)}
-                  />
-                </div>
+          {
+            items.length === 0 ? (
+              <div className='error'>
+                {functions.getTranslation("no_items_found")}
               </div>
-            )))}
+            ) : (
+              items.map((item) => (
+                <div className="lister-outer-item-wrapper" key={item.key}>
+                  <input type="checkbox" className='hidden' id={item.key} />
+                  <label className='lister-checkbox' htmlFor={item.key}>
+                    <Icons.Tick />
+                  </label>
+                  <StatusIcon id={item.key} />
+                  <div className="lister-item" key={item.key}>
+                    <div className="lister-item-wrapper">
+                      <Link href={`/${linkSingle}/${item.id}`}>
+                        <div className="lister-link-wrapper">
+                          <Component {...item} />
+                        </div>
+                      </Link>
+                    </div>
+                    <input
+                      type="button"
+                      className="small right warn"
+                      value={functions.getTranslation("delete")}
+                      onClick={() => actionDelete(item.id)}
+                    />
+                  </div>
+                </div>
+              )))}
         </div>
       </Tile>
     )
