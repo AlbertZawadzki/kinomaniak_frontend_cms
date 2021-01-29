@@ -1,6 +1,6 @@
 import * as actions from "../actionNames/actor"
 
-const request = (state = { data: [], was_fetched: false }, action) => {
+const actors = (state = { data: [], was_fetched: false }, action) => {
   switch (action.type) {
     case actions.ACTORS_ADD:
       state.data.push(action.data)
@@ -30,4 +30,4 @@ const request = (state = { data: [], was_fetched: false }, action) => {
   }
 }
 
-export default request
+export default actors

@@ -4,6 +4,7 @@ import { Provider } from "react-redux"
 import database from "../database"
 import * as CFG from "../database/config"
 import "../assets/styles/index.scss"
+import DataLoader from "./_dataLoader"
 
 
 class MyApp extends React.Component {
@@ -53,7 +54,9 @@ class MyApp extends React.Component {
 
     return (
       <Provider store={store}>
-        <Component {...pageProps} />
+        <DataLoader>
+          <Component {...pageProps} />
+        </DataLoader>
       </Provider>
     )
   }

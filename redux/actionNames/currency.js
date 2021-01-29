@@ -1,0 +1,1 @@
+export const CURRENCIES_SET = "CURRENCIES_SET"
