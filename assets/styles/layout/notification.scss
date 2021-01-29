@@ -15,14 +15,11 @@
 }
 
 .notification {
-  box-shadow: 0 0 3px 1px rgba($colorBlack, $halfOpacity);
   background-color: $colorWhite;
   position: relative;
   margin: 10px 0;
   min-width: 250px;
   max-width: 300px;
-  padding: 5px;
-  border-radius: 5px;
 
   &.success {
     background-color: $colorSuccess;
@@ -53,6 +50,10 @@
     transform: scale(0);
     overflow: hidden;
   }
+
+  @include themify {
+    box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $halfOpacity);
+  }
 }
 
 .notification-title {
@@ -68,6 +69,7 @@
   -1px 1px 1px rgba($colorWhite, $fullOpacity),
   1px -1px 1px rgba($colorWhite, $fullOpacity),
   -1px -1px 1px rgba($colorWhite, $fullOpacity);
+  padding: 5px 5px 0;
 }
 
 .notification-message {
@@ -76,6 +78,5 @@
   padding: 3px;
   text-indent: 3px;
   background-color: rgba($colorWhite, $lightOpacity);
-  border-radius: 5px;
   color: $colorBlack;
 }

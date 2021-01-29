@@ -1,10 +1,18 @@
 button {
   border: 0;
-  background-color: transparent;
   cursor: pointer;
+  background-color: transparent;
   transition: filter 0.1s ease-in-out, background-color 0.25s;
   font-size: 18px;
   margin: 5px;
+
+  @include themify {
+    color: $colorWhite;
+
+    svg {
+      color: themed($colorMainContrast);
+    }
+  }
 
   & .round {
     border-radius: 50%;
@@ -33,15 +41,17 @@ button {
     padding: 0 8px;
   }
 
-  .unknown & {
-    color: $colorWhite;
-  }
-
   &:hover {
     color: $colorWhite;
 
     @include themify {
       filter: drop-shadow(0 0 1px themed($colorMainContrast));
+    }
+  }
+
+  &.notification-button svg {
+    @include themify {
+      color: $colorWhite;
     }
   }
 }
