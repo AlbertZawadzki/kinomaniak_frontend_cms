@@ -6,7 +6,7 @@ import functions from "../../functions"
 
 const Breadcrumbs = () => {
   const router = useRouter()
-  const crumbs = router.asPath.split("/")
+  const crumbs = router.route.split("/")
   let fullPath = ""
 
   if (router.asPath === "/") {
