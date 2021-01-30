@@ -6,8 +6,10 @@ import User from "./User"
 import Tile from "../../Tile"
 
 const Dev = () => {
+  const mode = process.env.IS_DEV ? "Development" : "Production"
+
   return (
-    <Tile title={"#DEV BOX"} hidden column>
+    <Tile title={`${mode} dev box`} hidden column>
       <Login />
       <User />
       <Notificator />

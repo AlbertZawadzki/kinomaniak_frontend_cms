@@ -4,7 +4,7 @@ import roles from "../data/roleTypes.json"
 import { addNotification } from "../redux/actions/notification"
 
 export const USER_TOKEN_REFRESH_TIME = 30000
-export const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL
+export const BACKEND_URL = process.env.BACKEND_URL
 
 const LAST_REQUEST_TIME = "last_request_time"
 const TOKEN = "_token"
