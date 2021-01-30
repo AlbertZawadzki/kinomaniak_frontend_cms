@@ -9,8 +9,8 @@ const request = (state = { data: [], was_fetched: false }, action) => {
       state.data = state.data.filter(category => category.id !== action.id)
       return state
     case actions.CATEGORIES_SET:
-      state.was_fetched = true
-      state.data = action.data
+      state.was_fetched = !!action.data
+      state.data = action.data || []
       return state
     case actions.CATEGORIES_UPDATE:
       let found = false

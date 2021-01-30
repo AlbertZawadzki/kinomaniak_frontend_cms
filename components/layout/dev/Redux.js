@@ -32,7 +32,7 @@ class Redux extends React.Component {
           <Tile
             key={`store-${store}`}
             title={`${store.charAt(0).toUpperCase() + store.slice(1)} (${
-              data[store].data.length || 0
+              data[store].data?.length || 0
             })`}
             sub={1}
             hidden
