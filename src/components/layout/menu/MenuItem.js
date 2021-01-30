@@ -20,16 +20,16 @@ const renderPath = (path) => {
 }
 
 const MenuItem = ({
-  action,
-  isLink,
-  isTop,
-  name,
-  to,
-  type,
-  subitems,
-  isSubItem,
-  Icon,
-}) => {
+                    action,
+                    isLink,
+                    isTop,
+                    name,
+                    to,
+                    type,
+                    subitems,
+                    isSubItem,
+                    Icon,
+                  }) => {
   const router = useRouter()
   let basicClassName = `
     menu-item ${isTop ? "top" : "left"}

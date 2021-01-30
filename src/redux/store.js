@@ -9,13 +9,13 @@ import request from "./stores/request"
 
 const store = createStore(
   combineReducers({
-      actors,
-      categories,
-      countries,
-      currencies,
-      notifications,
-      posters,
-      request,
+    actors,
+    categories,
+    countries,
+    currencies,
+    notifications,
+    posters,
+    request,
   }),
 )
 

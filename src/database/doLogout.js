@@ -1,6 +1,7 @@
 import * as CFG from "./config"
 import store from "../redux/store"
 import { addNotification } from "../redux/actions/notification"
+
 const doLogout = async () => {
   const url = CFG.BACKEND_URL + "me/logout?" + CFG.getToken()
 
@@ -11,7 +12,7 @@ const doLogout = async () => {
       status: "processing",
       title: "Logging out",
       message: null,
-    })
+    }),
   )
 
   await fetch(url, { method: "GET" })
@@ -22,7 +23,7 @@ const doLogout = async () => {
           status: "success",
           title: "Logged out",
           message: null,
-        })
+        }),
       )
 
       CFG.clearUser()
@@ -34,7 +35,7 @@ const doLogout = async () => {
           status: "failure",
           title: "Failed to logout",
           message: null,
-        })
+        }),
       )
 
       CFG.clearUser()
