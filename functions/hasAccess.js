@@ -6,9 +6,14 @@ const hasAccess = (role) => {
 
   try {
     userRole = userRole?.toString()?.replaceAll(" ", "-") || roles.USER
-  } catch {}
+  } catch {
+  }
 
   if (userRole === roles.USER || userRole === roles.NEW_USER) {
+    if (typeof window !== "undefined" && window.location.pathname !== "/") {
+      window.location.replace("/")
+    }
+
     return false
   }
 

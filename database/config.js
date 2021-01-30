@@ -4,10 +4,11 @@ import roles from "../data/roleTypes.json"
 import { addNotification } from "../redux/actions/notification"
 
 export const USER_TOKEN_REFRESH_TIME = 30000
-export const BACKEND_URL = "http://localhost:8000/api/" //process.env.DEV ? "localhost:8000/api" : "api"
+export const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL
 
 const LAST_REQUEST_TIME = "last_request_time"
 const TOKEN = "_token"
+
 /**
  * Check if user is logged and if he was last authed more than 30sec ago
  */
