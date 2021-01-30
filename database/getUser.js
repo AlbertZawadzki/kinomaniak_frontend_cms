@@ -4,10 +4,6 @@ import { setUser } from "../redux/actions/request"
 import roles from "../data/roleTypes.json"
 
 const getUser = async () => {
-  // console.log("attempt")
-  // console.log("Blocked: " + (!CFG.canAuthUser() ? "yes" : "false"))
-  // console.log("Token: " + (!CFG.getToken() ? "is null" : "exists"))
-  // console.log("Token: " + CFG.getToken())
   if (!CFG.getToken() || !CFG.canAuthUser()) {
     return
   }
@@ -21,7 +17,6 @@ const getUser = async () => {
     })
     .then(({ data }) => {
       CFG.setParams(data)
-      // console.log(data)
 
       if (data?.data?.id) {
         object = {

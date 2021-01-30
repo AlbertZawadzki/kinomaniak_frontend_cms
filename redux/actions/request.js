@@ -14,8 +14,3 @@ export const setCsrf = (data) => ({
   type: actions.CSRF_SET,
   data: data,
 })
-
-export const setLastRequestTime = (data) => ({
-  type: actions.LAST_REQUEST_TIME_SET,
-  data: data,
-})

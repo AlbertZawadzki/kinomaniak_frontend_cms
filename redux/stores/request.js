@@ -1,7 +1,7 @@
 import * as actions from "../actionNames/request"
 
 const request = (
-  state = { data: { token: null, csrf: null, user: null, time: null } },
+  state = { data: { token: null, csrf: null, user: null } },
   action,
 ) => {
   switch (action.type) {
@@ -13,9 +13,6 @@ const request = (
       return state
     case actions.USER_SET:
       state.data.user = action.data
-      return state
-    case actions.LAST_REQUEST_TIME_SET:
-      state.data.time = action.data
       return state
     default:
       return state
