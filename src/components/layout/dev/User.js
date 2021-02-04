@@ -5,30 +5,40 @@ import store from "../../../redux/store"
 
 class User extends React.Component {
   state = {
-    user: [],
+    data: {},
+  }
+
+  updateData() {
+    let data = store.getState().request?.data
+    if (typeof localStorage !== "undefined") {
+      data["_token"] = localStorage.getItem("_token")
+      data["_csrf_token"] = localStorage.getItem("_csrf_token")
+      data["_csrf_correct"] = localStorage.getItem("_csrf_correct")
+      data["last_request"] = localStorage.getItem("last_request_time")
+    }
+    this.setState({ data })
   }
 
   componentDidMount() {
-    let { user } = this.state
-    user = store.getState().request.data.user
-    this.setState({ user })
+    this.updateData()
 
-    this.subscriber = store.subscribe(() => {
-      user = store.getState().request.data.user
-      this.setState({ user })
+    this.subsriber = store.subscribe(() => {
+      this.updateData()
     })
   }
 
   componentWillUnmount() {
-    this.subscriber()
+    this.subsriber()
   }
 
   render() {
-    const { user } = this.state
+    let data = this.state
 
     return (
-      <Tile title={`User ${user?.role || "empty"}`} hidden>
-        <pre>{JSON.stringify(user, null, 4)}</pre>
+      <Tile title={"Session data"} hideable={false}>
+      <pre className={"error"}>
+        {JSON.stringify(data.data, null, 4)}
+      </pre>
       </Tile>
     )
   }

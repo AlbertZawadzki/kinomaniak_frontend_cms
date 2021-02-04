@@ -2,9 +2,6 @@ import roles from "../data/roleTypes.json"
 import store from "../redux/store"
 
 const hasAccess = (role) => {
-
-  return false
-
   let userRole = store.getState().request?.data?.user?.role || roles.USER
 
   try {
@@ -12,7 +9,7 @@ const hasAccess = (role) => {
   } catch {
   }
 
-  if (userRole === roles.USER || userRole === roles.NEW_USER) {
+  if (userRole === roles.USER) {
     if (typeof window !== "undefined" && window.location.pathname !== "/") {
       window.location.replace("/")
     }

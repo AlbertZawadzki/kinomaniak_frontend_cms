@@ -3,12 +3,13 @@ import store from "../redux/store"
 import { setUser } from "../redux/actions/request"
 import { addNotification } from "../redux/actions/notification"
 
-const doLogout = async () => {
+const auth = async () => {
   const axios = databaseConfig.getAxios()
 
-  return await axios.post(databaseConfig.LOGOUT_URL, form).then(response => {
+  return await axios.post(databaseConfig.AUTH_URL, null, { params: databaseConfig.getParams() }).then(response => {
     databaseConfig.handleResponse(response)
-    store.dispatch(setUser(null))
+    console.log(response.data)
+    store.dispatch(setUser(response.data.data))
   })
     .catch(error => {
       console.error(error)
@@ -18,8 +19,10 @@ const doLogout = async () => {
         message: JSON.stringify(error.message, null, 2),
       }))
 
+      store.dispatch(setUser(null))
+
       return false
     })
 }
 
-export default doLogout
+export default auth

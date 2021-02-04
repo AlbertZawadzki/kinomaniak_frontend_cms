@@ -1,42 +1,25 @@
 import React from "react"
 import Tile from "../../Tile"
-import store from "../../../redux/store"
-import { setCsrf, setToken, setUser } from "../../../redux/actions/request"
 import database from "../../../database"
 import roles from "../../../data/roleTypes.json"
 
 class Login extends React.Component {
   login = async (role) => {
-    // FIXME
-    let url = "http://localhost:8000/api-test/" + role
-    if (store.getState().request.data?.token) {
-      url +=
-        "?_token=" +
-        (localStorage.getItem("_token") || store.getState().request.data?.token)
+    const form = new FormData()
+
+    if (role === "owner") {
+      form.append("email", "albert.zawadzki97@kinomaniak.eu")
+    } else {
+      form.append("email", roles[role] + "@kinomaniak.eu")
     }
 
-    await fetch(url, { method: "GET" })
-      .then(async (res) => {
-        return res.json()
-      })
-      .then((data) => {
-        const object = {
-          id: data?.data?.id || 0,
-          name: data?.data?.name || "No name",
-          role: data?.data?.role || roles.USER,
-          session: data?.data?.ssid || null,
-        }
+    form.append("password", roles[role.toString().toUpperCase()])
 
-        localStorage.setItem("_token", null)
-        localStorage.setItem("_token", data?._token || null)
-        store.dispatch(setToken(data?._token || null))
-        store.dispatch(setCsrf(data?.csrf || null))
-        store.dispatch(setUser(object || null))
-      })
+    await database.doLogin(form)
   }
 
   checkLogin = async () => {
-    await database.getUser()
+    await database.auth()
   }
 
   logout = async () => {
@@ -85,11 +68,6 @@ class Login extends React.Component {
           type="button"
           value="Login as user"
           onClick={() => this.login("user")}
-        />
-        <input
-          type="button"
-          value="Login as new_user"
-          onClick={() => this.login("newuser")}
         />
         <input
           type="button"

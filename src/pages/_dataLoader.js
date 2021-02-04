@@ -3,10 +3,13 @@ import database from "../database"
 import { connect } from "react-redux"
 import { setCountries } from "../redux/actions/country"
 import { setCurrencies } from "../redux/actions/currency"
+import functions from "../functions"
 
 class DataLoader extends React.Component {
   componentDidMount() {
-    setTimeout(() => this.fetchData(), 5000)
+    if (functions.hasAccess()) {
+      setTimeout(() => this.fetchData(), 5000)
+    }
   }
 
   fetchData = async () => {
@@ -16,7 +19,6 @@ class DataLoader extends React.Component {
     this.props.dispatch(setCountries(countries))
     this.props.dispatch(setCurrencies(currencies))
   }
-
 
   render() {
     const { children } = this.props

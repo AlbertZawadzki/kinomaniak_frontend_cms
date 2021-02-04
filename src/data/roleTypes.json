@@ -1,12 +1,12 @@
 {
-  "ALL": "all",
   "OWNER": "owner",
   "ADMIN": "admin",
   "CONTENT_MANAGER": "content-manager",
+  "CM": "cm",
   "ANALYTIC": "analytic",
   "DEVELOPER": "developer",
   "SUPPORT": "support",
   "TRANSLATOR": "translator",
   "USER": "user",
-  "NEW_USER": "new-user"
+  "GUEST": "guest"
 }

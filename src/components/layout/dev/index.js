@@ -9,9 +9,9 @@ const Dev = () => {
   const mode = process.env.NEXT_PUBLIC_IS_DEV ? "Development" : process.env.IS_DEV ? "Development" : "Production"
 
   return (
-    <Tile title={`${mode} dev box`} hidden column>
-      <Login />
+    <Tile title={`${mode} dev box`} column>
       <User />
+      <Login />
       <Notificator />
       <Redux />
     </Tile>

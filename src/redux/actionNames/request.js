@@ -1,3 +1,6 @@
-export const TOKEN_SET = "TOKEN_SET"
-export const CSRF_SET = "CSRF_SET"
+export const CSRF_NAME_SET = "CSRF_NAME_SET"
+export const COUNTRY_SET = "COUNTRY_SET"
+export const COUNTRY_CODE_SET = "COUNTRY_CODE_SET"
 export const USER_SET = "USER_SET"
+export const LATITUDE_SET = "LATITUDE_SET"
+export const LONGITUDE_SET = "LONGITUDE_SET"

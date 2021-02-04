@@ -1,8 +1,9 @@
+import auth from "./auth"
+import doLogin from "./doLogin"
 import doLogout from "./doLogout"
 import get from "./get"
-import getUser from "./getUser"
 import post from "./post"
 import remove from "./remove"
 import update from "./update"
 
-export default { doLogout, get, getUser, post, remove, update }
+export default { auth, doLogin, doLogout, get, post, remove, update }

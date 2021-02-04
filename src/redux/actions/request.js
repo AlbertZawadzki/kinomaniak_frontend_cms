@@ -5,12 +5,28 @@ export const setUser = (data) => ({
   data: data,
 })
 
-export const setToken = (data) => ({
-  type: actions.TOKEN_SET,
+export const setCsrfName = (data) => ({
+  type: actions.CSRF_NAME_SET,
   data: data,
 })
 
-export const setCsrf = (data) => ({
-  type: actions.CSRF_SET,
+export const setCountry = (data) => ({
+  type: actions.COUNTRY_SET,
   data: data,
 })
+
+export const setCountryCode = (data) => ({
+  type: actions.COUNTRY_CODE_SET,
+  data: data,
+})
+
+export const setLatitude = (data) => ({
+  type: actions.LATITUDE_SET,
+  data: data,
+})
+
+export const setLongitude = (data) => ({
+  type: actions.LONGITUDE_SET,
+  data: data,
+})
+

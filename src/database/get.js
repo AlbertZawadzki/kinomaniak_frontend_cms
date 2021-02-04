@@ -7,13 +7,15 @@ const get = async (url, silent = false) => {
 
   return await axios.get(url, {
     params: databaseConfig.getParams(),
-  }).then(data => databaseConfig.handleResponse(data, false, silent))
+  }).then(response => databaseConfig.handleResponse(response, false, silent))
     .catch(error => {
-      console.log(error)
+      console.error(error)
+
       store.dispatch(addNotification({
         status: "failure",
         message: `url: ${url} \n ${JSON.stringify(error.message, null, 2)}`,
       }))
+
       return false
     })
 }

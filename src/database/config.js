@@ -1,6 +1,7 @@
 import store from "../redux/store"
 import axios from "axios"
 import { addNotification } from "../redux/actions/notification"
+import { setCountry, setCountryCode } from "../redux/actions/request"
 
 class Configuration {
   USER_TOKEN_REFRESH_TIME = 30000
@@ -8,8 +9,13 @@ class Configuration {
   TOKEN = "_token"
   CSRF_NAME = "_csrf_name"
   CSRF_TOKEN = "_csrf_token"
+  CSRF_CORRECT = "_csrf_correct"
   LATITUDE = "_csrf_token"
   LONGITUDE = "_csrf_token"
+
+  AUTH_URL = "me/authenticate"
+  LOGIN_URL = "me/login"
+  LOGOUT_URL = "me/logout"
 
   /**
    * Fix axios idiotic idea of relative urls
@@ -26,7 +32,7 @@ class Configuration {
   canAuthUser = () => {
     const time = new Date()
     const now = time.getTime().toString()
-    const request = localStorage.getItem(LAST_REQUEST_TIME) || (parseInt(now) - 2 * USER_TOKEN_REFRESH_TIME).toString()
+    const request = localStorage.getItem(this.LAST_REQUEST_TIME) || (parseInt(now) - 2 * this.USER_TOKEN_REFRESH_TIME).toString()
     const userExists = store.getState().request?.user?.id !== 0
 
     return userExists && now - request > USER_TOKEN_REFRESH_TIME
@@ -36,11 +42,20 @@ class Configuration {
    * Set session params
    */
   setParams = (data) => {
-    localStorage.setItem(this.TOKEN, data?._token || null)
-    localStorage.setItem(this.CSRF_NAME, data?._csrf_name || null)
-    localStorage.setItem(this.CSRF_TOKEN, data?._csrf_token || null)
-    localStorage.setItem(this.LATITUDE, data?._latitude || null)
-    localStorage.setItem(this.LONGITUDE, data?._longitude || null)
+    if (!data) {
+      return
+    }
+
+    const time = new Date()
+    const now = time.getTime().toString()
+
+    localStorage.setItem(this.LAST_REQUEST_TIME, now)
+    localStorage.setItem(this.TOKEN, data._token)
+    localStorage.setItem(this.CSRF_TOKEN, data.csrf_token)
+    localStorage.setItem(this.CSRF_CORRECT, data._csrf_correct)
+
+    store.dispatch(setCountry(data.country))
+    store.dispatch(setCountryCode(data.country_code))
   }
 
   /**
@@ -51,8 +66,8 @@ class Configuration {
       _token: localStorage.getItem(this.TOKEN) || "no_token",
       _latitude: "no_latitude",
       _longitude: "no_langitude",
-      _csrf_name: "no_csrf_name",
-      _csrf_token: "no_csrf_token",
+      _csrf_name: store.getState().request?.data?._csrf_name || "no_csrf_name",
+      _csrf_token: localStorage.getItem(this.TOKEN) || "no_csrf_token",
     }
   }
 
@@ -74,7 +89,7 @@ class Configuration {
   /**
    * Response status handler
    */
-  handleResponse = (object, action, silent) => {
+  handleResponse = (object, action, silent = false) => {
     const { data, status } = object
     this.setParams(data)
     const realData = data.data

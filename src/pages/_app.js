@@ -13,7 +13,7 @@ class MyApp extends React.Component {
     if (this.userId === 0) {
       clearInterval(this.refreshUser)
     } else {
-      database.getUser()
+      database.auth()
     }
   }, databaseConfig.USER_TOKEN_REFRESH_TIME)
 
@@ -24,13 +24,13 @@ class MyApp extends React.Component {
       if (this.userId === 0) {
         clearInterval(this.refreshUser)
       } else {
-        database.getUser()
+        database.auth()
       }
     }, databaseConfig.USER_TOKEN_REFRESH_TIME)
   }
 
   componentDidMount() {
-    database.getUser()
+    database.auth()
     document.body.className = localStorage.getItem("theme") || "theme-light"
 
     this.subscriber = store.subscribe(() => {

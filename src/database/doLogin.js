@@ -1,14 +1,14 @@
 import databaseConfig from "./config"
 import store from "../redux/store"
-import { setUser } from "../redux/actions/request"
 import { addNotification } from "../redux/actions/notification"
+import { setUser } from "../redux/actions/request"
 
-const doLogout = async () => {
+const doLogin = async (form) => {
   const axios = databaseConfig.getAxios()
 
-  return await axios.post(databaseConfig.LOGOUT_URL, form).then(response => {
+  return await axios.post(databaseConfig.LOGIN_URL, form).then(response => {
     databaseConfig.handleResponse(response)
-    store.dispatch(setUser(null))
+    store.dispatch(setUser(response.data.data))
   })
     .catch(error => {
       console.error(error)
@@ -22,4 +22,4 @@ const doLogout = async () => {
     })
 }
 
-export default doLogout
+export default doLogin
