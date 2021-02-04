@@ -12,12 +12,12 @@ const submitForm = async (event, id, image_url) => {
   const { object, form } = functions.createForm(event, { id, image_url })
 
   let result
-  let returnUrl = "/content/actors/all"
+  let returnUrl = "/content/actors"
 
   if (id !== 0) {
-    result = await database.update(`actors/update/${id}`, updateActor(object), form)
+    result = await database.update(`actors/${id}`, updateActor(object), form)
   } else {
-    result = await database.post("actors/create", addActor, form)
+    result = await database.post("actors/", addActor, form)
   }
 
   if (result) {

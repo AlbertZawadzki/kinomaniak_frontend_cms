@@ -17,7 +17,7 @@ class ContentCategoriesSingle extends React.Component {
     const fastActionsName = functions.getTranslation("categories_actions")
     const fastActions = [
       {
-        to: "/content/categories/all",
+        to: "/content/categories/",
         name: functions.getTranslation("categories_see_all"),
       },
       {
