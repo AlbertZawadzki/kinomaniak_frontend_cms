@@ -25,8 +25,9 @@ class ListingPage extends React.Component {
     this.setState({ data, fetched: true })
 
     this.subscriber = store.subscribe(() => {
+      this.setState({ fetched: false })
       data = store.getState()[storeName].data
-      this.setState({ data })
+      this.setState({ data, fetched: true })
     })
   }
 

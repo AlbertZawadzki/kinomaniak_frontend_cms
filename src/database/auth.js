@@ -8,7 +8,7 @@ const auth = async () => {
 
   return await axios.post(databaseConfig.AUTH_URL, null, { params: databaseConfig.getParams() }).then(response => {
     databaseConfig.handleResponse(response)
-    console.log(response.data)
+
     store.dispatch(setUser(response.data.data))
   })
     .catch(error => {

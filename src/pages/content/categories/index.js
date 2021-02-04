@@ -25,7 +25,7 @@ const ContentCategoriesAll = () => (
     storeName={"categories"}
     fetchLink={"categories"}
     actionSet={setCategories}
-    actionDelete={(id) => database.remove(`categories/${id}`, removeCategory(id))}
+    actionDelete={(id) => database.remove(`categories/${id}`, () => removeCategory(id))}
     title={functions.getTranslation("categories_all_page")}
     fastActions={fastActions}
     listerName={functions.getTranslation("categories_all")}

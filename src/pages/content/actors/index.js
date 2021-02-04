@@ -25,7 +25,7 @@ const ContentActorsAll = () => (
     storeName={"actors"}
     fetchLink={"actors"}
     actionSet={setActors}
-    actionDelete={(id) => database.remove(`actors/${id}`, removeActor(id))}
+    actionDelete={(id) => database.remove(`actors/${id}`, () => removeActor(id))}
     title={functions.getTranslation("actors_all_page")}
     fastActions={fastActions}
     listerName={functions.getTranslation("actors_all")}

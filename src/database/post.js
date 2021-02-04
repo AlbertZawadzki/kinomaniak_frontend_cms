@@ -9,7 +9,8 @@ const post = async (url, action, form) => {
       params: databaseConfig.getParams(),
     },
   ).then(response => {
-    return databaseConfig.handleResponse(response, action)
+    store.dispatch(action(response.data.data))
+    return databaseConfig.handleResponse(response)
   })
     .catch(error => {
       console.error(error)
