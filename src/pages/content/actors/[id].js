@@ -37,7 +37,7 @@ class ContentActorsSingle extends React.Component {
         itemName={functions.getTranslation("actors")}
         id={id}
         storeName='actors'
-        fetchUrl={`actors/get/${id}`}
+        fetchUrl={`actors/${id}`}
         updateItem={updateActor}
         returnData={actor => this.setState({ actor })}
       >

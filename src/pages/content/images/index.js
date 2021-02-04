@@ -2,12 +2,12 @@ import React from "react"
 import Layout from "../../../components/layout"
 import roles from "../../../data/roleTypes.json"
 
-const ContentImages = () => {
+const ContentImagesAll = () => {
   return (
-    <Layout title="Images" role={roles.CONTENT_MANAGER}>
-      Content/Images/
+    <Layout title="Images - all" role={roles.CONTENT_MANAGER}>
+      Content/Images/All
     </Layout>
   )
 }
 
-export default ContentImages
+export default ContentImagesAll

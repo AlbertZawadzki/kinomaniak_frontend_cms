@@ -1,37 +1,19 @@
-import { addNotification } from "../redux/actions/notification"
+import databaseConfig from "./config"
 import store from "../redux/store"
-import * as CFG from "./config"
+import { addNotification } from "../redux/actions/notification"
 
 const get = async (url, silent = false) => {
-  url = CFG.BACKEND_URL + url + CFG.getParams()
+  const axios = databaseConfig.getAxios()
 
-  if (!silent) {
-    store.dispatch(
-      addNotification({ status: "processing", title: "Fetching data" }),
-    )
-  }
-
-  CFG.updateRequestTime()
-
-  return await fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
-      if (!silent) {
-        store.dispatch(addNotification({ status: "success" }))
-      }
-      CFG.setParams(data)
-      return data.data
-    })
-    .catch((err) => {
-      console.error(err)
-      if (!silent) {
-        store.dispatch(
-          addNotification({
-            status: "failure",
-            message: JSON.stringify(err, null, 2),
-          }),
-        )
-      }
+  return await axios.get(url, {
+    params: databaseConfig.getParams(),
+  }).then(data => databaseConfig.handleResponse(data, false, silent))
+    .catch(error => {
+      console.log(error)
+      store.dispatch(addNotification({
+        status: "failure",
+        message: `url: ${url} \n ${JSON.stringify(error.message, null, 2)}`,
+      }))
       return false
     })
 }

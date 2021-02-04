@@ -2,6 +2,9 @@ import roles from "../data/roleTypes.json"
 import store from "../redux/store"
 
 const hasAccess = (role) => {
+
+  return false
+
   let userRole = store.getState().request?.data?.user?.role || roles.USER
 
   try {

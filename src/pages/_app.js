@@ -2,7 +2,7 @@ import React from "react"
 import store from "../redux/store"
 import { Provider } from "react-redux"
 import database from "../database"
-import * as CFG from "../database/config"
+import databaseConfig from "../database/config"
 import "../assets/styles/index.scss"
 import DataLoader from "./_dataLoader"
 
@@ -15,7 +15,7 @@ class MyApp extends React.Component {
     } else {
       database.getUser()
     }
-  }, CFG.USER_TOKEN_REFRESH_TIME)
+  }, databaseConfig.USER_TOKEN_REFRESH_TIME)
 
   startRefreshUser = () => {
     clearInterval(this.refreshUser)
@@ -26,7 +26,7 @@ class MyApp extends React.Component {
       } else {
         database.getUser()
       }
-    }, CFG.USER_TOKEN_REFRESH_TIME)
+    }, databaseConfig.USER_TOKEN_REFRESH_TIME)
   }
 
   componentDidMount() {

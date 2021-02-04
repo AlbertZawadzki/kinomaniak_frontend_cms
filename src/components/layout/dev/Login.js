@@ -7,6 +7,7 @@ import roles from "../../../data/roleTypes.json"
 
 class Login extends React.Component {
   login = async (role) => {
+    // FIXME
     let url = "http://localhost:8000/api-test/" + role
     if (store.getState().request.data?.token) {
       url +=

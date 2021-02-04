@@ -2,12 +2,12 @@ import React from "react"
 import Layout from "../../../components/layout"
 import roles from "../../../data/roleTypes.json"
 
-const ContentContents = () => {
+const ContentContentsAll = () => {
   return (
-    <Layout title="Contents" role={roles.CONTENT_MANAGER}>
-      Content/Contents/
+    <Layout title="Contents - all" role={roles.CONTENT_MANAGER}>
+      Content/Contents/All
     </Layout>
   )
 }
 
-export default ContentContents
+export default ContentContentsAll

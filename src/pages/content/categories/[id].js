@@ -38,7 +38,7 @@ class ContentCategoriesSingle extends React.Component {
         itemName={functions.getTranslation("actors")}
         id={id}
         storeName='categories'
-        fetchUrl={`categories/get/${id}`}
+        fetchUrl={`categories/${id}`}
         updateItem={updateCategory}
         returnData={category => this.setState({ category })}
       >

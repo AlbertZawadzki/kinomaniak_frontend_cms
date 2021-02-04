@@ -10,7 +10,7 @@ class DataLoader extends React.Component {
   }
 
   fetchData = async () => {
-    const data = await database.get("data/get", true)
+    const data = await database.get("data", true)
     const { countries, currencies } = data
 
     this.props.dispatch(setCountries(countries))
