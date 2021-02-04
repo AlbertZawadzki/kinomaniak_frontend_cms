@@ -35,7 +35,7 @@ class Configuration {
     const request = localStorage.getItem(this.LAST_REQUEST_TIME) || (parseInt(now) - 2 * this.USER_TOKEN_REFRESH_TIME).toString()
     const userExists = store.getState().request?.user?.id !== 0
 
-    return userExists && now - request > USER_TOKEN_REFRESH_TIME
+    return userExists && now - request > this.USER_TOKEN_REFRESH_TIME
   }
 
   /**

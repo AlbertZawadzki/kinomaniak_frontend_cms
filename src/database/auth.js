@@ -4,6 +4,14 @@ import { setUser } from "../redux/actions/request"
 import { addNotification } from "../redux/actions/notification"
 
 const auth = async () => {
+  if (!databaseConfig.canAuthUser()) {
+    store.dispatch(addNotification({
+      status: "processing",
+      message: "Cant auth right now",
+    }))
+  }
+
+
   const axios = databaseConfig.getAxios()
 
   return await axios.post(databaseConfig.AUTH_URL, null, { params: databaseConfig.getParams() }).then(response => {
