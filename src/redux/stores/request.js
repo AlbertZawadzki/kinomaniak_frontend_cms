@@ -6,6 +6,7 @@ const request = (
   state = {
     data: {
       csrf_name: initCsrf,
+      csrf_correct: true,
       user: null,
       country_code: "unknown",
       country: "unknown",
@@ -21,6 +22,9 @@ const request = (
       return state
     case actions.CSRF_NAME_SET:
       state.data.csrf_name = action.data
+      return state
+    case actions.CSRF_CORRECT_SET:
+      state.data.csrf_correct = action.data
       return state
     case actions.COUNTRY_CODE_SET:
       state.data.country_code = action.data

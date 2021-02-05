@@ -1,7 +1,7 @@
 import store from "../redux/store"
 import axios from "axios"
 import { addNotification } from "../redux/actions/notification"
-import { setCountry, setCountryCode } from "../redux/actions/request"
+import { setCountry, setCountryCode, setCsrfCorrect } from "../redux/actions/request"
 
 class Configuration {
   USER_TOKEN_REFRESH_TIME = 30000
@@ -10,8 +10,8 @@ class Configuration {
   CSRF_NAME = "_csrf_name"
   CSRF_TOKEN = "_csrf_token"
   CSRF_CORRECT = "_csrf_correct"
-  LATITUDE = "_csrf_token"
-  LONGITUDE = "_csrf_token"
+  LATITUDE = "_latitude"
+  LONGITUDE = "_longitude"
 
   AUTH_URL = "me/authenticate"
   LOGIN_URL = "me/login"
@@ -22,7 +22,7 @@ class Configuration {
    */
   getAxios = () => {
     return axios.create({
-      baseURL: "http://localhost:8000/api/admin",//process.env.BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL,
+      baseURL: "http://localhost:8000/api/admin/",//process.env.BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL,
     })
   }
 
@@ -52,8 +52,8 @@ class Configuration {
     localStorage.setItem(this.LAST_REQUEST_TIME, now)
     localStorage.setItem(this.TOKEN, data._token)
     localStorage.setItem(this.CSRF_TOKEN, data.csrf_token)
-    localStorage.setItem(this.CSRF_CORRECT, data._csrf_correct)
 
+    store.dispatch(setCsrfCorrect(data._csrf_correct))
     store.dispatch(setCountry(data.country))
     store.dispatch(setCountryCode(data.country_code))
   }

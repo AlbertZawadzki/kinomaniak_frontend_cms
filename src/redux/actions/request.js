@@ -10,6 +10,11 @@ export const setCsrfName = (data) => ({
   data: data,
 })
 
+export const setCsrfCorrect = (data) => ({
+  type: actions.CSRF_CORRECT_SET,
+  data: data,
+})
+
 export const setCountry = (data) => ({
   type: actions.COUNTRY_SET,
   data: data,

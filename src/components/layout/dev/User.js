@@ -13,7 +13,6 @@ class User extends React.Component {
     if (typeof localStorage !== "undefined") {
       data["_token"] = localStorage.getItem("_token")
       data["_csrf_token"] = localStorage.getItem("_csrf_token")
-      data["_csrf_correct"] = localStorage.getItem("_csrf_correct")
       data["last_request"] = localStorage.getItem("last_request_time")
     }
     this.setState({ data })

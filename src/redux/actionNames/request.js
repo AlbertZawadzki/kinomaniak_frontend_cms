@@ -1,4 +1,5 @@
 export const CSRF_NAME_SET = "CSRF_NAME_SET"
+export const CSRF_CORRECT_SET = "CSRF_CORRECT_SET"
 export const COUNTRY_SET = "COUNTRY_SET"
 export const COUNTRY_CODE_SET = "COUNTRY_CODE_SET"
 export const USER_SET = "USER_SET"

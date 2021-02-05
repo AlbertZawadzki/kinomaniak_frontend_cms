@@ -16,9 +16,9 @@ const fastActions = [
 const ContentPostersAll = () => (
   <ListingPage
     storeName={"posters"}
-    fetchLink={"poster-styles/get"}
+    fetchLink={"poster-styles"}
     actionSet={setPosters}
-    actionDelete={(id) => database.remove(`posters/delete/${id}`, removePoster(id))}
+    actionDelete={(id) => database.remove(`posters/${id}`, removePoster(id))}
     title={functions.getTranslation("posters_all_page")}
     fastActions={{ name: fastActionsName, items: fastActions }}
     listerName={functions.getTranslation("posters_all")}
