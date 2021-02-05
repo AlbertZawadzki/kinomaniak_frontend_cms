@@ -1,6 +1,6 @@
 import React from "react"
 
-const CategoryShortSingle = ({ name }) => {
+const ListerItem = ({ name }) => {
   return (
     <div className='short-single-category-wrapper'>
       {name}
@@ -8,8 +8,8 @@ const CategoryShortSingle = ({ name }) => {
   )
 }
 
-CategoryShortSingle.defaultProps = {
+ListerItem.defaultProps = {
   name: "No name given",
 }
 
-export default CategoryShortSingle
+export default ListerItem

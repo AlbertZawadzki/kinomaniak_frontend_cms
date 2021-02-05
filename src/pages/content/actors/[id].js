@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import functions from "../../../functions"
 import { updateActor } from "../../../redux/actions/actor"
-import ActorForm from "../../../components/content/ActorForm"
+import Form from "../../../components/content/actor/Form"
 import Tile from "../../../components/Tile"
 import SingleItemPage from "../../../components/pages/SingleItemPage"
 
@@ -41,7 +41,7 @@ class ContentActorsSingle extends React.Component {
         updateItem={updateActor}
         returnData={actor => this.setState({ actor })}
       >
-        <ActorForm {...actor} isOld />
+        <Form {...actor} isOld />
         <Tile title={functions.getTranslation("actor_in_contents")}>
           <pre>
             {JSON.stringify(actor.contents, null, 2)}

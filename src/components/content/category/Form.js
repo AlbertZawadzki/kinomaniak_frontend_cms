@@ -1,13 +1,13 @@
 import React from "react"
-import TextInput from "../inputs/TextInput"
-import functions from "../../functions"
-import SubmitInput from "../inputs/SubmitInput"
-import Tile from "../Tile"
-import database from "../../database"
+import TextInput from "../../inputs/TextInput"
+import functions from "../../../functions"
+import SubmitInput from "../../inputs/SubmitInput"
+import Tile from "../../Tile"
+import database from "../../../database"
 import Router from "next/router"
-import { addCategory, updateCategory } from "../../redux/actions/category"
+import { addCategory, updateCategory } from "../../../redux/actions/category"
 
-class CategoryForm extends React.Component {
+class Form extends React.Component {
   submitForm = async (event, id) => {
     const { object, form } = functions.createForm(event, { id })
 
@@ -39,10 +39,10 @@ class CategoryForm extends React.Component {
   }
 }
 
-CategoryForm.defaultProps = {
+Form.defaultProps = {
   id: 0,
   name: "",
   isOld: false,
 }
 
-export default CategoryForm
+export default Form

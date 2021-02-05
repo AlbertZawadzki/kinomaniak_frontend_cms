@@ -4,7 +4,7 @@ import functions from "../../../functions"
 import Tile from "../../../components/Tile"
 import SingleItemPage from "../../../components/pages/SingleItemPage"
 import { updateCategory } from "../../../redux/actions/category"
-import CategoryForm from "../../../components/content/CategoryForm"
+import Form from "../../../components/content/category/Form"
 
 class ContentCategoriesSingle extends React.Component {
   state = {
@@ -42,7 +42,7 @@ class ContentCategoriesSingle extends React.Component {
         updateItem={updateCategory}
         returnData={category => this.setState({ category })}
       >
-        <CategoryForm {...category} isOld />
+        <Form {...category} isOld />
         <Tile title={functions.getTranslation("category_in_contents")}>
           <pre>
             {JSON.stringify(category.contents, null, 2)}

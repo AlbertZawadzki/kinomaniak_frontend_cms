@@ -1,5 +1,5 @@
 import React from "react"
-import ActorShortSingle from "../../../components/content/ActorShortSingle"
+import ListerItem from "../../../components/content/actor/ListerItem"
 import { removeActor, setActors } from "../../../redux/actions/actor"
 import functions from "../../../functions"
 import database from "../../../database"
@@ -16,8 +16,8 @@ const fastActions = {
 }
 
 const filterKeys = {
-  skip: ["key", "image_url", "contents_count", "is_full"],
-  only: [],
+  skip: [],
+  only: ["id", "name", "lastname"],
 }
 
 const ContentActorsAll = () => (
@@ -30,7 +30,7 @@ const ContentActorsAll = () => (
     fastActions={fastActions}
     listerName={functions.getTranslation("actors_all")}
     linkSingle={"content/actors"}
-    Component={ActorShortSingle}
+    Component={ListerItem}
     filterKeys={filterKeys}
   />
 )

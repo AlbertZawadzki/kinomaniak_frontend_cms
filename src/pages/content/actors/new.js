@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../../../components/layout"
 import roles from "../../../data/roleTypes.json"
-import ActorForm from "../../../components/content/ActorForm"
+import Form from "../../../components/content/actor/Form"
 import functions from "../../../functions"
 
 const ContentActorsNew = () => {
@@ -20,7 +20,7 @@ const ContentActorsNew = () => {
       fastActions={fastActions}
       fastActionsName={fastActionsName}
     >
-      <ActorForm />
+      <Form />
     </Layout>
   )
 }

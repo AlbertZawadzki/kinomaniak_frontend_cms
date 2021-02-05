@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../../../components/layout"
 import roles from "../../../data/roleTypes.json"
 import functions from "../../../functions"
-import CategoryForm from "../../../components/content/CategoryForm"
+import Form from "../../../components/content/category/Form"
 
 const ContentCategoriesNew = () => {
   const fastActionsName = functions.getTranslation("categories_actions")
@@ -20,7 +20,7 @@ const ContentCategoriesNew = () => {
       fastActions={fastActions}
       fastActionsName={fastActionsName}
     >
-      <CategoryForm />
+      <Form />
     </Layout>
   )
 }

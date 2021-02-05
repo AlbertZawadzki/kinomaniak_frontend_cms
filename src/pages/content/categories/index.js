@@ -2,7 +2,7 @@ import React from "react"
 import functions from "../../../functions"
 import database from "../../../database"
 import { removeCategory, setCategories } from "../../../redux/actions/category"
-import CategoriesShortSingle from "../../../components/content/CategoryShortSingle"
+import ListerItem from "../../../components/content/category/ListerItem"
 import ListingPage from "../../../components/pages/ListingPage"
 
 const fastActions = {
@@ -16,8 +16,8 @@ const fastActions = {
 }
 
 const filterKeys = {
-  skip: ["key", "image_url", "contents_count", "is_full"],
-  only: [],
+  skip: [],
+  only: ["id", "name"],
 }
 
 const ContentCategoriesAll = () => (
@@ -30,7 +30,7 @@ const ContentCategoriesAll = () => (
     fastActions={fastActions}
     listerName={functions.getTranslation("categories_all")}
     linkSingle={"content/categories"}
-    Component={CategoriesShortSingle}
+    Component={ListerItem}
     filterKeys={filterKeys}
   />
 )

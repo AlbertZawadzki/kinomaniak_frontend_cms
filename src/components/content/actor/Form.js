@@ -1,11 +1,11 @@
 import React from "react"
-import TextInput from "../inputs/TextInput"
-import functions from "../../functions"
-import SubmitInput from "../inputs/SubmitInput"
-import Tile from "../Tile"
-import ImageInput from "../inputs/ImageInput"
-import database from "../../database"
-import { addActor, updateActor } from "../../redux/actions/actor"
+import TextInput from "../../inputs/TextInput"
+import functions from "../../../functions"
+import SubmitInput from "../../inputs/SubmitInput"
+import Tile from "../../Tile"
+import ImageInput from "../../inputs/ImageInput"
+import database from "../../../database"
+import { addActor, updateActor } from "../../../redux/actions/actor"
 import Router from "next/router"
 
 const submitForm = async (event, id, image_url) => {
@@ -25,7 +25,7 @@ const submitForm = async (event, id, image_url) => {
   }
 }
 
-class ActorForm extends React.Component {
+class Form extends React.Component {
   state = {
     newImage: "",
   }
@@ -62,7 +62,7 @@ class ActorForm extends React.Component {
   }
 }
 
-ActorForm.defaultProps = {
+Form.defaultProps = {
   id: 0,
   name: "",
   lastname: "",
@@ -70,4 +70,4 @@ ActorForm.defaultProps = {
   isOld: false,
 }
 
-export default ActorForm
+export default Form

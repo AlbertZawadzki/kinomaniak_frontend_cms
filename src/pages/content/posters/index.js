@@ -3,7 +3,7 @@ import functions from "../../../functions"
 import database from "../../../database"
 import ListingPage from "../../../components/pages/ListingPage"
 import { removePoster, setPosters } from "../../../redux/actions/poster"
-import PosterShortSingle from "../../../components/content/PosterShortSingle"
+import ListerItem from "../../../components/content/poster/ListerItem"
 
 const fastActionsName = functions.getTranslation("posters_actions")
 const fastActions = [
@@ -12,6 +12,11 @@ const fastActions = [
     name: functions.getTranslation("posters_create_new"),
   },
 ]
+
+const filterKeys = {
+  skip: [],
+  only: ["id", "name"],
+}
 
 const ContentPostersAll = () => (
   <ListingPage
@@ -23,7 +28,8 @@ const ContentPostersAll = () => (
     fastActions={{ name: fastActionsName, items: fastActions }}
     listerName={functions.getTranslation("posters_all")}
     linkSingle={"content/posters"}
-    Component={PosterShortSingle}
+    Component={ListerItem}
+    filterKeys={filterKeys}
   />
 )
 

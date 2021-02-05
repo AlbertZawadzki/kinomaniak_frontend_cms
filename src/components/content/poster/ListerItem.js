@@ -1,7 +1,7 @@
 import React from "react"
-import Poster from "../Poster"
+import Poster from "../../Poster"
 
-const PosterShortSingle = ({ name, pin_color, pin_effect, border_visible, border_color, border_effect }) => {
+const ListerItem = ({ name, pin_color, pin_effect, border_visible, border_color, border_effect }) => {
   return (
     <div className='short-single-poster-wrapper'>
       <div className='short-single-poster-inner-wrapper'>
@@ -19,7 +19,7 @@ const PosterShortSingle = ({ name, pin_color, pin_effect, border_visible, border
   )
 }
 
-PosterShortSingle.defaultProps = {
+ListerItem.defaultProps = {
   name: "no name given",
   pin_color: "#4169e1",
   pin_effect: null,
@@ -28,4 +28,4 @@ PosterShortSingle.defaultProps = {
   border_effect: null,
 }
 
-export default PosterShortSingle
+export default ListerItem
