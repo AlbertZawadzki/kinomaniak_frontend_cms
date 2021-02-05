@@ -40,8 +40,7 @@ class ImageInput extends React.Component {
 ImageInput.defaultProps = {
   name: "No name given",
   title: "No title given",
-  returnData: () => {
-    console.log("No return function given")
+  actionReturn: () => {
   },
   scale: 1,
 }

@@ -15,9 +15,9 @@ class Form extends React.Component {
     let returnUrl = "/content/categories/all"
 
     if (id !== 0) {
-      result = await database.update(`categories/update/${id}`, updateCategory(object), form)
+      result = await database.update(`categories/${id}`, updateCategory(object), form)
     } else {
-      result = await database.post("categories/create", addCategory, form)
+      result = await database.post("categories/", addCategory, form)
     }
 
     if (result) {

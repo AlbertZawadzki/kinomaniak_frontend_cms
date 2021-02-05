@@ -20,8 +20,7 @@ CheckboxInput.defaultProps = {
   name: "unknown-name",
   checked: false,
   title: "No title given",
-  returnData: () => {
-    console.log("No return function given")
+  actionReturn: () => {
   },
 }
 

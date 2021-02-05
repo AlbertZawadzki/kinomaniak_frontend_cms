@@ -26,7 +26,6 @@ class ContentCategoriesSingle extends React.Component {
       },
     ]
 
-
     return (
       <SingleItemPage
         fastActions={
@@ -35,7 +34,7 @@ class ContentCategoriesSingle extends React.Component {
             actions: fastActions,
           }
         }
-        itemName={functions.getTranslation("actors")}
+        itemName={functions.getTranslation("categories")}
         id={id}
         storeName='categories'
         fetchUrl={`categories/${id}`}

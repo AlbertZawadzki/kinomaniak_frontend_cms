@@ -1,0 +1,15 @@
+.checkbox-wrapper.switch {
+  display: flex;
+  justify-content: flex-end;
+}
+
+input[type=checkbox].switch {
+  transform: translateY(1px);
+  cursor: pointer;
+
+  &.hidden {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}

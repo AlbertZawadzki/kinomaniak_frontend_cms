@@ -2,7 +2,7 @@ import React from "react"
 
 class SelectInput extends React.Component {
   render() {
-    const { name, title, selected, options, optionKeyName, small } = this.props
+    const { name, title, selected, options, optionKeyName, returnKeyName, small } = this.props
     const id = "text-select-" + name
 
     return (
@@ -15,7 +15,8 @@ class SelectInput extends React.Component {
             onChange={(event) => this.props.actionReturn(event.target)}
           >
             {options.map(singleOption => (
-              <option key={singleOption.key} selected={selected === singleOption.key} value={singleOption.key}>
+              <option key={singleOption.key} selected={selected === singleOption.key}
+                      value={singleOption[returnKeyName]}>
                 {singleOption[optionKeyName]}
               </option>
             ))}
@@ -32,7 +33,9 @@ SelectInput.defaultProps = {
   title: "No title given",
   options: [],
   optionKeyName: "key",
-  actionReturn: () => console.log("No return function given"),
+  returnKeyName: "key",
+  actionReturn: () => {
+  },
   small: false,
 }
 
