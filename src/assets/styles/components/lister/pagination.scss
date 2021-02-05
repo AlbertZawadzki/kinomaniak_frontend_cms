@@ -1,5 +1,9 @@
 .lister-pagination-wrapper {
   display: flex;
+
+  @include mobileMax {
+    flex-direction: column-reverse;
+  }
 }
 
 .lister-pagination-inner-wrapper {
