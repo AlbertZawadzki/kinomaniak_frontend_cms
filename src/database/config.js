@@ -103,7 +103,7 @@ class Configuration {
   /**
    * Response status handler
    */
-  handleResponse = (object) => {
+  handleResponse = (object, silent = false) => {
     const { data, status } = object
     this.setParams(data)
     const realData = data.data
@@ -111,13 +111,19 @@ class Configuration {
     switch (status) {
       case 200:
         this.setParams()
-        store.dispatch(addNotification({ status: "success", message: `url: ${object.config.url}` }))
+        if (!silent) {
+          store.dispatch(addNotification({ status: "success", message: `url: ${object.config.url}` }))
+        }
         return realData || []
       case 201:
-        store.dispatch(addNotification({ status: "success", title: "Item created" }))
+        if (!silent) {
+          store.dispatch(addNotification({ status: "success", title: "Item created" }))
+        }
         return true
       case 204:
-        store.dispatch(addNotification({ status: "success", title: "No items found" }))
+        if (!silent) {
+          store.dispatch(addNotification({ status: "success", title: "No items found" }))
+        }
         return realData || []
       case 403:
         store.dispatch(addNotification({ status: "unknown", message: "AUTHORIZATION FAILURE " + status }))
