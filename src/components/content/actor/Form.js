@@ -9,13 +9,13 @@ import { addActor, updateActor } from "../../../redux/actions/actor"
 import Router from "next/router"
 
 const submitForm = async (event, id, image_url) => {
-  const { object, form } = functions.createForm(event, { id, image_url })
+  const { form } = functions.createForm(event, { id, image_url })
 
   let result
   let returnUrl = "/content/actors"
 
   if (id !== 0) {
-    result = await database.update(`actors/${id}`, updateActor(object), form)
+    result = await database.update(`actors/${id}`, updateActor, form)
   } else {
     result = await database.post("actors/", addActor, form)
   }

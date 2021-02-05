@@ -3,13 +3,12 @@ import examplePoster from "../assets/images/examplePoster.png"
 import Link from "next/link"
 
 
-const Poster = ({ pinColor, pinEffect, borderVisible, borderColor, borderEffect, pinText, hiddenText, url, image_web, image_tv, forceHover, isTv, scale }) => {
+const Poster = ({ pinColor, pinEffect, borderVisible, borderColor, borderEffect, pinText, hiddenText, url, image_web, image_tv, forceHover, isTv, small }) => {
   const backgroundImage = isTv ? image_tv : image_web
 
   const data = (
     <div
-      className={`poster-wrapper ${forceHover ? "hover" : "nohover"} ${isTv ? "tv" : "nontv"}`}
-      style={{ transform: `scale(${scale})` }}
+      className={`poster-wrapper ${forceHover ? "hover" : "nohover"} ${isTv ? "tv" : "nontv"} ${small ? "small" : "normal"}`}
     >
       <div
         className={`poster-inner-wrapper effect-${borderEffect}`}
@@ -48,7 +47,7 @@ Poster.defaultProps = {
   image_tv: examplePoster,
   forceHover: false,
   isTv: false,
-  scale: 1,
+  small: false,
 }
 
 export default Poster

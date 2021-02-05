@@ -1,30 +1,37 @@
-import functions from "./index"
+const isDataInput = (input) => {
+  const isInput = input.tagName === "INPUT" || input.tagName === "SELECT"
+  return isInput && input.type !== "submit" || false
+}
+
+const getDataInput = (input) => {
+  switch (input.tagName) {
+    case "INPUT":
+      switch (input.type) {
+        case"file":
+          return input.files[0]
+        case"checkbox":
+          return input.checked
+        default:
+          return input.value
+      }
+    case "SELECT":
+      return input.value
+  }
+}
 
 const createForm = (event, additionalData) => {
   event.preventDefault()
 
   // Collect all fields
   const keys = Object.keys(event.target).filter(key => parseInt(key) == key)
-  const fields = []
+
+  let object = {}
   for (let i = 0; i < keys.length; i++) {
-    if (functions.isDataInput(event.target[keys[i]])) {
-      fields.push(event.target[keys[i]])
+    if (isDataInput(event.target[keys[i]])) {
+      object[event.target[keys[i]].name] = getDataInput(event.target[keys[i]])
     }
   }
 
-  // Create object to return
-  let object = {}
-  for (const id in fields) {
-    if (functions.isDataInput(fields[id])) {
-      try {
-        object[fields[id].name] = fields[id].files[0] || fields[id].value || fields[id].checked
-      } catch {
-        object[fields[id].name] = fields[id].value || fields[id].checked
-      }
-    } else {
-      console.log(field, " is not a data field")
-    }
-  }
   object = { ...object, ...additionalData }
 
   // Create form to be sent

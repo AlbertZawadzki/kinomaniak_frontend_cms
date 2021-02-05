@@ -9,7 +9,7 @@ const update = async (url, action, form) => {
       params: databaseConfig.getParams(),
     },
   ).then(response => {
-    action(response.data.data)
+    store.dispatch(action(response.data.data))
     return databaseConfig.handleResponse(response)
   })
     .catch(error => {

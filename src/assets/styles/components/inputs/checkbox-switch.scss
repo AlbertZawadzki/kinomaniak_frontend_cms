@@ -1,15 +1,66 @@
-.checkbox-wrapper.switch {
-  display: flex;
-  justify-content: flex-end;
+.switch-checkbox {
+  height: 0;
+  width: 0;
+  overflow: hidden;
 }
 
-input[type=checkbox].switch {
-  transform: translateY(1px);
-  cursor: pointer;
+.switch-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
 
-  &.hidden {
-    width: 0;
-    height: 0;
-    overflow: hidden;
+.switch-inner-wrapper {
+  margin: auto 10px;
+  width: 70%;
+  height: 4px;
+  display: block;
+  border-radius: 2px;
+  position: relative;
+
+  @include themify {
+    background-color: rgba(themed($colorMainContrast), $fullOpacity);
+    box-shadow: inset 0 0 1px 1px themed($colorMain);
+  }
+
+  &::after {
+    position: absolute;
+    top: -7.5px;
+    left: calc(100% - 20px);
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $colorFailure;
+    transition: left 0.25s ease-in-out;
+
+    @include themify {
+      box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $fullOpacity);
+    }
+
+    input:checked + * & {
+      background-color: $colorSuccess;
+      left: 0;
+    }
+  }
+}
+
+.switch-text {
+  opacity: 0.5;
+  color: $colorFailure;
+
+  &.true {
+    color: $colorSuccess
+  }
+
+  input:not(:checked) + * &.false,
+  input:checked + * &.true {
+    opacity: 1;
   }
 }

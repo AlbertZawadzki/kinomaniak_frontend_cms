@@ -9,13 +9,13 @@ import { addCategory, updateCategory } from "../../../redux/actions/category"
 
 class Form extends React.Component {
   submitForm = async (event, id) => {
-    const { object, form } = functions.createForm(event, { id })
+    const { form } = functions.createForm(event, { id })
 
     let result
     let returnUrl = "/content/categories/all"
 
     if (id !== 0) {
-      result = await database.update(`categories/${id}`, updateCategory(object), form)
+      result = await database.update(`categories/${id}`, updateCategory, form)
     } else {
       result = await database.post("categories/", addCategory, form)
     }

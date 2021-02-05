@@ -11,9 +11,11 @@ const ListerItem = ({ name, pin_color, pin_effect, border_visible, border_color,
           borderVisible={border_visible}
           borderColor={border_color}
           borderEffect={border_effect}
-          scale={0.5}
+          small
         />
-        {name}
+        <div className='short-single-poster-name'>
+          {name}
+        </div>
       </div>
     </div>
   )

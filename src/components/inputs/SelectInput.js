@@ -15,7 +15,7 @@ class SelectInput extends React.Component {
             onChange={(event) => this.props.actionReturn(event.target)}
           >
             {options.map(singleOption => (
-              <option key={singleOption.key} selected={selected === singleOption.key}
+              <option key={singleOption.key} defaultValue={selected === singleOption.key}
                       value={singleOption[returnKeyName]}>
                 {singleOption[optionKeyName]}
               </option>

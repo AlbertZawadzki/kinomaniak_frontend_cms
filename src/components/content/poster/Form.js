@@ -23,16 +23,13 @@ class Form extends React.Component {
   }
 
   submitForm = async (event, id) => {
-    const { object, form } = functions.createForm(event, { id })
+    const { form } = functions.createForm(event, { id })
 
     let result
-    let returnUrl = "/content/posters/all"
-
-    console.log(object)
-    return
+    let returnUrl = "/content/posters/"
 
     if (id !== 0) {
-      result = await database.update(`poster-styles/${id}`, updatePoster(object), form)
+      result = await database.update(`poster-styles/${id}`, updatePoster, form)
     } else {
       result = await database.post("poster-styles/", addPoster, form)
     }
@@ -67,7 +64,7 @@ class Form extends React.Component {
               pinColor={pinColor}
               borderEffect={borderEffect}
               borderColor={borderColor}
-              borderVisible={borderEffect}
+              borderVisible={borderVisible}
             />
           </div>
           <form className='content-form' onSubmit={(event) => this.submitForm(event, id)}>
@@ -88,6 +85,7 @@ class Form extends React.Component {
               title={functions.getTranslation("pin_effect")}
               options={pinEffects}
               optionKeyName='name'
+              returnKeyName='name'
               actionReturn={(data) => this.setState({ pinEffect: data.value })}
             />
             <CheckboxSwitchInput
@@ -96,7 +94,7 @@ class Form extends React.Component {
               title={functions.getTranslation("border_visible")}
               actionReturn={(data) => this.setState({ borderVisible: data.checked })}
             />
-            {borderVisible && (
+            {!!borderVisible && (
               <React.Fragment>
                 <ColorInput
                   name='border_color'

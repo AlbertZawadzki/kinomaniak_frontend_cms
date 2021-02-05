@@ -1,23 +1,39 @@
 .short-single-poster-wrapper {
   display: flex;
   align-items: center;
-  height: 140px;
-  padding: 0 5px;
+  padding: 5px;
 }
 
 .short-single-poster-inner-wrapper {
   display: flex;
   align-items: center;
-  transform: translateX(-45px);
   height: 100%;
   width: 100%;
+
+  @include mobileMax {
+    flex-direction: column;
+  }
+}
+
+.short-single-poster-name {
+  @include tabletMin {
+    margin-left: 10px;
+  }
 }
 
 .poster-with-preview {
   display: flex;
   width: 100%;
+
+  @include mobileMax {
+    flex-direction: column;
+  }
 }
 
 .poster-preview-wrapper {
   margin: 10px;
+
+  @include mobileMax {
+    margin: 10px auto;
+  }
 }
