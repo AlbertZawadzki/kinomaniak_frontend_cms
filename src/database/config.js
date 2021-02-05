@@ -2,6 +2,9 @@ import store from "../redux/store"
 import axios from "axios"
 import { addNotification } from "../redux/actions/notification"
 import { setCountry, setCountryCode, setCsrfCorrect } from "../redux/actions/request"
+import database from "./index"
+import { setCountries } from "../redux/actions/country"
+import { setCurrencies } from "../redux/actions/currency"
 
 class Configuration {
   USER_TOKEN_REFRESH_TIME = 30000
@@ -16,6 +19,17 @@ class Configuration {
   AUTH_URL = "me/authenticate"
   LOGIN_URL = "me/login"
   LOGOUT_URL = "me/logout"
+
+  /**
+   * Get static data
+   */
+  initData = async () => {
+    const data = await database.get("data", true)
+    const { countries, currencies } = data
+
+    store.dispatch(setCountries(countries))
+    store.dispatch(setCurrencies(currencies))
+  }
 
   /**
    * Fix axios idiotic idea of relative urls

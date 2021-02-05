@@ -11,13 +11,13 @@ const auth = async () => {
     }))
   }
 
-
   const axios = databaseConfig.getAxios()
 
-  return await axios.post(databaseConfig.AUTH_URL, null, { params: databaseConfig.getParams() }).then(response => {
+  return await axios.post(databaseConfig.AUTH_URL, null, { params: databaseConfig.getParams() }).then(async response => {
     databaseConfig.handleResponse(response)
-
     store.dispatch(setUser(response.data.data))
+
+    await databaseConfig.initData()
   })
     .catch(error => {
       console.error(error)

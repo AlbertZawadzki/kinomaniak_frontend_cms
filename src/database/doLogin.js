@@ -6,9 +6,11 @@ import { setUser } from "../redux/actions/request"
 const doLogin = async (form) => {
   const axios = databaseConfig.getAxios()
 
-  return await axios.post(databaseConfig.LOGIN_URL, form).then(response => {
+  return await axios.post(databaseConfig.LOGIN_URL, form).then(async response => {
     databaseConfig.handleResponse(response)
     store.dispatch(setUser(response.data.data))
+
+    await databaseConfig.initData()
   })
     .catch(error => {
       console.error(error)
