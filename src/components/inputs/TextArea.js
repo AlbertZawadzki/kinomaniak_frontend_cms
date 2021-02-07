@@ -9,8 +9,7 @@ class TextInput extends React.Component {
       <div className={`input-outer-wrapper ${small ? "small" : "big"}`}>
         <div className="input-wrapper">
           <label htmlFor={id}>{title}</label>
-          <input
-            type='text'
+          <textarea
             name={name}
             defaultValue={value}
             id={id}
