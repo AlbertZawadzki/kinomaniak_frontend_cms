@@ -1,5 +1,5 @@
 import React from "react"
-import Poster from "../../Poster"
+import Poster from "../../../Poster"
 
 const ListerItem = ({ name, pin_color, pin_effect, border_visible, border_color, border_effect }) => {
   return (

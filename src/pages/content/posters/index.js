@@ -3,7 +3,7 @@ import functions from "../../../functions"
 import database from "../../../database"
 import ListingPage from "../../../components/pages/ListingPage"
 import { removePoster, setPosters } from "../../../redux/actions/poster"
-import ListerItem from "../../../components/content/poster/ListerItem"
+import ListerItem from "../../../components/pages/content/poster/ListerItem"
 
 const fastActionsName = functions.getTranslation("posters_actions")
 const fastActions = [

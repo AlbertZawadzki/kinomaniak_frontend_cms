@@ -6,16 +6,18 @@ import currencies from "./stores/currencies"
 import notifications from "./stores/notifications"
 import posters from "./stores/posters"
 import request from "./stores/request"
+import vpns from "./stores/vpns"
 
 const store = createStore(
   combineReducers({
-    actors,
-    categories,
-    countries,
-    currencies,
-    notifications,
-    posters,
-    request,
+      actors,
+      categories,
+      countries,
+      currencies,
+      notifications,
+      posters,
+      request,
+      vpns,
   }),
 )
 

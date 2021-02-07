@@ -69,6 +69,7 @@
   "in_scale_w_h": "In scale (width/height)",
   "inside": "Inside",
   "insufficient_permissions": "Insufficient permissions",
+  "ips": "IPs",
   "items_all": "All items",
   "items_current_showing": "Showing current items",
   "items_per_page": "Items per page",
@@ -137,5 +138,14 @@
   "videos": "Videos",
   "vouchers": "Vouchers",
   "vpn": "VPN",
+  "vpn_create_new": "Create new VPN",
+  "vpn_name": "VPN name",
+  "vpn_ips": "VPN IPs",
+  "vpn_url": "VPN url",
+  "vpns_actions": "VPN actions",
+  "vpns_all": "Al VPNs",
+  "vpns_all_page": "VPN - all",
+  "vpns_see_all": "All VPNs",
+  "vpns_form": "VPN form",
   "website": "Website"
 }

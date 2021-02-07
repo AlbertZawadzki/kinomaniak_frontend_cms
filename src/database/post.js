@@ -14,6 +14,8 @@ const post = async (url, action, form) => {
     return
   }
 
+  store.dispatch(addNotification({ status: "processing" }))
+
   return await axios.post(url, form, {
       params: databaseConfig.getParams(),
     },

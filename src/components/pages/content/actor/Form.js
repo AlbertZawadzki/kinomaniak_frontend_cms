@@ -1,11 +1,11 @@
 import React from "react"
-import TextInput from "../../inputs/TextInput"
-import functions from "../../../functions"
-import SubmitInput from "../../inputs/SubmitInput"
-import Tile from "../../Tile"
-import ImageInput from "../../inputs/ImageInput"
-import database from "../../../database"
-import { addActor, updateActor } from "../../../redux/actions/actor"
+import TextInput from "../../../inputs/TextInput"
+import functions from "../../../../functions"
+import SubmitInput from "../../../inputs/SubmitInput"
+import Tile from "../../../Tile"
+import ImageInput from "../../../inputs/ImageInput"
+import database from "../../../../database"
+import { addActor, updateActor } from "../../../../redux/actions/actor"
 import Router from "next/router"
 
 const submitForm = async (event, id, image_url) => {

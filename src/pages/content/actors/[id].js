@@ -2,9 +2,10 @@ import React from "react"
 import { connect } from "react-redux"
 import functions from "../../../functions"
 import { updateActor } from "../../../redux/actions/actor"
-import Form from "../../../components/content/actor/Form"
+import Form from "../../../components/pages/content/actor/Form"
 import Tile from "../../../components/Tile"
 import SingleItemPage from "../../../components/pages/SingleItemPage"
+import roles from "../../../data/roleTypes.json"
 
 class ContentActorsSingle extends React.Component {
   state = {
@@ -17,7 +18,7 @@ class ContentActorsSingle extends React.Component {
     const fastActionsName = functions.getTranslation("actors_actions")
     const fastActions = [
       {
-        to: "/content/actors/all",
+        to: "/content/actors/",
         name: functions.getTranslation("actors_see_all"),
       },
       {
@@ -28,6 +29,7 @@ class ContentActorsSingle extends React.Component {
 
     return (
       <SingleItemPage
+        role={roles.CM}
         fastActions={
           {
             name: fastActionsName,

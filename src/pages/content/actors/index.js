@@ -1,9 +1,10 @@
 import React from "react"
-import ListerItem from "../../../components/content/actor/ListerItem"
+import ListerItem from "../../../components/pages/content/actor/ListerItem"
 import { removeActor, setActors } from "../../../redux/actions/actor"
 import functions from "../../../functions"
 import database from "../../../database"
 import ListingPage from "../../../components/pages/ListingPage"
+import roles from "../../../data/roleTypes.json"
 
 const fastActions = {
   name: functions.getTranslation("actors_actions"),
@@ -22,6 +23,7 @@ const filterKeys = {
 
 const ContentActorsAll = () => (
   <ListingPage
+    role={roles.CM}
     storeName={"actors"}
     fetchLink={"actors"}
     actionSet={setActors}

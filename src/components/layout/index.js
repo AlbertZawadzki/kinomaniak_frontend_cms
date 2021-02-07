@@ -52,6 +52,9 @@ class Layout extends React.Component {
           <MenuLeft />
           <div className="content-wrapper">
             <Breadcrumbs />
+            <div className={"error"}>
+              Required role: {role}
+            </div>
             <div className="data-wrapper">
               {functions.hasAccess(role) ? (
                 <React.Fragment>

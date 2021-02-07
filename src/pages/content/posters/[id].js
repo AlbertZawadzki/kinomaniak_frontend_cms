@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import functions from "../../../functions"
 import SingleItemPage from "../../../components/pages/SingleItemPage"
 import { updatePoster } from "../../../redux/actions/poster"
-import Form from "../../../components/content/poster/Form"
+import Form from "../../../components/pages/content/poster/Form"
 
 class ContentPosterSingle extends React.Component {
   state = {

@@ -14,6 +14,8 @@ const remove = async (url, action) => {
     return
   }
 
+  store.dispatch(addNotification({ status: "processing" }))
+
   return await axios.delete(url, {
       params: databaseConfig.getParams(),
     },

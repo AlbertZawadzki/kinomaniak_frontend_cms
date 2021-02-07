@@ -145,9 +145,25 @@ const data = [
     id: "menu-left-item-5-pre-b",
     name: functions.getTranslation("vpn"),
     type: ROLES.ADMIN,
-    isLink: true,
+    isLink: false,
     to: "/vpn",
-    Icon: <Icons.EmptyIcon />,
+    Icon: <Icons.Vpn />,
+    subitems: [
+      {
+        id: "menu-left-item-5-pre-b-1",
+        name: functions.getTranslation("all"),
+        isLink: true,
+        to: "/vpn",
+        Icon: <Icons.Vpn />,
+      },
+      {
+        id: "menu-left-item-5-pre-b-2",
+        name: functions.getTranslation("ips"),
+        isLink: true,
+        to: "/ips",
+        Icon: <Icons.Vpn />,
+      },
+    ],
   },
   {
     id: "menu-left-item-5",

@@ -2,7 +2,7 @@ import React from "react"
 import functions from "../../../functions"
 import database from "../../../database"
 import { removeCategory, setCategories } from "../../../redux/actions/category"
-import ListerItem from "../../../components/content/category/ListerItem"
+import ListerItem from "../../../components/pages/content/category/ListerItem"
 import ListingPage from "../../../components/pages/ListingPage"
 
 const fastActions = {

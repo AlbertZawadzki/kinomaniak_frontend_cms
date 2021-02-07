@@ -4,7 +4,7 @@ import functions from "../../../functions"
 import Tile from "../../../components/Tile"
 import SingleItemPage from "../../../components/pages/SingleItemPage"
 import { updateCategory } from "../../../redux/actions/category"
-import Form from "../../../components/content/category/Form"
+import Form from "../../../components/pages/content/category/Form"
 
 class ContentCategoriesSingle extends React.Component {
   state = {

@@ -1,11 +1,11 @@
 import React from "react"
-import TextInput from "../../inputs/TextInput"
-import functions from "../../../functions"
-import SubmitInput from "../../inputs/SubmitInput"
-import Tile from "../../Tile"
-import database from "../../../database"
+import TextInput from "../../../inputs/TextInput"
+import functions from "../../../../functions"
+import SubmitInput from "../../../inputs/SubmitInput"
+import Tile from "../../../Tile"
+import database from "../../../../database"
 import Router from "next/router"
-import { addCategory, updateCategory } from "../../../redux/actions/category"
+import { addCategory, updateCategory } from "../../../../redux/actions/category"
 
 class Form extends React.Component {
   submitForm = async (event, id) => {

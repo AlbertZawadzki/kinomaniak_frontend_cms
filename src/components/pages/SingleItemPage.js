@@ -32,13 +32,13 @@ class SingleItemPage extends React.Component {
 
   render() {
     const { item, loading } = this.state
-    const { fastActions, children, itemName, isNew } = this.props
+    const { fastActions, children, itemName, isNew, role } = this.props
 
     if (loading && !isNew) {
       return (
         <Layout
           title={`${itemName} - ${functions.getTranslation("loading")}`}
-          role={roles.CONTENT_MANAGER}
+          role={role}
           fastActions={fastActions.actions}
           fastActionsName={fastActions.name}
         >
@@ -51,7 +51,7 @@ class SingleItemPage extends React.Component {
       return (
         <Layout
           title={`${itemName} - ${functions.getTranslation("unknown")}`}
-          role={roles.CONTENT_MANAGER}
+          role={role}
           fastActions={fastActions.actions}
           fastActionsName={fastActions.name}
         >
@@ -65,7 +65,7 @@ class SingleItemPage extends React.Component {
     return (
       <Layout
         title={`${itemName} - ${item.id}`}
-        role={roles.CONTENT_MANAGER}
+        role={role}
         fastActions={fastActions.actions}
         fastActionsName={fastActions.name}
       >
@@ -87,6 +87,7 @@ SingleItemPage.defaultProps = {
   fetchUrl: "no-fetch-url",
   updateItem: () => console.log("No action given"),
   isNew: false,
+  role: roles.OWNER,
   returnData: () => console.log("No action given"),
 }
 

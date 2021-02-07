@@ -2,13 +2,13 @@ import React from "react"
 import Layout from "../../../components/layout"
 import roles from "../../../data/roleTypes.json"
 import functions from "../../../functions"
-import Form from "../../../components/content/category/Form"
+import Form from "../../../components/pages/content/category/Form"
 
 const ContentCategoriesNew = () => {
   const fastActionsName = functions.getTranslation("categories_actions")
   const fastActions = [
     {
-      to: "/content/categories/all",
+      to: "/content/categories",
       name: functions.getTranslation("categories_see_all"),
     },
   ]

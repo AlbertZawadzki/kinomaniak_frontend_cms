@@ -40,14 +40,14 @@ class ListingPage extends React.Component {
   }
 
   render() {
-    const { title, fastActions, listerName, linkSingle, Component, filterKeys } = this.props
+    const { title, fastActions, listerName, linkSingle, Component, filterKeys, role } = this.props
     const { data, fetched } = this.state
 
     if (!fetched) {
       return (
         <Layout
           title={title}
-          role={roles.CONTENT_MANAGER}
+          role={role}
           fastActions={fastActions.actions}
           fastActionsName={fastActions.name}
         >
@@ -59,7 +59,7 @@ class ListingPage extends React.Component {
     return (
       <Layout
         title={title}
-        role={roles.CONTENT_MANAGER}
+        role={role}
         fastActions={fastActions.items}
         fastActionsName={fastActions.name}
       >
@@ -78,6 +78,7 @@ class ListingPage extends React.Component {
 
 ListingPage.defaultProps = {
   storeName: "undefined",
+  role: roles.OWNER,
   fetchLink: "/",
   actionSet: (data) => {
     console.log(data)
