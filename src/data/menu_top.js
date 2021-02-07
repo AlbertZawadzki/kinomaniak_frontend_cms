@@ -7,7 +7,7 @@ const data = [
   {
     id: "menu-top-item-0",
     name: functions.getTranslation("theme"),
-    type: ROLES.ALL,
+    type: ROLES.NOT_CLIENT,
     isLink: false,
     action: () => {
       document.body.className = document.body.className === "theme-light" ? "theme-dark" : "theme-light"
@@ -19,7 +19,7 @@ const data = [
   {
     id: "menu-top-item-1",
     name: functions.getTranslation("home"),
-    type: ROLES.ALL,
+    type: ROLES.NOT_CLIENT,
     isLink: true,
     to: "/",
     showOnMobile: false,
@@ -28,7 +28,7 @@ const data = [
   {
     id: "menu-top-item-2",
     name: "user_name",
-    type: ROLES.ALL,
+    type: ROLES.NOT_CLIENT,
     isLink: true,
     to: "/profile/",
     showOnMobile: true,
@@ -37,7 +37,7 @@ const data = [
   {
     id: "menu-top-item-3",
     name: functions.getTranslation("logout"),
-    type: ROLES.ALL,
+    type: ROLES.NOT_CLIENT,
     isLink: false,
     action: () => database.doLogout(),
     showOnMobile: true,

@@ -10,7 +10,7 @@ class Login extends React.Component {
     if (role === "owner") {
       form.append("email", "albert.zawadzki97@kinomaniak.eu")
     } else {
-      form.append("email", roles[role] + "@kinomaniak.eu")
+      form.append("email", roles[role.toString().toUpperCase()] + "@kinomaniak.eu")
     }
 
     form.append("password", roles[role.toString().toUpperCase()])

@@ -17,7 +17,7 @@ const hasAccess = (role) => {
     return false
   }
 
-  if (role === roles.ALL) {
+  if (role === roles.NOT_CLIENT) {
     return true
   }
 

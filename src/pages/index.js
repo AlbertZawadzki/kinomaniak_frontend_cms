@@ -5,7 +5,7 @@ import Tile from "../components/Tile"
 
 const Home = () => {
   return (
-    <Layout title="Home" role={roles.ALL}>
+    <Layout title="Home" role={roles.NOT_CLIENT}>
       <Tile title={"Hi"}>
         Welcome to the cms
       </Tile>

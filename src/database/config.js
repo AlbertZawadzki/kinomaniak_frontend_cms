@@ -14,7 +14,7 @@ import { setCountries } from "../redux/actions/country"
 import { setCurrencies } from "../redux/actions/currency"
 
 class Configuration {
-  USER_TOKEN_REFRESH_TIME = 5000
+  USER_TOKEN_REFRESH_TIME = 30000
   LAST_REQUEST_TIME = "last_request_time"
   TOKEN = "_token"
   CSRF_NAME = "_csrf_name"
@@ -124,8 +124,13 @@ class Configuration {
           store.dispatch(addNotification({ status: "success", title: "No items found" }))
         }
         return realData || []
+      case 400:
+        if (!silent) {
+          store.dispatch(addNotification({ status: "failure", message: JSON.stringify(data.data, null, 2) }))
+        }
+        return false
       case 403:
-        store.dispatch(addNotification({ status: "failure", message: "Please login to use the cms" }))
+        // store.dispatch(addNotification({ status: "failure", message: "Please login to use the cms" }))
         return false
       case 404:
       case 500:

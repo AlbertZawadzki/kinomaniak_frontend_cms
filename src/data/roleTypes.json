@@ -7,6 +7,7 @@
   "DEVELOPER": "developer",
   "SUPPORT": "support",
   "TRANSLATOR": "translator",
+  "NOT_CLIENT": "not-client",
   "USER": "user",
   "GUEST": "guest"
 }
