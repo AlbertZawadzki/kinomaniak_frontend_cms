@@ -139,7 +139,7 @@ const data = [
     type: ROLES.CONTENT_MANAGER,
     isLink: true,
     to: "/seo",
-    Icon: <Icons.EmptyIcon />,
+    Icon: <Icons.SeoText />,
   },
   {
     id: "menu-left-item-5-pre-b",

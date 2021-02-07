@@ -55,12 +55,13 @@ class Configuration {
   }
 
   /**
-   * Fix axios idiotic idea of relative urls
+   * Axios config
    */
   getAxios = () => {
     return axios.create({
-      baseURL: "http://localhost:8000/api/admin/",//process.env.BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL,
-      validateStatus: (status) => {
+      // baseURL: "http://localhost:8000/api/admin/",
+      baseURL: process.env.BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL,
+      validateStatus: () => {
         return true // default
       },
     })

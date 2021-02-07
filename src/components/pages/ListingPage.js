@@ -32,7 +32,10 @@ class ListingPage extends React.Component {
   }
 
   componentWillUnmount() {
-    this.subscriber()
+    try {
+      this.subscriber()
+    } catch {
+    }
   }
 
   actionDelete = (id) => {

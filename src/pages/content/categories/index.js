@@ -4,6 +4,7 @@ import database from "../../../database"
 import { removeCategory, setCategories } from "../../../redux/actions/category"
 import ListerItem from "../../../components/pages/content/category/ListerItem"
 import ListingPage from "../../../components/pages/ListingPage"
+import roles from "../../../data/roleTypes.json"
 
 const fastActions = {
   name: functions.getTranslation("categories_actions"),
@@ -22,6 +23,7 @@ const filterKeys = {
 
 const ContentCategoriesAll = () => (
   <ListingPage
+    role={roles.CONTENT_MANAGER}
     storeName={"categories"}
     fetchLink={"categories"}
     actionSet={setCategories}

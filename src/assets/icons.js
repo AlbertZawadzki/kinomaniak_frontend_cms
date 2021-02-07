@@ -36,6 +36,7 @@ import Profile from "@material-ui/icons/AccountCircleRounded"
 import Purchased from "@material-ui/icons/ShoppingCartRounded"
 import Rules from "@material-ui/icons/PolicyRounded"
 import Search from "@material-ui/icons/SearchRounded"
+import SeoText from "@material-ui/icons/TextFieldsRounded"
 import Series from "@material-ui/icons/VideocamRounded"
 import Settings from "@material-ui/icons/SettingsRounded"
 import ShowLess from "@material-ui/icons/ExpandLessRounded"
@@ -92,6 +93,7 @@ export {
   Purchased,
   Rules,
   Search,
+  SeoText,
   Series,
   ShowLess,
   ShowMore,

@@ -4,6 +4,7 @@ import database from "../../../database"
 import ListingPage from "../../../components/pages/ListingPage"
 import { removePoster, setPosters } from "../../../redux/actions/poster"
 import ListerItem from "../../../components/pages/content/poster/ListerItem"
+import roles from "../../../data/roleTypes.json"
 
 const fastActionsName = functions.getTranslation("posters_actions")
 const fastActions = [
@@ -20,6 +21,7 @@ const filterKeys = {
 
 const ContentPostersAll = () => (
   <ListingPage
+    role={roles.CONTENT_MANAGER}
     storeName={"posters"}
     fetchLink={"poster-styles"}
     actionSet={setPosters}

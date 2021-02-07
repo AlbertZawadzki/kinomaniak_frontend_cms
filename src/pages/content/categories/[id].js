@@ -5,6 +5,7 @@ import Tile from "../../../components/Tile"
 import SingleItemPage from "../../../components/pages/SingleItemPage"
 import { updateCategory } from "../../../redux/actions/category"
 import Form from "../../../components/pages/content/category/Form"
+import roles from "../../../data/roleTypes.json"
 
 class ContentCategoriesSingle extends React.Component {
   state = {
@@ -28,6 +29,7 @@ class ContentCategoriesSingle extends React.Component {
 
     return (
       <SingleItemPage
+        role={roles.CONTENT_MANAGER}
         fastActions={
           {
             name: fastActionsName,

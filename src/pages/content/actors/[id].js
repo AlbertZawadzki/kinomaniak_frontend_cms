@@ -29,7 +29,7 @@ class ContentActorsSingle extends React.Component {
 
     return (
       <SingleItemPage
-        role={roles.CM}
+        role={roles.CONTENT_MANAGER}
         fastActions={
           {
             name: fastActionsName,

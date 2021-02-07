@@ -23,7 +23,7 @@ const filterKeys = {
 
 const ContentActorsAll = () => (
   <ListingPage
-    role={roles.CM}
+    role={roles.CONTENT_MANAGER}
     storeName={"actors"}
     fetchLink={"actors"}
     actionSet={setActors}

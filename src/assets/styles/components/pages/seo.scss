@@ -1,0 +1,15 @@
+.short-single-seo-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  height: 100%;
+
+  @include mobileMax {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.seo-form {
+  width: 100%;
+}
