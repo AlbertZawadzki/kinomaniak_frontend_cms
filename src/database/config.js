@@ -1,13 +1,20 @@
 import store from "../redux/store"
 import axios from "axios"
 import { addNotification } from "../redux/actions/notification"
-import { setCountry, setCountryCode, setCsrfCorrect } from "../redux/actions/request"
+import {
+  blockRequests,
+  setCountry,
+  setCountryCode,
+  setCsrfCorrect,
+  setUser,
+  unblockRequests,
+} from "../redux/actions/request"
 import database from "./index"
 import { setCountries } from "../redux/actions/country"
 import { setCurrencies } from "../redux/actions/currency"
 
 class Configuration {
-  USER_TOKEN_REFRESH_TIME = 30000
+  USER_TOKEN_REFRESH_TIME = 5000
   LAST_REQUEST_TIME = "last_request_time"
   TOKEN = "_token"
   CSRF_NAME = "_csrf_name"
@@ -24,11 +31,27 @@ class Configuration {
    * Get static data
    */
   initData = async () => {
+    if (store.getState().countries?.data?.was_fetched && store.getState().currencies?.data?.was_fetched) {
+      return
+    }
+
     const data = await database.get("data", true)
     const { countries, currencies } = data
 
     store.dispatch(setCountries(countries))
     store.dispatch(setCurrencies(currencies))
+  }
+
+  canMakeRequest = () => {
+    return !store.getState().request?.data?.blocked
+  }
+
+  blockRequests = () => {
+    store.dispatch(blockRequests())
+  }
+
+  unblockRequests = () => {
+    store.dispatch(unblockRequests())
   }
 
   /**
@@ -37,19 +60,10 @@ class Configuration {
   getAxios = () => {
     return axios.create({
       baseURL: "http://localhost:8000/api/admin/",//process.env.BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL,
+      validateStatus: (status) => {
+        return true // default
+      },
     })
-  }
-
-  /**
-   * Check if user is logged and if he was last authed more than 30sec ago
-   */
-  canAuthUser = () => {
-    const time = new Date()
-    const now = time.getTime().toString()
-    const request = localStorage.getItem(this.LAST_REQUEST_TIME) || (parseInt(now) - 2 * this.USER_TOKEN_REFRESH_TIME).toString()
-    const userExists = store.getState().request?.user?.id !== 0
-
-    return userExists && now - request > this.USER_TOKEN_REFRESH_TIME
   }
 
   /**
@@ -70,6 +84,7 @@ class Configuration {
     store.dispatch(setCsrfCorrect(data._csrf_correct))
     store.dispatch(setCountry(data.country))
     store.dispatch(setCountryCode(data.country_code))
+    store.dispatch(setUser(data.data))
   }
 
   /**
@@ -86,26 +101,10 @@ class Configuration {
   }
 
   /**
-   * Updates last request time
-   */
-  updateRequestTime = () => {
-    const time = new Date()
-    const now = time.getTime().toString()
-    localStorage.setItem(LAST_REQUEST_TIME, now)
-  }
-
-  /**
-   * Definite user logout
-   */
-  clearUser = () => {
-  }
-
-  /**
    * Response status handler
    */
   handleResponse = (object, silent = false) => {
     const { data, status } = object
-    this.setParams(data)
     const realData = data.data
 
     switch (status) {
@@ -126,7 +125,7 @@ class Configuration {
         }
         return realData || []
       case 403:
-        store.dispatch(addNotification({ status: "unknown", message: "AUTHORIZATION FAILURE " + status }))
+        store.dispatch(addNotification({ status: "failure", message: "Please login to use the cms" }))
         return false
       case 404:
       case 500:

@@ -5,6 +5,15 @@ import { addNotification } from "../redux/actions/notification"
 const update = async (url, action, form) => {
   const axios = databaseConfig.getAxios()
 
+  if (!databaseConfig.canMakeRequest()) {
+    store.dispatch(addNotification({
+      status: "unknown",
+      message: `Timeouting`,
+    }))
+    setTimeout(() => update(url, action, form), 1000)
+    return
+  }
+
   return await axios.post(url, form, {
       params: databaseConfig.getParams(),
     },

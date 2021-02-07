@@ -1,14 +1,13 @@
 import databaseConfig from "./config"
 import store from "../redux/store"
 import { addNotification } from "../redux/actions/notification"
-import { setUser } from "../redux/actions/request"
 
 const doLogin = async (form) => {
   const axios = databaseConfig.getAxios()
 
   return await axios.post(databaseConfig.LOGIN_URL, form).then(async response => {
     databaseConfig.handleResponse(response)
-    store.dispatch(setUser(response.data.data))
+    databaseConfig.setParams(response.data)
 
     await databaseConfig.initData()
   })

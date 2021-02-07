@@ -35,3 +35,11 @@ export const setLongitude = (data) => ({
   data: data,
 })
 
+export const blockRequests = () => ({
+  type: actions.BLOCK_REQUESTS,
+})
+
+export const unblockRequests = () => ({
+  type: actions.UNBLOCK_REQUESTS,
+})
+

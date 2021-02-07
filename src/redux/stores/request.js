@@ -12,6 +12,7 @@ const request = (
       country: "unknown",
       longitude: "unknown",
       latitude: "unknown",
+      blocked: false,
     },
   },
   action,
@@ -37,6 +38,12 @@ const request = (
       return state
     case actions.LATITUDE_SET:
       state.data.latitude = action.data
+      return state
+    case actions.BLOCK_REQUESTS:
+      state.data.blocked = true
+      return state
+    case actions.UNBLOCK_REQUESTS:
+      state.data.blocked = false
       return state
     default:
       return state

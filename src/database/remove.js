@@ -5,6 +5,15 @@ import { addNotification } from "../redux/actions/notification"
 const remove = async (url, action) => {
   const axios = databaseConfig.getAxios()
 
+  if (!databaseConfig.canMakeRequest()) {
+    store.dispatch(addNotification({
+      status: "unknown",
+      message: `Timeouting`,
+    }))
+    setTimeout(() => remove(url, action), 1000)
+    return
+  }
+
   return await axios.delete(url, {
       params: databaseConfig.getParams(),
     },
