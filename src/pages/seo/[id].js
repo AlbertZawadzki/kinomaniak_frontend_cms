@@ -28,7 +28,7 @@ class SeoSingle extends React.Component {
 
     return (
       <SingleItemPage
-        role={roles.ADMIN}
+        role={roles.CONTENT_MANAGER}
         fastActions={
           {
             name: fastActionsName,
