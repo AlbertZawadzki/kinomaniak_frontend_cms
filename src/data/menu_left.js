@@ -171,7 +171,7 @@ const data = [
     type: ROLES.CONTENT_MANAGER,
     isLink: true,
     to: "/geoblock",
-    Icon: <Icons.EmptyIcon />,
+    Icon: <Icons.Earth />,
   },
   {
     id: "menu-left-item-6",

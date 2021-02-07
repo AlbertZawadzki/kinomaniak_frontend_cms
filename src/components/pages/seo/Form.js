@@ -26,10 +26,6 @@ const submitForm = async (event, id) => {
 }
 
 class Form extends React.Component {
-  state = {
-    newImage: "",
-  }
-
   render() {
     const { id, description, url, isOld } = this.props
 

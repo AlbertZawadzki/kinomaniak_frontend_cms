@@ -3,6 +3,7 @@ import actors from "./stores/actors"
 import categories from "./stores/categories"
 import countries from "./stores/countries"
 import currencies from "./stores/currencies"
+import geoblocks from "./stores/geoblocks"
 import notifications from "./stores/notifications"
 import posters from "./stores/posters"
 import request from "./stores/request"
@@ -15,6 +16,7 @@ const store = createStore(
       categories,
       countries,
       currencies,
+      geoblocks,
       notifications,
       posters,
       request,
