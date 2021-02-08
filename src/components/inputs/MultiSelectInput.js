@@ -103,9 +103,9 @@ class MultiSelectInput extends React.Component {
           <label htmlFor={id}>{title}</label>
           <div className='multi-select-wrapper'>
             <div className='multi-select-inner-wrapper'>
-              <h4>
+              <h3>
                 {functions.getTranslation("select_options")}
-              </h4>
+              </h3>
               <TextInput
                 name='filter'
                 title={functions.getTranslation("filter")}
@@ -140,9 +140,9 @@ class MultiSelectInput extends React.Component {
               </div>
             </div>
             <div className='multi-select-inner-wrapper'>
-              <h4>
+              <h3>
                 {functions.getTranslation("selected_options")}
-              </h4>
+              </h3>
               <TextInput
                 name='filter'
                 title={functions.getTranslation("filter")}
