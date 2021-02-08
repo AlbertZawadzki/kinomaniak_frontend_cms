@@ -263,7 +263,7 @@ const data = [
   {
     id: "menu-left-item-10",
     name: functions.getTranslation("translations"),
-    type: ROLES.NOT_CLIENT,
+    type: ROLES.TRANSLATOR,
     isLink: true,
     to: "/translations",
     Icon: <Icons.EmptyIcon />,
