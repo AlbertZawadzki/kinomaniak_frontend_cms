@@ -1,6 +1,7 @@
 import React from "react"
 import functions from "../../functions/"
 import Filter from "../lister/Filter"
+import Loader from "../Loader"
 
 class MultiSelectInput extends React.Component {
   state = {
@@ -59,6 +60,17 @@ class MultiSelectInput extends React.Component {
     const { name, title, showKeys } = this.props
     const { selected, options, allOptions } = this.state
     const id = "multi-select-" + name
+
+    if (options.length === 0) {
+      return (
+        <div className="input-outer-wrapper">
+          <div className="input-wrapper">
+            <label htmlFor={id}>{title}</label>
+            <Loader />
+          </div>
+        </div>
+      )
+    }
 
     return (
       <div className="input-outer-wrapper">
