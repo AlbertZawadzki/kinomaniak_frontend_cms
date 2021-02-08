@@ -101,16 +101,22 @@ class Filter extends React.Component {
   setFilters = (data) => {
     let { filters } = this.state
 
-    filters[data.name] = {
+    const field = this.fixFilterName(data.name)
+
+    filters[field] = {
       key: Math.random(),
       value: data.value,
     }
 
-    if (filters[data.name].value.length === 0) {
-      delete (filters[data.name])
+    if (filters[field].value.length === 0) {
+      delete (filters[field])
     }
 
     this.setState({ filters }, () => this.filterItems())
+  }
+
+  fixFilterName = (fakeName) => {
+    return fakeName.replace("filter-", "")
   }
 
   filterItems = () => {
@@ -121,7 +127,9 @@ class Filter extends React.Component {
     for (const index in allItems) {
       let addItem = true
 
-      for (const field in filters) {
+      for (const fakeFieldName in filters) {
+        const field = this.fixFilterName(fakeFieldName)
+
         const value = filters[field].value
 
         if (!allItems[index][field].toString().toLowerCase().includes(value.toString().toLowerCase())) {
