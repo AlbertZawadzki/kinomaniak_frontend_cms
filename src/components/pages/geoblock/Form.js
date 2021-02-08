@@ -48,10 +48,13 @@ class Form extends React.Component {
     }
   }
 
+  componentWillMount() {
+    this.getCountries()
+  }
+
   componentDidMount() {
     const { countries } = this.props
     this.setState({ countries })
-    this.getCountries()
   }
 
   render() {

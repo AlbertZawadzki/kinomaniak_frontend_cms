@@ -1,6 +1,6 @@
 import React from "react"
 
-class TextInput extends React.Component {
+class TextArea extends React.Component {
   render() {
     const { name, value, title, small } = this.props
     const id = "text-area-" + name
@@ -21,7 +21,7 @@ class TextInput extends React.Component {
   }
 }
 
-TextInput.defaultProps = {
+TextArea.defaultProps = {
   name: "unknown-name",
   value: "",
   title: "No title given",
@@ -30,4 +30,4 @@ TextInput.defaultProps = {
   small: false,
 }
 
-export default TextInput
+export default TextArea
