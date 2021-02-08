@@ -161,7 +161,7 @@ const data = [
         name: functions.getTranslation("ips"),
         isLink: true,
         to: "/ips",
-        Icon: <Icons.Vpn />,
+        Icon: <Icons.EmptyIcon />,
       },
     ],
   },
