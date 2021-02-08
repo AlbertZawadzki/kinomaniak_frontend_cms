@@ -60,10 +60,9 @@ class Configuration {
    */
   getAxios = () => {
     return axios.create({
-      // baseURL: "http://localhost:8000/api/admin/",
       baseURL: process.env.BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL,
       validateStatus: () => {
-        return true // default
+        return true
       },
     })
   }
