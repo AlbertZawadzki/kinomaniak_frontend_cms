@@ -35,7 +35,8 @@ class Configuration {
       return
     }
 
-    const data = await database.get("data", true)
+    const data = await database.get("data")
+
     const { countries, currencies } = data
 
     store.dispatch(setCountries(countries))
@@ -104,23 +105,32 @@ class Configuration {
   /**
    * Response status handler
    */
-  handleResponse = (object, silent = false) => {
+  handleResponse = (object, action, silent = false) => {
     const { data, status } = object
     const realData = data.data
 
     switch (status) {
       case 200:
         this.setParams()
+        if (action) {
+          store.dispatch(action)
+        }
         if (!silent) {
           store.dispatch(addNotification({ status: "success", message: `url: ${object.config.url}` }))
         }
         return realData || []
       case 201:
+        if (action) {
+          store.dispatch(action)
+        }
         if (!silent) {
           store.dispatch(addNotification({ status: "success", title: "Item created" }))
         }
         return true
       case 204:
+        if (action) {
+          store.dispatch(action)
+        }
         if (!silent) {
           store.dispatch(addNotification({ status: "success", title: "No items found" }))
         }

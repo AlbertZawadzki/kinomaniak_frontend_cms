@@ -1,5 +1,5 @@
 import React from "react"
-import ListerItem from "../../components/pages/vpn/ListerItem"
+import ListerItem from "../../components/pages/geoblock/ListerItem"
 import functions from "../../functions"
 import database from "../../database"
 import ListingPage from "../../components/pages/ListingPage"

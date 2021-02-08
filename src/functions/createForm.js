@@ -1,6 +1,7 @@
 const isDataInput = (input) => {
   const isInput = input.tagName === "INPUT" || input.tagName === "SELECT"
-  return isInput && input.type !== "submit" || false
+  const notFilter = !input.name.includes("filter-")
+  return isInput && input.type !== "submit" && notFilter || false
 }
 
 const getDataInput = (input) => {

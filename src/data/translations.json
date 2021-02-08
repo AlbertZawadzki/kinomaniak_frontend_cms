@@ -122,6 +122,8 @@
   "required_role": "required role",
   "required_role_min": "minimum required role",
   "search": "Search",
+  "select_options": "Options to select",
+  "selected_options": "Selected options",
   "seo_text": "SEO",
   "seo": "SEO",
   "seo_create_new": "Create new SEO",

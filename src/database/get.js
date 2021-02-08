@@ -16,7 +16,9 @@ const get = async (url, silent = false) => {
 
   return await axios.get(url, {
     params: databaseConfig.getParams(),
-  }).then(response => databaseConfig.handleResponse(response, silent))
+  }).then(response => {
+    return databaseConfig.handleResponse(response, false, silent)
+  })
     .catch(error => {
       console.error(error)
 

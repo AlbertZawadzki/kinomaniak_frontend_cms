@@ -20,9 +20,7 @@ const remove = async (url, action) => {
       params: databaseConfig.getParams(),
     },
   ).then(response => {
-    store.dispatch(action())
-    store.dispatch(addNotification({ status: "success" }))
-    return databaseConfig.handleResponse(response)
+    return databaseConfig.handleResponse(response, action)
   })
     .catch(error => {
       console.error(error)

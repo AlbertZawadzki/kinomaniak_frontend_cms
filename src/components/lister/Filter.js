@@ -75,7 +75,23 @@ class Filter extends React.Component {
       this.setState({ keys: onlyKeys })
     }
 
-    this.setState({ allItems: items, items, skipKeys, onlyKeys })
+    const allItems = JSON.parse(JSON.stringify(items))
+
+    this.setState({ allItems, items, skipKeys, onlyKeys })
+  }
+
+  componentWillReceiveProps() {
+    const { items, skipKeys, onlyKeys } = this.props
+
+    if (onlyKeys.length === 0) {
+      this.getKeys(items, skipKeys)
+    } else {
+      this.setState({ keys: onlyKeys })
+    }
+
+    const allItems = JSON.parse(JSON.stringify(items))
+
+    this.setState({ allItems, items, skipKeys, onlyKeys })
   }
 
   transformKeyName = (key) => {
@@ -131,7 +147,7 @@ class Filter extends React.Component {
             <TextInput
               key={`object-key-${key}`}
               title={`${functions.getTranslation("filter_by")} ${this.transformKeyName(key)}`}
-              name={key}
+              name={`filter-${key}`}
               actionReturn={(data) => this.setFilters(data)}
               small
             />

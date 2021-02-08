@@ -20,8 +20,7 @@ const update = async (url, action, form) => {
       params: databaseConfig.getParams(),
     },
   ).then(response => {
-    store.dispatch(action(response.data.data))
-    return databaseConfig.handleResponse(response)
+    return databaseConfig.handleResponse(response, action(response.data.data))
   })
     .catch(error => {
       console.error(error)
