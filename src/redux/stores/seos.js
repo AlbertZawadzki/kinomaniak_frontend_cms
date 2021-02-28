@@ -1,6 +1,6 @@
 import * as actions from "../actionNames/seo"
 
-const vpns = (state = { data: [], was_fetched: false }, action) => {
+const seos = (state = { data: [], was_fetched: false }, action) => {
   switch (action.type) {
     case actions.SEO_ADD:
       state.data.push(action.data)
@@ -30,4 +30,4 @@ const vpns = (state = { data: [], was_fetched: false }, action) => {
   }
 }
 
-export default vpns
+export default seos

@@ -9,13 +9,14 @@ class LoginPanel extends React.Component {
     return (
       <form className="login-form">
         <TextInput
-          title={functions.getTranslation("user_login")}
+          title={functions.getTranslation("user_email")}
           name="login"
+          type='email'
         />
         <TextInput
           title={functions.getTranslation("password")}
           name="password"
-          isPassword
+          type='password'
         />
         <CheckboxInput
           name="remember_me"
