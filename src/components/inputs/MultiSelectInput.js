@@ -12,6 +12,7 @@ class MultiSelectInput extends React.Component {
 
   isSelected = (key) => {
     const { allSelected } = this.state
+
     return allSelected.filter((item) => item.key === key).length !== 0
   }
 
@@ -24,9 +25,11 @@ class MultiSelectInput extends React.Component {
   }
 
   componentWillReceiveProps() {
-    const { options } = this.props
+    const { selected, options } = this.props
 
-    this.setState({ allOptions: options, options })
+    const allSelected = JSON.parse(JSON.stringify(selected))
+
+    this.setState({ allSelected, selected, allOptions: options, options })
   }
 
   makeSelection = (option) => {
@@ -94,7 +97,7 @@ class MultiSelectInput extends React.Component {
 
   render() {
     const { name, title, showKeys } = this.props
-    const { selected, options, allOptions } = this.state
+    const { selected, options } = this.state
     const id = "multi-select-" + name
 
     return (
