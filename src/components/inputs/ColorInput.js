@@ -1,6 +1,6 @@
 import React from "react"
 
-class TextInput extends React.Component {
+class ColorInput extends React.Component {
   render() {
     const { name, value, title, small } = this.props
     const id = "text-input-" + name
@@ -22,7 +22,7 @@ class TextInput extends React.Component {
   }
 }
 
-TextInput.defaultProps = {
+ColorInput.defaultProps = {
   name: "unknown-name",
   value: "",
   title: "No title given",
@@ -31,4 +31,4 @@ TextInput.defaultProps = {
   small: false,
 }
 
-export default TextInput
+export default ColorInput

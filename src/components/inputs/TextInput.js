@@ -2,7 +2,7 @@ import React from "react"
 
 class TextInput extends React.Component {
   render() {
-    const { name, value, title, isPassword, small } = this.props
+    const { name, value, title, isPassword, isEmail, small } = this.props
     const id = "text-input-" + name
 
     return (
@@ -10,7 +10,7 @@ class TextInput extends React.Component {
         <div className="input-wrapper">
           <label htmlFor={id}>{title}</label>
           <input
-            type={isPassword ? "password" : "text"}
+            type={isPassword ? "password" : isEmail ? "email" : text}
             name={name}
             defaultValue={value}
             id={id}
@@ -29,6 +29,7 @@ TextInput.defaultProps = {
   actionReturn: () => {
   },
   isPassword: false,
+  isEmail: false,
   small: false,
 }
 
