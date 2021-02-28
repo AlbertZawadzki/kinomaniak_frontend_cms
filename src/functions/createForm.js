@@ -1,5 +1,5 @@
 const isDataInput = (input) => {
-  const isInput = input.tagName === "INPUT" || input.tagName === "SELECT"
+  const isInput = input.tagName === "INPUT" || input.tagName === "SELECT" || input.tagName === "TEXTAREA"
   const notFilter = !input.name.includes("filter-")
   return isInput && input.type !== "submit" && notFilter || false
 }
@@ -16,6 +16,8 @@ const getDataInput = (input) => {
           return input.value
       }
     case "SELECT":
+      return input.value
+    case "TEXTAREA":
       return input.value
   }
 }
