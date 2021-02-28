@@ -41,8 +41,14 @@ class Form extends React.Component {
       <Tile title={functions.getTranslation("vouchers_form")}>
         <form className='content-form' onSubmit={(event) => this.submitForm(event, id)}>
           <TextInput name='name' value={name} title={functions.getTranslation("voucher_name")} />
-          <TextInput type='number' name='number_of_codes' value={codes.length || 0}
-                     title={functions.getTranslation("voucher_codes_number")} />
+          {!isOld && (
+            <TextInput
+              type='number'
+              name='number_of_codes'
+              value={codes.length || 0}
+              title={functions.getTranslation("voucher_codes_number")}
+            />
+          )}
           <TextInput type='date' name='valid_from' value={valid_from} title={functions.getTranslation("valid_from")} />
           <TextInput type='date' name='valid_to' value={valid_to} title={functions.getTranslation("valid_to")} />
           <CheckboxSwitchInput name='available' checked={available} title={functions.getTranslation("available")} />

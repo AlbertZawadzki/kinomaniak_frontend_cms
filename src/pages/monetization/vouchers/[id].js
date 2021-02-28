@@ -6,6 +6,7 @@ import Form from "../../../components/pages/monetization/voucher/Form"
 import Tile from "../../../components/Tile"
 import SingleItemPage from "../../../components/pages/SingleItemPage"
 import roles from "../../../data/roleTypes.json"
+import SingleCode from "../../../components/Code"
 
 class MonetizationVoucherSingle extends React.Component {
   state = {
@@ -44,11 +45,14 @@ class MonetizationVoucherSingle extends React.Component {
         returnData={voucher => this.setState({ voucher })}
       >
         <Form {...voucher} isOld />
-        <Tile title={functions.getTranslation("voucher_codes")}>
-          <pre>
-            {JSON.stringify(voucher.codes, null, 2)}
-          </pre>
-        </Tile>
+        {
+          voucher?.codes?.length > 0 &&
+          (<Tile title={functions.getTranslation("voucher_codes")}>
+              {
+                voucher.codes.map(code => <SingleCode key={code.key} active={code.used} name={code.code} />)
+              }
+            </Tile>
+          )}
       </SingleItemPage>)
   }
 }

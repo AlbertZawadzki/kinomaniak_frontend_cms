@@ -1,0 +1,23 @@
+.single-code {
+  font-size: 18px;
+  margin: 5px 10px 5px 0;
+  background-color: $colorGreen;
+  color: $colorWhite;
+  padding: 3px 7px;
+  border-radius: 5px;
+  cursor: copy;
+
+  &.used {
+    background-color: $colorRed;
+  }
+
+  &:hover,
+  &.copied {
+    background-color: $colorBlue;
+  }
+
+
+  @include themify {
+    box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $halfOpacity);
+  }
+}

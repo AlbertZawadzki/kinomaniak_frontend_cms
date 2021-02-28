@@ -18,7 +18,7 @@ const fastActions = {
 
 const filterKeys = {
   skip: [],
-  only: ["id", "name"],
+  only: ["id", "name", "available"],
 }
 
 const MonetizationVouchersAll = () => (
