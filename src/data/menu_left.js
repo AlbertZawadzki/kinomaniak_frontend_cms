@@ -122,7 +122,7 @@ const data = [
         name: functions.getTranslation("Vouchers"),
         isLink: true,
         to: "/monetization/vouchers",
-        Icon: <Icons.EmptyIcon />,
+        Icon: <Icons.Monetization />,
       },
       {
         id: "menu-left-item-4-3",
@@ -147,7 +147,7 @@ const data = [
     type: ROLES.ADMIN,
     isLink: false,
     to: "/vpn",
-    Icon: <Icons.Vpn />,
+    Icon: <Icons.EmptyIcon />,
     subitems: [
       {
         id: "menu-left-item-5-pre-b-1",
