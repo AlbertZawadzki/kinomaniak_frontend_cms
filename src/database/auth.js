@@ -16,12 +16,13 @@ const auth = async () => {
   }
 
   databaseConfig.blockRequests()
-  return await axios.post(databaseConfig.AUTH_URL, null, { params: databaseConfig.getParams() }).then(async response => {
-    databaseConfig.unblockRequests()
-    databaseConfig.handleResponse(response)
-    databaseConfig.setParams(response.data)
-    store.dispatch(setUser(response.data.data))
-  })
+  return await axios.post(databaseConfig.AUTH_URL, null, { params: databaseConfig.getParams() })
+    .then(async response => {
+      databaseConfig.unblockRequests()
+      databaseConfig.handleResponse(response, null, true)
+      databaseConfig.setParams(response.data)
+      store.dispatch(setUser(response.data.data))
+    })
     .catch(error => {
       console.error(error)
       databaseConfig.unblockRequests()
