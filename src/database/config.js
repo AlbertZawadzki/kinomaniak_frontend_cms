@@ -98,6 +98,8 @@ class Configuration {
       _longitude: "no_langitude",
       _csrf_name: store.getState().request?.data?._csrf_name || "no_csrf_name",
       _csrf_token: localStorage.getItem(this.TOKEN) || "no_csrf_token",
+      // FIXME: should be handled by notifications
+      _force: true,
     }
   }
 

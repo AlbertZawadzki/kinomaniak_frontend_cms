@@ -8,10 +8,10 @@ const getDataInput = (input) => {
   switch (input.tagName) {
     case "INPUT":
       switch (input.type) {
-        case"file":
+        case "file":
           return input.files[0]
-        case"checkbox":
-          return input.checked
+        case "checkbox":
+          return input.checked ? "1" : "0"
         default:
           return input.value
       }

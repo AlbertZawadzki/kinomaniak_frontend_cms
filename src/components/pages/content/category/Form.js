@@ -12,7 +12,7 @@ class Form extends React.Component {
     const { form } = functions.createForm(event, { id })
 
     let result
-    let returnUrl = "/content/categories/all"
+    let returnUrl = "/content/categories"
 
     if (id !== 0) {
       result = await database.update(`categories/${id}`, updateCategory, form)

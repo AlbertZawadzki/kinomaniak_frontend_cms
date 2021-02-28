@@ -8,6 +8,7 @@ import notifications from "./stores/notifications"
 import posters from "./stores/posters"
 import request from "./stores/request"
 import seos from "./stores/seos"
+import vouchers from "./stores/vouchers"
 import vpns from "./stores/vpns"
 
 const store = createStore(
@@ -21,6 +22,7 @@ const store = createStore(
       posters,
       request,
       seos,
+      vouchers,
       vpns,
   }),
 )
