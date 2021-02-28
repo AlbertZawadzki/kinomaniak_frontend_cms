@@ -29,7 +29,7 @@ button {
   &.right {
     right: 0;
     margin-left: auto;
-    margin-right: 0;
+    margin-right: 5px;
   }
 
   &.center {
@@ -84,6 +84,15 @@ input[type="submit"] {
     &:hover {
       background-color: $colorDarkBlue;
       color: $colorFailure;
+    }
+  }
+
+  &.success {
+    background-color: $colorSuccess;
+
+    &:hover {
+      background-color: $colorDarkBlue;
+      color: $colorSuccess;
     }
   }
 

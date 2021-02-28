@@ -5,6 +5,7 @@ import functions from "../../../functions"
 import database from "../../../database"
 import ListingPage from "../../../components/pages/ListingPage"
 import roles from "../../../data/roleTypes.json"
+import ListingButtons from "../../../components/pages/monetization/voucher/ListingButtons"
 
 const fastActions = {
   name: functions.getTranslation("vouchers_actions"),
@@ -34,6 +35,7 @@ const MonetizationVouchersAll = () => (
     linkSingle={"monetization/vouchers"}
     Component={ListerItem}
     filterKeys={filterKeys}
+    buttons={ListingButtons}
   />
 )
 

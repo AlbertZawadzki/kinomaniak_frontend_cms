@@ -5,6 +5,10 @@ import { addNotification } from "../redux/actions/notification"
 const remove = async (url, action) => {
   const axios = databaseConfig.getAxios()
 
+  if (!window.confirm("Are you sure?")) {
+    return
+  }
+
   if (!databaseConfig.canMakeRequest()) {
     store.dispatch(addNotification({
       status: "unknown",

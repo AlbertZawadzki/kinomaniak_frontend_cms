@@ -43,7 +43,7 @@ class Lister extends React.Component {
 
   render() {
     const { items, allItems, filteredItems } = this.state
-    const { Component, linkSingle, actionDelete, name, filterKeys } = this.props
+    const { Component, linkSingle, actionDelete, name, filterKeys, Buttons } = this.props
 
     return (
       <Tile title={name}>
@@ -82,12 +82,15 @@ class Lister extends React.Component {
                           </div>
                         </Link>
                       </div>
-                      <input
-                        type="button"
-                        className="small right warn"
-                        value={functions.getTranslation("delete")}
-                        onClick={() => actionDelete(item.id)}
-                      />
+                      <div className='lister-item-buttons'>
+                        <Buttons key={`${item.key}-buttons`}  {...item} />
+                        <input
+                          type="button"
+                          className="small right warn"
+                          value={functions.getTranslation("delete")}
+                          onClick={() => actionDelete(item.id)}
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -110,6 +113,7 @@ Lister.defaultProps = {
     skip: ["key", "is_full"],
     only: [],
   },
+  Buttons: <></>,
 }
 
 export default Lister
