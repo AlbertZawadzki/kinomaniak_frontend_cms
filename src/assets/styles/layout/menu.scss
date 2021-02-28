@@ -33,7 +33,7 @@
   flex-direction: column;
 
   @include themify {
-    background-color: themed('colorMain');
+    background-color: themed($colorMain);
   }
 
   @include mobileMax {
@@ -42,7 +42,7 @@
     transition: transform 0.25s ease-in-out;
 
     @include themify {
-      box-shadow: 0 0 5px 1px rgba(themed('colorMainContrast'), $halfOpacity);
+      box-shadow: 0 0 5px 1px rgba(themed($colorMainContrast), $halfOpacity);
     }
 
     &.active {
@@ -61,8 +61,8 @@
   z-index: 15;
 
   @include themify {
-    background-color: themed('colorMain');
-    box-shadow: 0 0 5px 1px rgba(themed('colorMainContrast'), $halfOpacity);
+    background-color: themed($colorMain);
+    box-shadow: 0 0 5px 1px rgba(themed($colorMainContrast), $halfOpacity);
   }
 
   svg {
@@ -86,11 +86,11 @@
   }
 
   @include themify {
-    border-left: 2px solid themed('colorMain');
-    background-color: themed('colorMain');
+    border-left: 2px solid themed($colorMain);
+    background-color: themed($colorMain);
 
     &.top {
-      border-bottom: 2px solid themed('colorMain');
+      border-bottom: 2px solid themed($colorMain);
       border-left: 0
     }
   }
@@ -217,13 +217,13 @@
 
 .submenu {
   @include themify {
-    background-color: themed('colorMain');
-    box-shadow: 0 0 3px 1px rgba(themed('colorMainContrast'), $halfOpacity);
+    background-color: themed($colorMain);
+    box-shadow: 0 0 3px 1px rgba(themed($colorMainContrast), $halfOpacity);
   }
 }
 
 .mobile-top-menu {
   @include themify {
-    border-top: 3px double themed('colorMainContrast');
+    border-top: 3px double themed($colorMainContrast);
   }
 }
