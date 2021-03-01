@@ -5,6 +5,7 @@ import countries from "./stores/countries"
 import currencies from "./stores/currencies"
 import geoblocks from "./stores/geoblocks"
 import notifications from "./stores/notifications"
+import plans from "./stores/plans"
 import posters from "./stores/posters"
 import request from "./stores/request"
 import seos from "./stores/seos"
@@ -20,6 +21,7 @@ const store = createStore(
       geoblocks,
       notifications,
       posters,
+      plans,
       request,
       seos,
       vouchers,
