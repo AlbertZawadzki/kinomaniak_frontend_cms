@@ -113,7 +113,7 @@ Lister.defaultProps = {
     skip: ["key", "is_full"],
     only: [],
   },
-  Buttons: <></>,
+  Buttons: () => <></>,
 }
 
 export default Lister

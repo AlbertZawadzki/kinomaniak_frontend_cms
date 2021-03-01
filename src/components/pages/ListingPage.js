@@ -99,7 +99,7 @@ ListingPage.defaultProps = {
     skip: ["key", "is_full"],
     only: [],
   },
-  buttons: "",
+  buttons: () => <></>,
 }
 
 export default connect()(ListingPage)
