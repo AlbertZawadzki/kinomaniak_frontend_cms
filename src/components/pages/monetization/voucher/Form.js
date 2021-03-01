@@ -10,7 +10,7 @@ import CheckboxSwitchInput from "../../../inputs/CheckboxSwitchInput"
 
 class Form extends React.Component {
   submitForm = async (event, id) => {
-    const { form, object } = functions.createForm(event, { id })
+    const { form } = functions.createForm(event, { id })
 
     const codes = []
     for (let i = 0; i < form.get('number_of_codes'); i++) {
