@@ -7,7 +7,7 @@ const doLogout = async () => {
   const axios = databaseConfig.getAxios()
 
   return await axios.post(databaseConfig.LOGOUT_URL, null, { params: databaseConfig.getParams() }).then(response => {
-    databaseConfig.handleResponse(response)
+    databaseConfig.handleResponse(response, null, true)
     store.dispatch(setUser(null))
   })
     .catch(error => {

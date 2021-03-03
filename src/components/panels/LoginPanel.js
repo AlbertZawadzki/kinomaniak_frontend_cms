@@ -3,14 +3,20 @@ import TextInput from "../inputs/TextInput"
 import SubmitInput from "../inputs/SubmitInput"
 import functions from "../../functions"
 import CheckboxInput from "../inputs/CheckboxInput"
+import database from "../../database"
 
 class LoginPanel extends React.Component {
+  login = async (event) => {
+    const { form } = functions.createForm(event)
+    await database.doLogin(form)
+  }
+
   render() {
     return (
-      <form className="login-form">
+      <form className="login-form" onSubmit={this.login}>
         <TextInput
           title={functions.getTranslation("user_email")}
-          name="login"
+          name="email"
           type='email'
         />
         <TextInput
