@@ -2,7 +2,7 @@ import React from "react"
 
 class TextInput extends React.Component {
   render() {
-    const { name, value, title, type, small } = this.props
+    const { name, value, title, type, small, step } = this.props
     const id = "text-input-" + name
 
     return (
@@ -12,6 +12,7 @@ class TextInput extends React.Component {
           <input
             type={type}
             name={name}
+            step={step}
             defaultValue={value}
             id={id}
             onChange={(event) => this.props.actionReturn(event.target)}
@@ -30,6 +31,7 @@ TextInput.defaultProps = {
   },
   type: "text",
   small: false,
+  step: 1,
 }
 
 export default TextInput

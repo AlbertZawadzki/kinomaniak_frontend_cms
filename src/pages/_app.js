@@ -28,7 +28,7 @@ class MyApp extends React.Component {
     }, databaseConfig.USER_TOKEN_REFRESH_TIME)
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     database.auth()
     document.body.className = localStorage.getItem("theme") || "theme-light"
 

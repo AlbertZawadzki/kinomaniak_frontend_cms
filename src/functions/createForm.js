@@ -1,7 +1,8 @@
 const isDataInput = (input) => {
   const isInput = input.tagName === "INPUT" || input.tagName === "SELECT" || input.tagName === "TEXTAREA"
   const notFilter = !input.name.includes("filter-")
-  return isInput && input.type !== "submit" && notFilter || false
+  const notSkip = !input.name.includes("ignore-")
+  return isInput && input.type !== "submit" && notFilter && notSkip || false
 }
 
 const getDataInput = (input) => {

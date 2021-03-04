@@ -191,7 +191,7 @@ MultiSelectInput.defaultProps = {
   title: " No title given",
   selected: [],
   options: [],
-  showKeys: [" key"],
+  showKeys: ["key"],
   actionReturn: () => {
   },
 }

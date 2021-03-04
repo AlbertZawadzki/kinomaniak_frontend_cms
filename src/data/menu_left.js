@@ -115,7 +115,7 @@ const data = [
         name: functions.getTranslation("plans"),
         isLink: true,
         to: "/monetization/plans",
-        Icon: <Icons.EmptyIcon />,
+        Icon: <Icons.Monetization />,
       },
       {
         id: "menu-left-item-4-2",

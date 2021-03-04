@@ -20,6 +20,8 @@ const auth = async () => {
     .then(async response => {
       databaseConfig.unblockRequests()
       databaseConfig.handleResponse(response, null, true)
+      // FIXME:
+      databaseConfig.initData()
       databaseConfig.setParams(response.data)
       store.dispatch(setUser(response.data.data))
     })
