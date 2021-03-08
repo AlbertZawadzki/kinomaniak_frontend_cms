@@ -5,6 +5,7 @@ import countries from "./stores/countries"
 import currencies from "./stores/currencies"
 import geoblocks from "./stores/geoblocks"
 import notifications from "./stores/notifications"
+import pages from "./stores/pages"
 import plans from "./stores/plans"
 import posters from "./stores/posters"
 import request from "./stores/request"
@@ -14,18 +15,19 @@ import vpns from "./stores/vpns"
 
 const store = createStore(
   combineReducers({
-      actors,
-      categories,
-      countries,
-      currencies,
-      geoblocks,
-      notifications,
-      posters,
-      plans,
-      request,
-      seos,
-      vouchers,
-      vpns,
+    actors,
+    categories,
+    countries,
+    currencies,
+    geoblocks,
+    notifications,
+    pages,
+    plans,
+    posters,
+    request,
+    seos,
+    vouchers,
+    vpns,
   }),
 )
 
