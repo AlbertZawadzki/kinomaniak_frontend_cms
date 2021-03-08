@@ -128,8 +128,10 @@
   }
 
   &:hover {
-    border-color: $colorUnknown;
-    background-color: rgba($colorUnknown, $fullOpacity);
+    @include themify {
+      border-color: themed($colorMainContrast);
+      background-color: rgba(themed($colorMainContrast), $fullOpacity);
+    }
 
     &.all {
       border-color: $colorAll;
