@@ -98,7 +98,7 @@ const data = [
         name: functions.getTranslation("pages"),
         isLink: true,
         to: "/apps/pages",
-        Icon: <Icons.EmptyIcon />,
+        Icon: <Icons.Page />,
       },
     ],
   },

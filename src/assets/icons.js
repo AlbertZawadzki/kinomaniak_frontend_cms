@@ -31,6 +31,7 @@ import MailUs from "@material-ui/icons/AlternateEmailRounded"
 import Monetization from "@material-ui/icons/MonetizationOnRounded"
 import Movie from "@material-ui/icons/MovieRounded"
 import New from "@material-ui/icons/AddCircleOutlineRounded"
+import Page from "@material-ui/icons/MenuBookRounded"
 import Plan from "@material-ui/icons/AssignmentRounded"
 import Profile from "@material-ui/icons/AccountCircleRounded"
 import Purchased from "@material-ui/icons/ShoppingCartRounded"
@@ -87,6 +88,7 @@ export {
   Monetization,
   Movie,
   New,
+  Page,
   Plan,
   Poster,
   Profile,
